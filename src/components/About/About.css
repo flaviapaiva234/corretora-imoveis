@@ -1,0 +1,80 @@
+.about {
+  padding: 6rem 2rem;
+  background: #fff;
+}
+
+.about-grid {
+  display: grid;
+  grid-template-columns: 1.2fr 0.8fr;
+  gap: 3rem;
+  align-items: center;
+  max-width: 1180px;
+  margin: 0 auto;
+}
+
+.about-text span {
+  display: inline-block;
+  margin-bottom: 1rem;
+  color: #b0965f;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  font-size: 0.85rem;
+}
+
+.about-text h2 {
+  font-family: 'Playfair Display', serif;
+  font-size: clamp(2.2rem, 3vw, 3rem);
+  margin-bottom: 1.5rem;
+  color: #111;
+}
+
+.about-text p {
+  max-width: 640px;
+  line-height: 1.8;
+  margin-bottom: 1.75rem;
+  color: #4b4b4b;
+}
+
+.about-text ul {
+  list-style: none;
+  padding: 0;
+  margin: 0 0 2rem;
+}
+
+.about-text li {
+  margin-bottom: 0.85rem;
+  color: #555;
+}
+
+.about-text .button {
+  display: inline-flex;
+  padding: 0.95rem 1.6rem;
+  border-radius: 999px;
+  background: #111;
+  color: #fff;
+  text-decoration: none;
+  font-weight: 600;
+}
+
+.about-media {
+  display: flex;
+  justify-content: center;
+}
+
+.about-image {
+  width: 100%;
+  min-height: 420px;
+  background: url('/images/ariana-photo.jpg') center/cover no-repeat;
+  border-radius: 24px;
+  box-shadow: 0 30px 80px rgba(0, 0, 0, 0.12);
+}
+
+@media (max-width: 900px) {
+  .about-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .about-image {
+    min-height: 320px;
+  }
+}

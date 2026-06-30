@@ -1,0 +1,73 @@
+header {
+  display: flex;              /* coloca logo e menu lado a lado */
+  justify-content: space-between; /* espaço entre logo e menu */
+  align-items: center;        /* centraliza verticalmente */
+  padding: 1rem 2rem;         /* espaço interno */
+  background-color: white;    /* fundo branco elegante */
+  border-bottom: 1px solid #ddd; /* linha discreta abaixo */
+}
+
+header h2 {
+  font-family: 'Playfair Display', serif; /* fonte sofisticada */
+  color: #333;                            /* cinza grafite */
+}
+
+nav a {
+  margin-left: 1.5rem;        /* espaço entre links */
+  text-decoration: none;      /* remove sublinhado */
+  font-family: 'Inter', sans-serif;
+  color: #333;
+  transition: color 0.3s ease;
+}
+
+nav a:hover {
+  color: goldenrod;           /* dourado discreto no hover */
+}
+
+/* botão hambúrguer escondido no desktop */
+.menu-btn {
+  display: none;
+  font-size: 1.5rem;
+  background: none;
+  border: none;
+  cursor: pointer;
+}
+
+/* celular */
+@media (max-width: 768px) {
+  nav {
+    display: none;
+    flex-direction: column;
+    background-color: white;
+    position: absolute;
+    top: 60px;
+    right: 0;
+    width: 200px;
+    padding: 1rem;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+  }
+
+  nav.open {
+    display: flex;
+  }
+
+  .menu-btn {
+    display: block;
+  }
+}
+
+header h2 {
+  font-family: 'Playfair Display', serif;
+  font-weight: 700;
+  color: #000; /* preto elegante */
+}
+
+nav a {
+  font-family: 'Inter', sans-serif;
+  font-weight: 600;
+  color: #333;
+}
+
+nav a:hover {
+  color: goldenrod; /* dourado discreto no hover */
+}

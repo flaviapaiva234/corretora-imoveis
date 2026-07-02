@@ -27,6 +27,9 @@ export function PropertyCard({ property }: PropertyCardProps) {
           ) : (
             <button className="button outline button-disabled" type="button" disabled>Tour indisponível</button>
           )}
+          <a className="button outline" href="#" onClick={(event) => event.preventDefault()}>
+            Detalhes do Imóvel
+          </a>
           <a
             className="button"
             href={`https://wa.me/5521988659172?text=${encodeURIComponent(`Olá Ariana, quero saber mais sobre o imóvel ${property.title}`)}`}

@@ -6,7 +6,7 @@ export function Header() {
 
   return (
     <header>
-      <h2>Corretora Imóveis Patrimar</h2>
+      <h2>Aniana Nunes | Corretora de Imóveis Patrimóvel</h2>
       <nav className={menuOpen ? "open" : ""}>
         <a href="#home">Home</a>
         <a href="#properties">Imóveis</a>

@@ -1,4 +1,5 @@
 import './PropertyCard.css';
+import { Link } from 'react-router-dom';
 import type { Property } from '../../data/properties';
 
 type PropertyCardProps = {
@@ -27,9 +28,9 @@ export function PropertyCard({ property }: PropertyCardProps) {
           ) : (
             <button className="button outline button-disabled" type="button" disabled>Tour indisponível</button>
           )}
-          <a className="button outline" href="#" onClick={(event) => event.preventDefault()}>
+          <Link className="button outline" to={`/imovel/${property.id}`}>
             Detalhes do Imóvel
-          </a>
+          </Link>
           <a
             className="button"
             href={`https://wa.me/5521988659172?text=${encodeURIComponent(`Olá Ariana, quero saber mais sobre o imóvel ${property.title}`)}`}

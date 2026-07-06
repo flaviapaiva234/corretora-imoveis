@@ -22,6 +22,8 @@ export type Property = {
   };
 };
 
+const basePath = import.meta.env.BASE_URL;
+
 export const properties: Property[] = [
   {
     id: 1,
@@ -33,7 +35,7 @@ export const properties: Property[] = [
     suites: '1-3',
     garage: 'conforme unidade',
     video: 'https://www.youtube.com/watch?v=aatr_2MstrI',
-    image: '/images/symphony-flamengo.jpg',
+    image: `${basePath}images/symphony-flamengo.jpg`,
     summary:
       'Lançamento no antigo Colégio Bennett com localização histórica no Flamengo, alto padrão e forte potencial de valorização.',
     details: {
@@ -54,7 +56,7 @@ export const properties: Property[] = [
     suites: '1-2',
     garage: 'sob consulta',
     video: 'https://www.youtube.com/watch?v=YSoxmrByv8c',
-    image: '/images/connect-square-piscina.jpg',
+    image: `${basePath}images/connect-square-piscina.jpg`,
     summary:
       'Residencial da Patrimar no Centro, com rooftop, studios e apartamentos de 1 e 2 quartos pensado para mobilidade e conveniência urbana.',
     details: {
@@ -77,7 +79,7 @@ export const properties: Property[] = [
     suites: 'variável',
     garage: 'conforme unidade',
     video: 'https://www.youtube.com/watch?v=CO0Q2jHKEg0',
-    image: '/images/ipa-studios.jpg',
+    image: `${basePath}images/ipa-studios.jpg`,
     summary:
       'No Quadrilátero do Charme, com mais de 1.500m² de lazer, solarium com vista para lagoa e infraestrutura premium.',
     details: {

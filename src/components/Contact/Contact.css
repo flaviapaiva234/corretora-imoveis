@@ -1,6 +1,6 @@
 .contact {
   padding: 5.5rem 2rem;
-  background: #fff;
+  background: #0f0f0f;
 }
 
 .contact-inner {
@@ -15,7 +15,7 @@
 .contact-inner span {
   display: inline-block;
   margin-bottom: 1rem;
-  color: #b38f56;
+  color: #d4af37;
   text-transform: uppercase;
   letter-spacing: 0.24em;
   font-size: 0.85rem;
@@ -25,11 +25,11 @@
   font-family: 'Playfair Display', serif;
   font-size: clamp(2rem, 3vw, 3rem);
   margin-bottom: 1rem;
-  color: #111;
+  color: #fdf8f3;
 }
 
 .contact-inner p {
-  color: #5e5e5e;
+  color: #c4c1b3;
   line-height: 1.8;
   margin-bottom: 2rem;
 }
@@ -46,22 +46,25 @@
   padding: 1.4rem 1.7rem;
   border-radius: 24px;
   text-decoration: none;
-  background: #f3f1eb;
-  color: #111;
-  transition: transform 0.2s ease, box-shadow 0.2s ease;
+  background: #1a1a1a;
+  color: #e8e5d9;
+  border: 1px solid #d4af37;
+  transition: transform 0.2s ease, box-shadow 0.2s ease, background 0.2s ease;
 }
 
 .contact-card:hover {
   transform: translateY(-4px);
-  box-shadow: 0 18px 40px rgba(0, 0, 0, 0.08);
+  box-shadow: 0 18px 40px rgba(212, 175, 55, 0.15);
+  background: #232220;
 }
 
 .contact-card strong {
   font-size: 1.05rem;
+  color: #d4af37;
 }
 
 .contact-card span {
-  color: #6f6f6f;
+  color: #a8a5a0;
 }
 
 @media (max-width: 900px) {

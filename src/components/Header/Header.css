@@ -3,25 +3,26 @@ header {
   justify-content: space-between; /* espaço entre logo e menu */
   align-items: center;        /* centraliza verticalmente */
   padding: 1rem 2rem;         /* espaço interno */
-  background-color: white;    /* fundo branco elegante */
-  border-bottom: 1px solid #ddd; /* linha discreta abaixo */
+  background-color: #1a1a1a;    /* fundo escuro luxuoso */
+  border-bottom: 1px solid #d4af37; /* linha em dourado */
 }
 
 header h2 {
   font-family: 'Playfair Display', serif; /* fonte sofisticada */
-  color: #333;                            /* cinza grafite */
+  color: #d4af37;                            /* dourado */
 }
 
 nav a {
   margin-left: 1.5rem;        /* espaço entre links */
   text-decoration: none;      /* remove sublinhado */
   font-family: 'Inter', sans-serif;
-  color: #333;
+  color: #d4af37;
   transition: color 0.3s ease;
+  font-weight: 600;
 }
 
 nav a:hover {
-  color: goldenrod;           /* dourado discreto no hover */
+  color: #e8c547;           /* dourado mais claro no hover */
 }
 
 /* botão hambúrguer escondido no desktop */
@@ -31,6 +32,7 @@ nav a:hover {
   background: none;
   border: none;
   cursor: pointer;
+  color: #d4af37;
 }
 
 /* celular */
@@ -38,13 +40,13 @@ nav a:hover {
   nav {
     display: none;
     flex-direction: column;
-    background-color: white;
+    background-color: #1a1a1a;
     position: absolute;
     top: 60px;
     right: 0;
     width: 200px;
     padding: 1rem;
-    box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+    box-shadow: 0 2px 8px rgba(0,0,0,0.5);
   }
 
   nav.open {
@@ -54,20 +56,4 @@ nav a:hover {
   .menu-btn {
     display: block;
   }
-}
-
-header h2 {
-  font-family: 'Playfair Display', serif;
-  font-weight: 700;
-  color: #000; /* preto elegante */
-}
-
-nav a {
-  font-family: 'Inter', sans-serif;
-  font-weight: 600;
-  color: #333;
-}
-
-nav a:hover {
-  color: goldenrod; /* dourado discreto no hover */
 }

@@ -1,6 +1,6 @@
 .hero {
   position: relative;
-  min-height: 80vh;
+  min-height: 60vh;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -28,8 +28,9 @@
   font-size: 0.95rem;
   letter-spacing: 0.4em;
   text-transform: uppercase;
-  color: #f7d08a;
-  text-shadow: 0 2px 10px rgba(0, 0, 0, 0.7);
+  color: #d4af37;
+  text-shadow: 0 2px 10px rgba(0, 0, 0, 0.8);
+  font-weight: 600;
 }
 
 .hero h1 {
@@ -38,7 +39,8 @@
   margin-bottom: 1rem;
   line-height: 1.05;
   color: #fff;
-  text-shadow: 0 4px 24px rgba(0, 0, 0, 0.75);
+  text-shadow: 0 4px 24px rgba(0, 0, 0, 0.9), 0 2px 8px rgba(0, 0, 0, 0.8);
+  font-weight: 700;
 }
 
 .hero p {
@@ -77,14 +79,20 @@
 }
 
 .button.secondary {
-  background: rgba(255, 255, 255, 0.12);
-  color: #fff;
-  border: 1px solid rgba(255, 255, 255, 0.22);
+  background: rgba(212, 175, 55, 0.25);
+  color: #d4af37;
+  border: 2px solid #d4af37;
+  font-weight: 700;
+}
+
+.button.secondary:hover {
+  background: rgba(212, 175, 55, 0.35);
+  color: #fdf8f3;
 }
 
 @media (max-width: 768px) {
   .hero {
-    min-height: 72vh;
+    min-height: 55vh;
   }
 
   .hero p {

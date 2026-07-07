@@ -1,6 +1,6 @@
 .featured {
   padding: 6rem 2rem;
-  background: #f8f6f1;
+  background: #0f0f0f;
 }
 
 .section-header {
@@ -14,7 +14,7 @@
   margin-bottom: 1rem;
   text-transform: uppercase;
   letter-spacing: 0.25em;
-  color: #9a7a3b;
+  color: #d4af37;
   font-size: 0.85rem;
 }
 
@@ -22,7 +22,7 @@
   font-family: 'Playfair Display', serif;
   font-size: clamp(2rem, 3vw, 3rem);
   line-height: 1.05;
-  color: #111;
+  color: #fdf8f3;
 }
 
 .property-grid {

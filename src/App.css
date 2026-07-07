@@ -6,16 +6,16 @@
 
 :root {
   font-family: 'Inter', sans-serif;
-  color: #333;
-  background: #fff;
+  color: #e8e5d9;
+  background: #0f0f0f;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
 
 body {
   min-height: 100vh;
-  background: #fff;
-  color: #333;
+  background: #0f0f0f;
+  color: #e8e5d9;
 }
 
 button,

@@ -1,7 +1,7 @@
 <!--START_SECTION:header-->
 <div align="center">
   <p align="center">
-    <img src="dist/images/SALA-APTO-1Q-F28-scaled.jpg" alt="Corretora de Imóveis" width="400px" />
+    <img src="public/images/SALA-APTO-1Q-F28-scaled.jpg" alt="Corretora de Imóveis" width="400px" />
     <h1>🏠 Corretora de Imóveis</h1>
   </p>
 </div>

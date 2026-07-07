@@ -1,52 +1,87 @@
 header {
-  display: flex;              /* coloca logo e menu lado a lado */
-  justify-content: space-between; /* espaço entre logo e menu */
-  align-items: center;        /* centraliza verticalmente */
-  padding: 1rem 2rem;         /* espaço interno */
-  background-color: #1a1a1a;    /* fundo escuro luxuoso */
-  border-bottom: 1px solid #d4af37; /* linha em dourado */
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem 2rem;
+  background-color: var(--header-bg);
+  border-bottom: 1px solid var(--header-border);
+  gap: 1rem;
 }
 
 header h2 {
-  font-family: 'Playfair Display', serif; /* fonte sofisticada */
-  color: #d4af37;                            /* dourado */
+  font-family: 'Playfair Display', serif;
+  color: var(--header-text);
+}
+
+.header-actions {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+nav {
+  display: flex;
+  align-items: center;
+  gap: 1.5rem;
 }
 
 nav a {
-  margin-left: 1.5rem;        /* espaço entre links */
-  text-decoration: none;      /* remove sublinhado */
+  text-decoration: none;
   font-family: 'Inter', sans-serif;
-  color: #d4af37;
+  color: var(--header-text);
   transition: color 0.3s ease;
   font-weight: 600;
 }
 
 nav a:hover {
-  color: #e8c547;           /* dourado mais claro no hover */
+  color: var(--header-hover);
 }
 
-/* botão hambúrguer escondido no desktop */
+.theme-toggle-btn {
+  border: 1px solid var(--header-button-border);
+  background: var(--header-button-bg);
+  color: var(--header-text);
+  padding: 0.6rem 0.9rem;
+  border-radius: 999px;
+  cursor: pointer;
+  font-weight: 600;
+  transition: transform 0.2s ease, background-color 0.3s ease;
+}
+
+.theme-toggle-btn:hover {
+  transform: translateY(-1px);
+}
+
 .menu-btn {
   display: none;
   font-size: 1.5rem;
   background: none;
   border: none;
   cursor: pointer;
-  color: #d4af37;
+  color: var(--header-text);
 }
 
-/* celular */
 @media (max-width: 768px) {
+  header {
+    position: relative;
+  }
+
+  .header-actions {
+    gap: 0.75rem;
+  }
+
   nav {
     display: none;
     flex-direction: column;
-    background-color: #1a1a1a;
+    background-color: var(--header-bg);
     position: absolute;
     top: 60px;
     right: 0;
     width: 200px;
     padding: 1rem;
-    box-shadow: 0 2px 8px rgba(0,0,0,0.5);
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
+    border: 1px solid var(--header-button-border);
+    border-radius: 0.75rem;
   }
 
   nav.open {
@@ -55,5 +90,10 @@ nav a:hover {
 
   .menu-btn {
     display: block;
+  }
+
+  .theme-toggle-btn {
+    font-size: 0.9rem;
+    padding: 0.55rem 0.75rem;
   }
 }

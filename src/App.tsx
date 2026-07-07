@@ -1,4 +1,5 @@
 import './App.css';
+import { useState } from 'react';
 import { Route, Routes } from 'react-router-dom';
 import { Header } from './components/Header/Header';
 import { Hero } from './components/Hero/Hero';
@@ -10,9 +11,11 @@ import { WhatsAppButton } from './components/WhatsAppButton/WhatsAppButton';
 import { PropertyDetailsPage } from './pages/PropertyDetailsPage';
 
 function App() {
+  const [theme, setTheme] = useState<'dark' | 'light'>('dark');
+
   return (
-    <div>
-      <Header />
+    <div className={`app-shell app-theme-${theme}`}>
+      <Header theme={theme} onToggleTheme={() => setTheme(theme === 'dark' ? 'light' : 'dark')} />
       <Routes>
         <Route
           path="/"

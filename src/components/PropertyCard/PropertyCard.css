@@ -1,18 +1,18 @@
 .property-card {
-  background: #1a1a1a;
+  background: var(--card-bg);
   border-radius: 24px;
   overflow: hidden;
-  box-shadow: 0 30px 70px rgba(0, 0, 0, 0.4);
+  box-shadow: 0 30px 70px var(--card-shadow);
   display: flex;
   flex-direction: column;
   transition: transform 0.3s ease, box-shadow 0.3s ease, border 0.3s ease;
-  border: 1px solid #2a2820;
+  border: 1px solid var(--card-border);
 }
 
 .property-card:hover {
   transform: translateY(-6px);
-  box-shadow: 0 40px 90px rgba(212, 175, 55, 0.2);
-  border: 1px solid #d4af37;
+  box-shadow: 0 40px 90px rgba(212, 175, 55, 0.16);
+  border: 1px solid var(--accent);
 }
 
 .property-image {
@@ -41,7 +41,7 @@
   margin: 0;
   font-family: 'Playfair Display', serif;
   font-size: 1.55rem;
-  color: #fdf8f3;
+  color: var(--section-heading);
 }
 
 .property-price {
@@ -54,12 +54,12 @@
   display: flex;
   gap: 1rem;
   flex-wrap: wrap;
-  color: #a8a5a0;
+  color: var(--section-text-muted);
   font-size: 0.95rem;
 }
 
 .property-summary {
-  color: #c4c1b3;
+  color: var(--section-text-muted);
   font-size: 0.95rem;
   line-height: 1.7;
 }
@@ -94,8 +94,8 @@
 }
 
 .button.outline {
-  border: 1px solid #d4af37;
-  color: #d4af37;
+  border: 1px solid var(--accent);
+  color: var(--accent);
   background: transparent;
 }
 
@@ -104,6 +104,6 @@
 }
 
 .button:not(.outline) {
-  background: #d4af37;
-  color: #111;
+  background: var(--accent);
+  color: var(--section-bg-alt);
 }

@@ -1,6 +1,7 @@
 .about {
   padding: 6rem 2rem;
-  background: #0f0f0f;
+  background: var(--section-bg);
+  color: var(--section-text);
 }
 
 .about-grid {
@@ -15,7 +16,7 @@
 .about-text span {
   display: inline-block;
   margin-bottom: 1rem;
-  color: #d4af37;
+  color: var(--accent);
   letter-spacing: 0.2em;
   text-transform: uppercase;
   font-size: 1.5rem;
@@ -25,14 +26,14 @@
   font-family: 'Playfair Display', serif;
   font-size: clamp(2.2rem, 3vw, 3rem);
   margin-bottom: 1.5rem;
-  color: #fdf8f3;
+  color: var(--section-heading);
 }
 
 .about-text p {
   max-width: 640px;
   line-height: 1.8;
   margin-bottom: 1.75rem;
-  color: #c4c1b3;
+  color: var(--section-text-muted);
 }
 
 .about-text ul {
@@ -43,22 +44,22 @@
 
 .about-text li {
   margin-bottom: 0.85rem;
-  color: #d8d5c8;
+  color: var(--section-text-muted);
 }
 
 .about-text .button {
   display: inline-flex;
   padding: 0.95rem 1.6rem;
   border-radius: 999px;
-  background: #d4af37;
-  color: #0f0f0f;
+  background: var(--accent);
+  color: var(--section-bg-alt);
   text-decoration: none;
   font-weight: 600;
   transition: background 0.3s ease;
 }
 
 .about-text .button:hover {
-  background: #e8c547;
+  background: var(--accent-hover);
 }
 
 .about-media {

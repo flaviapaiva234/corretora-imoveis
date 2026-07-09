@@ -23,6 +23,9 @@ export function PropertyDetailsPage() {
           `${basePath}images/pool-bar-rooftop.jpg`,
           `${basePath}images/QUARTO-CASAL-APTO-2Q-F24-scaled.jpg`,
           `${basePath}images/SALA-APTO-1Q-F28-scaled.jpg`,
+          `${basePath}images/symphony-3-quartos.jpg`,
+          `${basePath}images/symphony-2-quartos.jpg`,
+          `${basePath}images/symphony-1-quarto.jpg`,
         ]
       : [property.image, property.image, property.image];
 

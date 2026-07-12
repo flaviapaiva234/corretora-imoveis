@@ -34,7 +34,7 @@ export const properties: Property[] = [
     bedrooms: '1-3 quartos',
     suites: '1-3',
     garage: 'conforme unidade',
-    video: 'https://www.youtube.com/watch?v=aatr_2MstrI',
+    video: 'https://www.youtube.com/shorts/MqjWjUuK5cw',
     image: `${basePath}images/symphony-flamengo.jpg`,
     summary:
       'Lançamento no antigo Colégio Bennett com localização histórica no Flamengo, alto padrão e forte potencial de valorização.',

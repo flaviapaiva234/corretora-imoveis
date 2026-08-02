@@ -9,6 +9,7 @@ export type Property = {
   garage: string;
   video: string;
   image: string;
+  pdf?: string;
   summary?: string;
   details?: {
     address?: string;
@@ -55,7 +56,7 @@ export const properties: Property[] = [
     bedrooms: 'Studios, 1 e 2 quartos',
     suites: '1-2',
     garage: 'sob consulta',
-    video: 'https://www.youtube.com/watch?v=YSoxmrByv8c',
+    video: 'https://www.youtube.com/shorts/xEyIXTbYLnk',
     image: `${basePath}images/connect-square-piscina.jpg`,
     summary:
       'Residencial da Patrimar no Centro, com rooftop, studios e apartamentos de 1 e 2 quartos pensado para mobilidade e conveniência urbana.',
@@ -78,7 +79,7 @@ export const properties: Property[] = [
     bedrooms: '1-3 quartos',
     suites: 'variável',
     garage: 'conforme unidade',
-    video: 'https://www.youtube.com/watch?v=CO0Q2jHKEg0',
+    video: 'https://www.instagram.com/p/DbPG-5ktyJ_/',
     image: `${basePath}images/ipa-studios.jpg`,
     summary:
       'No Quadrilátero do Charme, com mais de 1.500m² de lazer, solarium com vista para lagoa e infraestrutura premium.',
@@ -122,29 +123,40 @@ export const properties: Property[] = [
     garage: '3 vagas',
     video: 'https://www.instagram.com/p/Da0BgdTs19_/',
     image: `${basePath}images/iconyc-2-perfil-metade.jpg`,
+    summary: 'Conheça o ICONYC em Botafogo, um empreendimento que transforma o extraordinário em realidade.',
   },
   {
     id: 5,
-    title: 'Apartamento Ipanema',
-    location: 'Ipanema',
-    price: 'R$ 3.500.000,00',
+    title: 'JAZZ',
+    location: 'Nova Iguaçu - RJ',
+    price: 'R$ 197.000,00',
     area: '200 m²',
-    bedrooms: '3 suítes',
-    suites: '3',
-    garage: '2 vagas',
-    video: 'https://www.youtube.com/watch?v=xwsYvBYZcx4&list=RDxwsYvBYZcx4&start_radio=1',
-    image: 'https://images.unsplash.com/photo-1505693416388-ac5ce068fe85?auto=format&fit=crop&w=1200&q=80',
+    bedrooms: '1 e 2 Quartos',
+    suites: 'Apartamentos, Studios e Gardens',
+    garage: 'sob consulta',
+    video: 'https://www.instagram.com/p/DaxyIt2shMc/',
+    pdf: 'https://ba44ede8f6ee3c28519402c66ea60935.cdn.bubble.io/f1780219962661x460311151065862000/Book%20Digital%20-%20Jazz%20Powered%20By%20Housi.pdf',
+    image: `${basePath}images/jazz-01.jpg`,
+    summary: 'Jazz Nova Iguaçu oferece studios e gardens com projeto inteligente e opções flexíveis em uma região em forte transformação urbana.',
+    details: {
+      address: 'Av. Abílio Augusto Távora, Nova Iguaçu',
+      description: 'O Jazz combina arquitetura contemporânea, conforto inteligente e localização estratégica em Nova Iguaçu, com opções de studios, apartamentos e gardens pensados para quem busca praticidade sem abrir mão de qualidade.',
+      condominiumEstimate: 'Infraestrutura completa com piscina, espaço fitness e coworking.',
+      valuesValid: 'PDF disponível com condições atualizadas para consulta imediata.',
+    },
   },
   {
     id: 6,
-    title: 'Casa Jardim Botânico',
-    location: 'Jardim Botânico',
-    price: 'R$ 5.250.000,00',
-    area: '380 m²',
-    bedrooms: '5 suítes',
-    suites: '5',
-    garage: '4 vagas',
-    video: 'https://www.youtube.com/watch?v=e6Po2lDHD1I&list=RDxwsYvBYZcx4&index=2',
-    image: 'https://images.unsplash.com/photo-1519710164239-da123dc03ef4?auto=format&fit=crop&w=1200&q=80',
+    title: 'GAVÍ',
+    location: 'Gávea',
+    price: 'R$ 2.250.000,00',
+    area: '30,05m² - 106,07 m²',
+    bedrooms: 'suítes',
+    suites: 'Variável',
+    garage: 'Vagas de garagem conforme unidade',
+    video: 'https://www.instagram.com/p/DasidpVMVGj/',
+    image: `${basePath}images/gavi-01.jpg`,
+    pdf: `${basePath}images/gavi-book.pdf`,
+    summary: 'Viver na Gávea é muito mais do que escolher um endereço. É escolher um estilo de vida.',
   },
 ];

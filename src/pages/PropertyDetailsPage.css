@@ -181,6 +181,42 @@
   box-shadow: 0 12px 30px rgba(0, 0, 0, 0.35);
 }
 
+.gallery-item--pdf {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 160px;
+  background: rgba(212, 175, 55, 0.12);
+  border: 1px solid rgba(212, 175, 55, 0.25);
+}
+
+.gallery-item__pdf {
+  display: grid;
+  gap: 0.35rem;
+  text-align: center;
+  color: #fdf8f3;
+  font-weight: 700;
+}
+
+.gallery-item__pdf span {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 46px;
+  height: 46px;
+  border-radius: 50%;
+  background: #d4af37;
+  color: #111;
+  font-size: 0.95rem;
+}
+
+.gallery-item__pdf p {
+  margin: 0;
+  font-size: 0.85rem;
+  line-height: 1.25;
+  color: #f4f1e8;
+}
+
 .gallery-modal {
   position: fixed;
   inset: 0;

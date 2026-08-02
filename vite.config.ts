@@ -3,7 +3,7 @@ import react from '@vitejs/plugin-react'
 
 // https://vite.dev/config/
 export default defineConfig(({ mode }) => {
-  const base = mode === 'vercel' ? '/' : '/corretora-imoveis/'
+  const base = mode === 'vercel' || mode === 'development' ? '/' : '/corretora-imoveis/'
 
   return {
     base,

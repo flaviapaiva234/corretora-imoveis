@@ -34,10 +34,10 @@ export function PropertyDetailsPage() {
       src: `${basePath}images/gavi-${number}.jpg`,
       label: `Gavi ${number}`,
       alt: `Gavi ${number}`,
-    };
+    } as GalleryItem;
   });
 
-  const galleryItems: GalleryItem[] =
+  const galleryItems = (
     property.id === 4
       ? [
         { type: 'image', src: `${basePath}images/iconyc-1-perfil-inteiro.jpg`, label: 'ICONYC fachada', alt: 'ICONYC fachada' },
@@ -92,7 +92,8 @@ export function PropertyDetailsPage() {
               { type: 'image', src: property.image, label: property.title, alt: property.title },
               { type: 'image', src: property.image, label: property.title, alt: property.title },
               { type: 'image', src: property.image, label: property.title, alt: property.title },
-            ];
+            ]
+  ) as GalleryItem[];
 
   useEffect(() => {
     if (selectedImageIndex === null) {

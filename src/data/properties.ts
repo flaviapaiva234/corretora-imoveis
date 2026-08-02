@@ -156,7 +156,7 @@ export const properties: Property[] = [
     garage: 'Vagas de garagem conforme unidade',
     video: 'https://www.instagram.com/p/DasidpVMVGj/',
     image: `${basePath}images/gavi-01.jpg`,
-    pdf: `${basePath}images/gavi-book.pdf`,
+    pdf: `${basePath}docs/gavi-book.pdf`,
     summary: 'Viver na Gávea é muito mais do que escolher um endereço. É escolher um estilo de vida.',
   },
 ];

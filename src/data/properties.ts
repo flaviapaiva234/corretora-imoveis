@@ -7,7 +7,12 @@ export type Property = {
   bedrooms: string;
   suites: string;
   garage: string;
-  video: string;
+  cardVideo?: string;
+  heroMedia?: {
+    type: 'image' | 'video';
+    src: string;
+    alt?: string;
+  };
   image: string;
   pdf?: string;
   summary?: string;
@@ -35,7 +40,12 @@ export const properties: Property[] = [
     bedrooms: '1-3 quartos',
     suites: '1-3',
     garage: 'conforme unidade',
-    video: 'https://www.youtube.com/shorts/MqjWjUuK5cw',
+    cardVideo: 'https://youtube.com/shorts/MqjWjUuK5cw',
+    heroMedia: {
+      type: 'video',
+      src: 'https://www.youtube.com/watch?v=Qj24v8MEFXc&t=281s',
+      alt: 'Vídeo Symphony Flamengo',
+    },
     image: `${basePath}images/symphony-flamengo.jpg`,
     summary:
       'Lançamento no antigo Colégio Bennett com localização histórica no Flamengo, alto padrão e forte potencial de valorização.',
@@ -56,7 +66,12 @@ export const properties: Property[] = [
     bedrooms: 'Studios, 1 e 2 quartos',
     suites: '1-2',
     garage: 'sob consulta',
-    video: 'https://www.youtube.com/shorts/xEyIXTbYLnk',
+    cardVideo: 'https://www.youtube.com/shorts/xEyIXTbYLnk',
+    heroMedia: {
+      type: 'video',
+      src: 'https://www.youtube.com/shorts/xEyIXTbYLnk',
+      alt: 'Vídeo Connect Square',
+    },
     image: `${basePath}images/connect-square-piscina.jpg`,
     summary:
       'Residencial da Patrimar no Centro, com rooftop, studios e apartamentos de 1 e 2 quartos pensado para mobilidade e conveniência urbana.',
@@ -79,7 +94,7 @@ export const properties: Property[] = [
     bedrooms: '1-3 quartos',
     suites: 'variável',
     garage: 'conforme unidade',
-    video: 'https://www.instagram.com/p/DbPG-5ktyJ_/',
+    cardVideo: 'https://www.instagram.com/p/DbPG-5ktyJ_/',
     image: `${basePath}images/ipa-studios.jpg`,
     summary:
       'No Quadrilátero do Charme, com mais de 1.500m² de lazer, solarium com vista para lagoa e infraestrutura premium.',
@@ -121,7 +136,12 @@ export const properties: Property[] = [
     bedrooms: '2 Quartos ou Cobertura Duplex com Suítes',
     suites: 'Variável',
     garage: '3 vagas',
-    video: 'https://www.instagram.com/p/Da0BgdTs19_/',
+    cardVideo: 'https://youtube.com/shorts/2w8U1FGbD28',
+    heroMedia: {
+      type: 'video',
+      src: 'https://youtube.com/shorts/2w8U1FGbD28',
+      alt: 'Vídeo ICONYC',
+    },
     image: `${basePath}images/iconyc-2-perfil-metade.jpg`,
     summary: 'Conheça o ICONYC em Botafogo, um empreendimento que transforma o extraordinário em realidade.',
   },
@@ -134,7 +154,7 @@ export const properties: Property[] = [
     bedrooms: '1 e 2 Quartos',
     suites: 'Apartamentos, Studios e Gardens',
     garage: 'sob consulta',
-    video: 'https://www.instagram.com/p/DaxyIt2shMc/',
+    cardVideo: 'https://www.instagram.com/p/DaxyIt2shMc/',
     pdf: 'https://ba44ede8f6ee3c28519402c66ea60935.cdn.bubble.io/f1780219962661x460311151065862000/Book%20Digital%20-%20Jazz%20Powered%20By%20Housi.pdf',
     image: `${basePath}images/jazz-01.jpg`,
     summary: 'Jazz Nova Iguaçu oferece studios e gardens com projeto inteligente e opções flexíveis em uma região em forte transformação urbana.',
@@ -154,7 +174,12 @@ export const properties: Property[] = [
     bedrooms: 'suítes',
     suites: 'Variável',
     garage: 'Vagas de garagem conforme unidade',
-    video: 'https://www.instagram.com/p/DasidpVMVGj/',
+    cardVideo: 'https://youtube.com/shorts/xEyIXTbYLnk',
+    heroMedia: {
+      type: 'video',
+      src: 'https://youtube.com/shorts/wHAj0JXVo8U',
+      alt: 'Vídeo Gavi',
+    },
     image: `${basePath}images/gavi-01.jpg`,
     pdf: `${basePath}docs/gavi-book.pdf`,
     summary: 'Viver na Gávea é muito mais do que escolher um endereço. É escolher um estilo de vida.',

@@ -23,8 +23,8 @@ export function PropertyCard({ property }: PropertyCardProps) {
           <span>{property.garage}</span>
         </div>
         <div className="property-actions">
-          {property.video ? (
-            <a className="button outline" href={property.video} target="_blank" rel="noreferrer">Assistir Tour</a>
+          {property.cardVideo ? (
+            <a className="button outline" href={property.cardVideo} target="_blank" rel="noreferrer">Assistir Tour</a>
           ) : (
             <button className="button outline button-disabled" type="button" disabled>Tour indisponível</button>
           )}

@@ -27,6 +27,35 @@ export function PropertyDetailsPage() {
   }
 
   const basePath = import.meta.env.BASE_URL;
+
+  const getYoutubeEmbedUrl = (videoUrl: string) => {
+    try {
+      const url = new URL(videoUrl);
+      if (url.hostname.includes('youtu.be')) {
+        const id = url.pathname.slice(1);
+        return `https://www.youtube.com/embed/${id}`;
+      }
+
+      if (url.hostname.includes('youtube.com')) {
+        if (url.pathname.includes('/watch')) {
+          return `https://www.youtube.com/embed/${url.searchParams.get('v')}`;
+        }
+        if (url.pathname.includes('/shorts/')) {
+          const id = url.pathname.split('/shorts/')[1];
+          return `https://www.youtube.com/embed/${id}`;
+        }
+      }
+    } catch {
+      return null;
+    }
+
+    return null;
+  };
+
+  const heroMedia = property.heroMedia ?? (property.cardVideo
+    ? { type: 'video' as const, src: property.cardVideo, alt: property.title }
+    : { type: 'image' as const, src: property.image, alt: property.title });
+  const videoEmbedUrl = heroMedia.type === 'video' ? getYoutubeEmbedUrl(heroMedia.src) : null;
   const gaviGalleryImages: GalleryItem[] = Array.from({ length: 22 }, (_, index) => {
     const number = String(index + 2).padStart(2, '0');
     return {
@@ -192,7 +221,19 @@ export function PropertyDetailsPage() {
       </Link>
 
       <section className="details-hero">
-        <img className="details-hero__image" src={property.image} alt={property.title} />
+        {videoEmbedUrl ? (
+          <div className="details-hero__video">
+            <iframe
+              className="details-hero__iframe"
+              src={videoEmbedUrl}
+              title={heroMedia.alt || property.title}
+              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+              allowFullScreen
+            />
+          </div>
+        ) : (
+          <img className="details-hero__image" src={heroMedia.src} alt={heroMedia.alt || property.title} />
+        )}
 
         <div className="details-card">
           <span className="details-card__eyebrow">{property.location}</span>

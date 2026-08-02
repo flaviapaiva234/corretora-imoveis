@@ -211,13 +211,18 @@ export function PropertyDetailsPage() {
           <div className="details-actions">
             <a
               className="details-actions__button details-actions__button--primary"
-              href={`https://wa.me/5521988659172?text=${encodeURIComponent(`Olá Ariana, quero saber mais sobre o imóvel ${property.title}`)}`}
+              href={`https://wa.me/5521988659172?text=${encodeURIComponent(`Olá Ariana, quero saber mais sobre o imóvel que vi no site ${property.title}.`)}`}
               target="_blank"
               rel="noreferrer"
             >
               Falar com Ariana no WhatsApp
             </a>
-            <a className="details-actions__button details-actions__button--secondary" href="https://wa.me/5521988659172" target="_blank" rel="noreferrer">
+            <a
+              className="details-actions__button details-actions__button--secondary"
+              href={`https://wa.me/5521988659172?text=${encodeURIComponent('Olá Ariana, quero saber mais sobre o imóvel que vi no site.')}`}
+              target="_blank"
+              rel="noreferrer"
+            >
               Agendar visita
             </a>
           </div>

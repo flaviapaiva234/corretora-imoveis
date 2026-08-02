@@ -33,7 +33,7 @@ export function PropertyCard({ property }: PropertyCardProps) {
           </Link>
           <a
             className="button"
-            href={`https://wa.me/5521988659172?text=${encodeURIComponent(`Olá Ariana, quero saber mais sobre o imóvel ${property.title}`)}`}
+            href={`https://wa.me/5521988659172?text=${encodeURIComponent(`Olá Ariana, quero saber mais sobre o imóvel que vi no site ${property.title}.`)}`}
             target="_blank"
             rel="noreferrer"
           >

@@ -5,7 +5,7 @@ export function Hero() {
     <section className="hero" id="home">
       <div className="hero-overlay" />
       <div className="hero-content">
-        <span className="hero-pretitle">Ariana Nunes | Patrimóvel</span>
+        <span className="hero-pretitle">Ariana Nunes | Somma</span>
         <h1>Consultora Imobiliária de Alto Padrão</h1>
         <p>Imóveis exclusivos no Rio de Janeiro com atendimento personalizado e foco em resultados.</p>
         <div className="hero-actions">

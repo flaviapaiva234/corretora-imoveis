@@ -12,7 +12,7 @@ export function Header({ theme, onToggleTheme }: HeaderProps) {
 
   return (
     <header>
-      <h2>Aniana Nunes | Corretora de Imóveis Patrimóvel</h2>
+      <h2>Aniana Nunes | Corretora de Imóveis Somma</h2>
       <div className="header-actions">
         <nav className={menuOpen ? "open" : ""}>
           <a href="#home">Home</a>

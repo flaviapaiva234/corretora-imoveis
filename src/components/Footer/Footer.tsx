@@ -6,7 +6,7 @@ export function Footer() {
       <div className="footer-content">
         <div>
           <h3>Ariana Nunes</h3>
-          <p>Consultora Imobiliária | Patrimóvel</p>
+          <p>Consultora Imobiliária | Somma</p>
           <p style={{marginTop: '0.5rem'}}><strong>WhatsApp: </strong><a href="https://wa.me/5521988659172" style={{color: '#d8d7d3', textDecoration: 'none'}}>(21) 98865-9172</a></p>
           <p style={{margin: 0}}><strong>E-mail: </strong><a href="mailto:ariana.nsb@gmail.com" style={{color: '#d8d7d3', textDecoration: 'none'}}>ariana.nsb@gmail.com</a></p>
         </div>

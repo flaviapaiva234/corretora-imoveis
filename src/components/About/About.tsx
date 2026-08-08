@@ -7,7 +7,7 @@ export function About() {
         <div className="about-text">
           <span>Quem é Ariana</span>
           <h2>Atendimento personalizado para seu imóvel de alto padrão</h2>
-          <p>Consultora imobiliária na Patrimóvel, especializada em imóveis de alto padrão. O objetivo é encontrar o imóvel ideal com experiência, segurança e muito cuidado em cada detalhe.</p>
+          <p>Consultora imobiliária na Somma, especializada em imóveis de alto padrão. O objetivo é encontrar o imóvel ideal com experiência, segurança e muito cuidado em cada detalhe.</p>
           <ul>
             <li>Atendimento exclusivo e consultivo</li>
             <li>Negócios de alto padrão e alto valor agregado</li>

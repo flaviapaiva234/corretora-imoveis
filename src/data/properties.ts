@@ -13,6 +13,7 @@ export type Property = {
     src: string;
     alt?: string;
   };
+  images?: string[];
   image: string;
   pdf?: string;
   summary?: string;
@@ -25,6 +26,8 @@ export type Property = {
     frontalPrudente?: { unit: string; area: string; price: string }[];
     condominiumEstimate?: string;
     valuesValid?: string;
+    developer?: string;
+    highlights?: string[];
   };
 };
 
@@ -183,5 +186,56 @@ export const properties: Property[] = [
     image: `${basePath}images/gavi-01.jpg`,
     pdf: `${basePath}docs/gavi-book.pdf`,
     summary: 'Viver na Gávea é muito mais do que escolher um endereço. É escolher um estilo de vida.',
+  },
+  {
+    id: 7,
+    title: 'Ilha Pura',
+    location: 'Barra Olímpica, Barra da Tijuca - RJ',
+    price: 'A partir de R$ 1.573.200,00',
+    area: '—',
+    bedrooms: '—',
+    suites: '—',
+    garage: 'sob consulta',
+    cardVideo: 'https://youtu.be/nreJePAp2xw',
+    heroMedia: {
+      type: 'video',
+      src: 'https://youtu.be/iKMVow1DP2U',
+      alt: 'Vídeo Ilha Pura',
+    },
+    images: [
+      `${basePath}images/id07/ilha-pura-01.jpg`,
+      `${basePath}images/id07/ilha-pura-02.jpg`,
+      `${basePath}images/id07/ilha-pura-03.jpg`,
+      `${basePath}images/id07/ilha-pura-04.jpg`,
+      `${basePath}images/id07/ilha-pura-05.jpg`,
+      `${basePath}images/id07/ilha-pura-06.jpg`,
+      `${basePath}images/id07/ilha-pura-07.jpg`,
+      `${basePath}images/id07/ilha-pura-08.jpg`,
+      `${basePath}images/id07/ilha-pura-09.jpg`,
+      `${basePath}images/id07/ilha-pura-10.jpg`,
+      `${basePath}images/id07/ilha-pura-11.jpg`,
+      `${basePath}images/id07/ilha-pura-12.jpg`,
+      `${basePath}images/id07/ilha-pura-13.jpg`,
+      `${basePath}images/id07/ilha-pura-14.jpg`,
+    ],
+    image: `${basePath}images/id07/ilha-pura-01.jpg`,
+    summary:
+      'Ilha Pura — bairro planejado e empreendimento imobiliário na Barra Olímpica, com integração entre moradia e natureza.',
+    details: {
+      developer: 'BTG Pactual',
+      highlights: [
+        'Bairro planejado com condomínios residenciais e grande parque integrado',
+        'Paisagismo com participação de Benedito Abbud e Burle Marx Escritório de Paisagismo',
+        'Condomínios lançados: Astra, Elos, Saint Michel, Millenio, Viure e Oro by Ornare',
+      ],
+      valuesValid: 'Informações sujeitas a confirmação.',
+      // informações sobre ofertas e localização
+      promotionalUnits: undefined,
+      condominiumEstimate: undefined,
+      address: 'Avenida Salvador Allende, Barra Olímpica, Barra da Tijuca, Rio de Janeiro',
+      // descrição detalhada do que oferece
+      description:
+        'As unidades variam geralmente de 2 a 4 quartos, com plantas entre aproximadamente 79 m² e 160 m², oferecendo áreas de lazer como piscinas, academias, salões de festa, quadras, playgrounds e soluções sustentáveis como reaproveitamento de água. Localizado próximo à Avenida das Américas e Linha Amarela, com acesso a BRT, shoppings, escolas e serviços.',
+    },
   },
 ];

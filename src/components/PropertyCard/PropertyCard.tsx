@@ -7,9 +7,11 @@ type PropertyCardProps = {
 };
 
 export function PropertyCard({ property }: PropertyCardProps) {
+  const coverImage = property.images && property.images.length > 0 ? property.images[0] : property.image;
+
   return (
     <article className="property-card">
-      <div className="property-image" style={{ backgroundImage: `url(${property.image})` }} />
+      <div className="property-image" style={{ backgroundImage: `url(${coverImage})` }} />
       <div className="property-content">
         <div>
           <span>{property.location}</span>

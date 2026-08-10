@@ -88,30 +88,37 @@ export function PropertyDetailsPage() {
     ];
   } else if (property.id === 5) {
     galleryItems = [
-      { type: 'image' as const, src: property.image, label: 'Jazz apartamento', alt: 'Jazz apartamento' },
-      { type: 'image' as const, src: `${basePath}images/jazz-02.jpg`, label: 'Jazz 02', alt: 'Jazz 02' },
-      { type: 'image' as const, src: `${basePath}images/jazz-03.jpg`, label: 'Jazz 03', alt: 'Jazz 03' },
-      { type: 'image' as const, src: `${basePath}images/jazz-04.jpg`, label: 'Jazz 04', alt: 'Jazz 04' },
-      { type: 'image' as const, src: `${basePath}images/jazz-05.jpg`, label: 'Jazz 05', alt: 'Jazz 05' },
-      { type: 'image' as const, src: `${basePath}images/jazz-06.jpg`, label: 'Jazz 06', alt: 'Jazz 06' },
-      { type: 'image' as const, src: `${basePath}images/jazz-07.jpg`, label: 'Jazz 07', alt: 'Jazz 07' },
-      { type: 'image' as const, src: `${basePath}images/jazz-08.jpg`, label: 'Jazz 08', alt: 'Jazz 08' },
-      { type: 'image' as const, src: `${basePath}images/jazz-10.jpg`, label: 'Jazz 10', alt: 'Jazz 10' },
-      { type: 'image' as const, src: `${basePath}images/jazz-11.jpg`, label: 'Jazz 11', alt: 'Jazz 11' },
-      { type: 'image' as const, src: `${basePath}images/jazz-12.jpg`, label: 'Jazz 12', alt: 'Jazz 12' },
-      { type: 'image' as const, src: `${basePath}images/jazz-13.jpg`, label: 'Jazz 13', alt: 'Jazz 13' },
-      { type: 'image' as const, src: `${basePath}images/jazz-14.jpg`, label: 'Jazz 14', alt: 'Jazz 14' },
-      { type: 'image' as const, src: `${basePath}images/jazz-15.jpg`, label: 'Jazz 15', alt: 'Jazz 15' },
-      { type: 'image' as const, src: `${basePath}images/jazz-16.jpg`, label: 'Jazz 16', alt: 'Jazz 16' },
-      { type: 'image' as const, src: `${basePath}images/jazz-17.jpg`, label: 'Jazz 17', alt: 'Jazz 17' },
-      { type: 'image' as const, src: `${basePath}images/jazz-18.jpg`, label: 'Jazz 18', alt: 'Jazz 18' },
-      { type: 'image' as const, src: `${basePath}images/jazz-19.jpg`, label: 'Jazz 19', alt: 'Jazz 19' },
-      { type: 'image' as const, src: `${basePath}images/jazz-20.jpg`, label: 'Jazz 20', alt: 'Jazz 20' },
-      { type: 'image' as const, src: `${basePath}images/jazz-21.jpg`, label: 'Jazz 21', alt: 'Jazz 21' },
-      { type: 'image' as const, src: `${basePath}images/jazz-22.jpg`, label: 'Jazz 22', alt: 'Jazz 22' },
-      { type: 'image' as const, src: `${basePath}images/jazz-23.jpg`, label: 'Jazz 23', alt: 'Jazz 23' },
-      { type: 'image' as const, src: `${basePath}images/jazz-24.jpg`, label: 'Jazz 24', alt: 'Jazz 24' },
-      { type: 'pdf' as const, src: property.pdf ?? '', label: 'Book Jazz', alt: 'Brochura Jazz' },
+      { type: 'image' as const, src: `${basePath}images/id05/arte-wood-00.jpg`, label: 'Arte Wood 01', alt: 'Arte Wood 01' },
+      { type: 'image' as const, src: `${basePath}images/id05/arte-wood-01.jpg`, label: 'Arte Wood 02', alt: 'Arte Wood 02' },
+      { type: 'image' as const, src: `${basePath}images/id05/arte-wood-02.jpg`, label: 'Arte Wood 03', alt: 'Arte Wood 03' },
+      { type: 'image' as const, src: `${basePath}images/id05/arte-wood-03.jpg`, label: 'Arte Wood 04', alt: 'Arte Wood 04' },
+      { type: 'image' as const, src: `${basePath}images/id05/arte-wood-04.jpg`, label: 'Arte Wood 05', alt: 'Arte Wood 05' },
+      { type: 'image' as const, src: `${basePath}images/id05/arte-wood-05.jpg`, label: 'Arte Wood 06', alt: 'Arte Wood 06' },
+      { type: 'image' as const, src: `${basePath}images/id05/arte-wood-06.jpg`, label: 'Arte Wood 07', alt: 'Arte Wood 07' },
+      { type: 'image' as const, src: `${basePath}images/id05/arte-wood-07.jpg`, label: 'Arte Wood 08', alt: 'Arte Wood 08' },
+      { type: 'image' as const, src: `${basePath}images/id05/arte-wood-08.jpg`, label: 'Arte Wood 09', alt: 'Arte Wood 09' },
+      { type: 'image' as const, src: `${basePath}images/id05/arte-wood-09.jpg`, label: 'Arte Wood 10', alt: 'Arte Wood 10' },
+      { type: 'image' as const, src: `${basePath}images/id05/arte-wood-10.jpg`, label: 'Arte Wood 11', alt: 'Arte Wood 11' },
+      { type: 'image' as const, src: `${basePath}images/id05/arte-wood-11.jpg`, label: 'Arte Wood 12', alt: 'Arte Wood 12' },
+      { type: 'image' as const, src: `${basePath}images/id05/arte-wood-12.jpg`, label: 'Arte Wood 13', alt: 'Arte Wood 13' },
+      { type: 'image' as const, src: `${basePath}images/id05/arte-wood-13.jpg`, label: 'Arte Wood 14', alt: 'Arte Wood 14' },
+      { type: 'image' as const, src: `${basePath}images/id05/arte-wood-14.jpg`, label: 'Arte Wood 15', alt: 'Arte Wood 15' },
+      { type: 'image' as const, src: `${basePath}images/id05/arte-wood-15.jpg`, label: 'Arte Wood 16', alt: 'Arte Wood 16' },
+      { type: 'image' as const, src: `${basePath}images/id05/arte-wood-16.jpg`, label: 'Arte Wood 17', alt: 'Arte Wood 17' },
+      { type: 'image' as const, src: `${basePath}images/id05/arte-wood-17.jpg`, label: 'Arte Wood 18', alt: 'Arte Wood 18' },
+      { type: 'image' as const, src: `${basePath}images/id05/arte-wood-18.jpg`, label: 'Arte Wood 19', alt: 'Arte Wood 19' },
+      { type: 'image' as const, src: `${basePath}images/id05/arte-wood-19.jpg`, label: 'Arte Wood 20', alt: 'Arte Wood 20' },
+      { type: 'image' as const, src: `${basePath}images/id05/arte-wood-20.jpg`, label: 'Arte Wood 21', alt: 'Arte Wood 21' },
+      { type: 'image' as const, src: `${basePath}images/id05/arte-wood-21.jpg`, label: 'Arte Wood 22', alt: 'Arte Wood 22' },
+      { type: 'image' as const, src: `${basePath}images/id05/arte-wood-22.jpg`, label: 'Arte Wood 23', alt: 'Arte Wood 23' },
+      { type: 'image' as const, src: `${basePath}images/id05/arte-wood-23.jpg`, label: 'Arte Wood 24', alt: 'Arte Wood 24' },
+      { type: 'image' as const, src: `${basePath}images/id05/arte-wood-24.jpg`, label: 'Arte Wood 25', alt: 'Arte Wood 25' },
+      { type: 'image' as const, src: `${basePath}images/id05/arte-wood-25.jpg`, label: 'Arte Wood 26', alt: 'Arte Wood 26' },
+      { type: 'image' as const, src: `${basePath}images/id05/arte-wood-26.jpg`, label: 'Arte Wood 27', alt: 'Arte Wood 27' },
+      { type: 'image' as const, src: `${basePath}images/id05/arte-wood-27.jpg`, label: 'Arte Wood 28', alt: 'Arte Wood 28' },
+      { type: 'image' as const, src: `${basePath}images/id05/arte-wood-28.jpg`, label: 'Arte Wood 29', alt: 'Arte Wood 29' },
+      { type: 'image' as const, src: `${basePath}images/id05/arte-wood-29.jpg`, label: 'Arte Wood 30', alt: 'Arte Wood 30' },
+      { type: 'image' as const, src: `${basePath}images/id05/arte-wood-30.jpg`, label: 'Arte Wood 31', alt: 'Arte Wood 31' },
     ];
   } else if (property.id === 6) {
     galleryItems = [
@@ -328,13 +335,29 @@ export function PropertyDetailsPage() {
               <li><strong>📍 Localização:</strong> entre a lagoa e as montanhas, com acesso à Barra e proximidade da praia.</li>
             </ul>
           </>
+        ) : property.id === 5 ? (
+          <>
+            <p className="details-section__text">
+              O <strong>Arte Wood Residences</strong> oferece unidades studios, 2 e 3 quartos, distribuídas em diferentes tipologias. O condomínio conta com uma infraestrutura ampla e diversificada, pensada para atender às diferentes necessidades dos moradores.
+            </p>
+
+            <ul className="details-section__text" style={{ textAlign: 'left' }}>
+              <li><strong>Unidades de 30 m² a 182 m²</strong> – Desde studios compactos até apartamentos espaçosos</li>
+              <li><strong>Tipologias variadas:</strong> apartamentos, up gardens, coberturas duplex, townhouses e lojas</li>
+              <li><strong>Áreas de lazer completas:</strong> piscina de surf indoor, academias, spa e salão de festas</li>
+              <li><strong>Espaços de conveniência:</strong> coworking, pet park, minimercado e transporte exclusivo até o metrô Jardim Oceânico</li>
+              <li><strong>Lojas de conveniência</strong> distribuídas pelas quadras do Cidade Arte</li>
+            </ul>
+
+            <p className="details-section__text" style={{ marginTop: '1rem', fontWeight: 'bold', fontSize: '1.1em', textAlign: 'left' }}>
+              🌿 Mais de 6 mil m² de verde e lazer.
+            </p>
+          </>
         ) : (
           <p className="details-section__text">
             {property.id === 4
               ? 'Mais do que um endereço, o Iconyc é uma nova forma de viver. Arquitetura marcante, design exclusivo e apartamentos de 2 a 4 quartos, além de gardens e coberturas, em um dos bairros mais desejados do Rio de Janeiro. Viva cercado por cultura, gastronomia, mobilidade e uma vista privilegiada, com toda a sofisticação que você e sua família merecem.'
-              : property.id === 5
-                ? 'O Jazz nasce em Nova Iguaçu com uma proposta contemporânea de morar, unindo diversidade de tipologias, lazer completo e uma experiência urbana integrada. O projeto conta com 220 unidades, distribuídas entre studios, up gardens, apartamentos de 1 dormitório + office e opções de 2 quartos, com e sem suíte, atendendo diferentes estilos de vida e necessidades. O lazer é um dos grandes destaques, com estrutura completa, incluindo área de lazer no rooftop, piscina, academia, sky bar, coworking, espaços gourmet, churrasqueira, quadra, sauna, espaço pet, lavanderia, minimercado, entre outros ambientes pensados para convivência, bem-estar e funcionalidade.'
-                : property.id === 6
+              : property.id === 6
                   ? 'O Gaví reúne sofisticação, natureza, gastronomia, cultura e bem-estar em um dos bairros mais desejados do Rio de Janeiro. Imagine morar cercado pelo verde, a poucos passos do Baixo Gávea, da PUC, do Planetário e da futura estação de metrô. Um projeto pensado para oferecer conforto, integração e qualidade de vida, com studios, apartamentos de 1, 2 e 3 quartos, UpGardens e uma área de lazer exclusiva com bosque, rooftop, coworking, espaço de estudos, sala de podcast, minimercado e área wellness. Mais do que um empreendimento, o Gaví traduz a essência da Gávea em cada detalhe. ✨ Descubra por que a Gávea vive no Gaví.'
                   : property.id === 2
                     ? 'O Connect Square Centro traz conveniência urbana ao lado do Terminal Menezes Cortes, com rooftop, studios modernos e opções de 1 e 2 quartos para quem busca mobilidade e estrutura completa.'

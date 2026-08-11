@@ -17,7 +17,6 @@ export function PropertyCard({ property }: PropertyCardProps) {
           <span>{property.location}</span>
           <h3>{property.title}</h3>
         </div>
-        <p className="property-price">{property.price}</p>
         {property.summary ? <p className="property-summary">{property.summary}</p> : null}
         <div className="property-details">
           <span>{property.area}</span>
@@ -39,7 +38,7 @@ export function PropertyCard({ property }: PropertyCardProps) {
             target="_blank"
             rel="noreferrer"
           >
-            Falar com Ariana
+            QUERO MAIS INFORMAÇÕES
           </a>
         </div>
       </div>

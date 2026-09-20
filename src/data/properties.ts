@@ -27,6 +27,9 @@ export type Property = {
     condominiumEstimate?: string;
     valuesValid?: string;
     developer?: string;
+    characteristics?: string[];
+    amenities?: string[];
+    contactMessage?: string;
     highlights?: string[];
   };
 };
@@ -303,6 +306,59 @@ export const properties: Property[] = [
       ],
       condominiumEstimate: 'Sob consulta',
       valuesValid: 'Entre em contato com a Ariana Nunes da Corretora Somma para informações atualizadas sobre preço, disponibilidade e condições de pagamento.',
+    },
+  },
+  {
+    id: 9,
+    title: 'Barra Home Design',
+    location: 'Barra da Tijuca – Rio de Janeiro/RJ',
+    price: 'Entre em contato com Ariana Nunes',
+    area: '296 - 516 m²',
+    bedrooms: '5 suítes',
+    suites: '5',
+    garage: 'a partir de 2 vagas',
+    cardVideo: 'https://youtu.be/ntlDVaEMZDY',
+    heroMedia: {
+      type: 'video',
+      src: 'https://www.youtube.com/watch?v=5ygPLTUuAF4',
+      alt: 'Vídeo Barra Home Design',
+    },
+    images: Array.from({ length: 26 }, (_, index) =>
+      `${basePath}images/id09/Barra ${String(index + 1).padStart(2, '0')}.jpg`,
+    ),
+    image: `${basePath}images/id09/Barra 01.jpg`,
+    summary: 'Arquitetura contemporânea, liberdade para personalizar e uma nova forma de viver na Barra.',
+    details: {
+      address: 'Barra da Tijuca, Rio de Janeiro/RJ',
+      description:
+        'O Barra Home Design apresenta casas triplex de arquitetura contemporânea, com plantas flexíveis e ambientes projetados para integrar conforto, sofisticação e funcionalidade. As residências contam com cozinha com ilha integrada ao living e à área gourmet, proporcionando ambientes amplos e conectados para receber a família e os amigos.',
+      characteristics: [
+        'Casas triplex',
+        '5 suítes',
+        'Plantas de 296 a 516 m²',
+        'Plantas flexíveis',
+        'Piscina privativa',
+        'Área gourmet com churrasqueira',
+        'Cozinha com ilha integrada ao living',
+        'Lavabo',
+        'Dependência completa',
+        'A partir de 2 vagas de garagem',
+      ],
+      amenities: [
+        '🏖️ Piscina natural com praia privativa',
+        '🏋️ Academia',
+        '⚽ Quadra de futebol',
+        '🏐 Quadra de areia',
+        '🐾 Espaço Pet',
+        '🍽️ Espaço Gourmet',
+        '🔥 Churrasqueira',
+        '🌴 Deck Lounge',
+        '👧 Espaço Kids',
+        '🧸 Brinquedoteca',
+        '🎮 Espaço Teen',
+        '🍹 Bar da piscina',
+      ],
+      contactMessage: 'Para consultar preço, disponibilidade e condições de pagamento, entre em contato com Ariana Nunes, da SOMMA Imobiliária.',
     },
   },
 ];

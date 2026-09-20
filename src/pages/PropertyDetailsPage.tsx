@@ -229,13 +229,14 @@ export function PropertyDetailsPage() {
     setZoomLevel(1);
   };
 
-  const amenities = [
+  const defaultAmenities = [
     'Piscina com deck integrada',
     'Academia e espaço wellness',
     'Coworking e lounge gourmet',
     'Segurança 24 horas',
     'Vista privilegiada e localização premium',
   ];
+  const amenities = property.details?.amenities || defaultAmenities;
 
   return (
     <main className="property-details-page">
@@ -318,7 +319,7 @@ export function PropertyDetailsPage() {
         </div>
 
         <div className="details-section">
-          <h2 className="details-section__title">Amenidades</h2>
+          <h2 className="details-section__title">Lazer e diferenciais</h2>
           <ul className="amenities-list">
             {amenities.map((item) => (
               <li key={item}>{item}</li>
@@ -327,9 +328,29 @@ export function PropertyDetailsPage() {
         </div>
       </section>
 
+      {property.details?.characteristics ? (
+        <section className="details-section" style={{ marginTop: '1.5rem' }}>
+          <h2 className="details-section__title">Características</h2>
+          <ul className="details-section__text">
+            {property.details.characteristics.map((item) => (
+              <li key={item}>{item}</li>
+            ))}
+          </ul>
+        </section>
+      ) : null}
+
       <section className="details-section" style={{ marginTop: '1.5rem' }}>
         <h2 className="details-section__title">Por que esse imóvel se destaca</h2>
-        {property.id === 7 ? (
+        {property.id === 9 ? (
+          <>
+            <p className="details-section__text">
+              O <strong>Barra Home Design</strong> combina arquitetura contemporânea, espaços amplos e flexibilidade de planta em um projeto pensado para proporcionar uma experiência de moradia diferenciada na Barra da Tijuca. As casas triplex contam com piscina privativa, área gourmet com churrasqueira e integração entre cozinha e living, enquanto o condomínio oferece <strong>4.400 m² de lazer</strong> para toda a família.
+            </p>
+            <p className="details-section__text">
+              A proposta une <strong>privacidade, conforto e lazer</strong>, criando um ambiente que valoriza tanto a rotina quanto os momentos de convivência.
+            </p>
+          </>
+        ) : property.id === 7 ? (
           <>
             <p className="details-section__text">
               <strong>Oro Ilha Pura</strong> tem um posicionamento mais sofisticado dentro do bairro planejado Ilha Pura, na Barra Olímpica. O empreendimento oferece apartamentos de <strong>3 e 4 suítes, de 171 m² a 227 m²</strong>, e coberturas de <strong>251 m² a 461 m²</strong>.
@@ -389,6 +410,11 @@ export function PropertyDetailsPage() {
         {property.details?.valuesValid ? (
           <p className="details-section__text" style={{ marginTop: '0.5rem' }}>
             <strong>Vigência:</strong> {property.details.valuesValid}
+          </p>
+        ) : null}
+        {property.details?.contactMessage ? (
+          <p className="details-section__text" style={{ marginTop: '0.5rem' }}>
+            {property.details.contactMessage}
           </p>
         ) : null}
       </section>

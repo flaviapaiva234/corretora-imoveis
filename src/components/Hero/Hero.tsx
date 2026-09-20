@@ -1,8 +1,14 @@
 import './Hero.css';
 
 export function Hero() {
+  const basePath = import.meta.env.BASE_URL;
+
   return (
-    <section className="hero" id="home">
+    <section
+      className="hero"
+      id="home"
+      style={{ backgroundImage: `url("${basePath}images/id09/Barra 01.jpg")` }}
+    >
       <div className="hero-overlay" />
       <div className="hero-content">
         <span className="hero-pretitle">Ariana Nunes | Somma</span>
@@ -10,6 +16,7 @@ export function Hero() {
         <p>Imóveis exclusivos no Rio de Janeiro com atendimento personalizado e foco em resultados.</p>
         <div className="hero-actions">
           <a className="button primary" href="#properties">Conheça os imóveis</a>
+          <a className="button secondary" href="https://youtu.be/ntlDVaEMZDY" target="_blank" rel="noreferrer">Assistir vídeo</a>
           <a className="button secondary" href="https://wa.me/5521988659172?text=Ol%C3%A1%20Ariana%2C%20quero%20saber%20mais%20sobre%20o%20im%C3%B3vel%20que%20vi%20no%20site." target="_blank" rel="noreferrer">WhatsApp</a>
         </div>
       </div>

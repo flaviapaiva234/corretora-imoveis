@@ -11,7 +11,7 @@ export function PropertyCard({ property }: PropertyCardProps) {
 
   return (
     <article className="property-card">
-      <div className="property-image" style={{ backgroundImage: `url(${coverImage})` }} />
+      <div className="property-image" style={{ backgroundImage: `url("${coverImage}")` }} />
       <div className="property-content">
         <div>
           <span>{property.location}</span>

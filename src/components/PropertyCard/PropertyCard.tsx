@@ -10,7 +10,7 @@ export function PropertyCard({ property }: PropertyCardProps) {
   const coverImage = property.images && property.images.length > 0 ? property.images[0] : property.image;
 
   return (
-    <article className="property-card">
+    <article className="property-card" id={`property-card-${property.id}`}>
       <div className="property-image" style={{ backgroundImage: `url("${coverImage}")` }} />
       <div className="property-content">
         <div>

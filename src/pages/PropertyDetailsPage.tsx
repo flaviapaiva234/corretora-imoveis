@@ -16,12 +16,16 @@ export function PropertyDetailsPage() {
   const [selectedImageIndex, setSelectedImageIndex] = useState<number | null>(null);
   const [zoomLevel, setZoomLevel] = useState(1);
 
+  useEffect(() => {
+    window.scrollTo({ top: 0, left: 0, behavior: 'auto' });
+  }, [id]);
+
   if (!property) {
     return (
       <main className="property-details-page">
         <h1>Imóvel não encontrado</h1>
         <p>Não foi possível localizar este imóvel.</p>
-        <Link className="property-details-page__back" to="/">← Voltar para a home</Link>
+        <Link className="property-details-page__back" to={`/#property-card-${id}`}>← Voltar para a home</Link>
       </main>
     );
   }
@@ -240,7 +244,7 @@ export function PropertyDetailsPage() {
 
   return (
     <main className="property-details-page">
-      <Link className="property-details-page__back" to="/">
+      <Link className="property-details-page__back" to={`/#property-card-${property.id}`}>
         ← Voltar para imóveis
       </Link>
 

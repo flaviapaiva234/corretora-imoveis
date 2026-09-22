@@ -15,11 +15,46 @@
   font-weight: 700;
   box-shadow: 0 20px 40px rgba(37, 211, 102, 0.4);
   transition: transform 0.2s ease;
+  animation: whatsapp-attention 10s ease-in-out infinite;
   text-shadow: -1px -1px 0 #1f2d1f, 1px -1px 0 #1f2d1f, -1px 1px 0 #1f2d1f, 1px 1px 0 #1f2d1f;
 }
 
+@keyframes whatsapp-attention {
+  0%, 82%, 100% {
+    transform: scale(1) rotate(0deg);
+  }
+
+  84% {
+    transform: scale(1.15) rotate(-8deg);
+  }
+
+  86% {
+    transform: scale(1.15) rotate(8deg);
+  }
+
+  88% {
+    transform: scale(1.15) rotate(-6deg);
+  }
+
+  90% {
+    transform: scale(1.15) rotate(6deg);
+  }
+
+  92% {
+    transform: scale(1.05) rotate(0deg);
+  }
+}
+
 .whatsapp-button:hover {
+  animation-play-state: paused;
   transform: translateY(-4px);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .whatsapp-button {
+    animation: none;
+    transition: none;
+  }
 }
 
 @media (max-width: 640px) {

@@ -271,9 +271,18 @@ export function PropertyDetailsPage() {
           <ul className="details-card__list">
             <li><strong>Endereço:</strong> {property.details?.address || 'Em breve'}</li>
             <li><strong>Área:</strong> {property.area}</li>
-            <li><strong>Quartos:</strong> {property.bedrooms}</li>
-            <li><strong>Suítes:</strong> {property.suites}</li>
-            <li><strong>Garagem:</strong> {property.garage}</li>
+            {property.details?.typologies && property.details.beachDistance ? (
+              <>
+                <li><strong>Tipologias:</strong> {property.details.typologies}</li>
+                <li><strong>Distância da praia:</strong> {property.details.beachDistance}</li>
+              </>
+            ) : (
+              <>
+                <li><strong>Quartos:</strong> {property.bedrooms}</li>
+                <li><strong>Suítes:</strong> {property.suites}</li>
+                <li><strong>Garagem:</strong> {property.garage}</li>
+              </>
+            )}
           </ul>
 
           <div className="details-actions">
@@ -323,7 +332,9 @@ export function PropertyDetailsPage() {
         </div>
 
         <div className="details-section">
-          <h2 className="details-section__title">Lazer e diferenciais</h2>
+          <h2 className="details-section__title">
+            {property.id === 10 ? 'Bem-estar e experiências' : 'Lazer e diferenciais'}
+          </h2>
           <ul className="amenities-list">
             {amenities.map((item) => (
               <li key={item}>{item}</li>
@@ -345,7 +356,11 @@ export function PropertyDetailsPage() {
 
       <section className="details-section" style={{ marginTop: '1.5rem' }}>
         <h2 className="details-section__title">Por que esse imóvel se destaca</h2>
-        {property.id === 9 ? (
+        {property.id === 10 ? (
+          <p className="details-section__text">
+            Mais do que um endereço, o ARTi Leblon é uma peça de design na quadríssima da praia. A apenas 150 metros da orla, reúne arquitetura contemporânea, interiores sofisticados e uma atmosfera de hotel boutique. Com studios, apartamentos de 1 quarto e coberturas lineares de 36 a 72 m², o projeto foi pensado para proporcionar uma experiência diferenciada de viver o Leblon.
+          </p>
+        ) : property.id === 9 ? (
           <>
             <p className="details-section__text">
               O <strong>Barra Home Design</strong> combina arquitetura contemporânea, espaços amplos e flexibilidade de planta em um projeto pensado para proporcionar uma experiência de moradia diferenciada na Barra da Tijuca. As casas triplex contam com piscina privativa, área gourmet com churrasqueira e integração entre cozinha e living, enquanto o condomínio oferece <strong>4.400 m² de lazer</strong> para toda a família.

@@ -7,7 +7,7 @@ export function Hero() {
     <section
       className="hero"
       id="home"
-      style={{ backgroundImage: `url("${basePath}images/id09/Barra 01.jpg")` }}
+      style={{ backgroundImage: `url("${basePath}images/ariana-hero.jpg")` }}
     >
       <div className="hero-overlay" />
       <div className="hero-content">

@@ -20,6 +20,8 @@ export type Property = {
   details?: {
     address?: string;
     description?: string;
+    typologies?: string;
+    beachDistance?: string;
     promotionalUnits?: { unit: string; area: string; price: string }[];
     seaAndLagoonViews?: { unit: string; area: string; price: string }[];
     corcovadoView?: { unit: string; area: string; price: string }[];
@@ -359,6 +361,50 @@ export const properties: Property[] = [
         '🍹 Bar da piscina',
       ],
       contactMessage: 'Para consultar preço, disponibilidade e condições de pagamento, entre em contato com Ariana Nunes, da SOMMA Imobiliária.',
+    },
+  },
+  {
+    id: 10,
+    title: 'ARTi Leblon',
+    location: 'LEBLON',
+    price: 'Entre em contato com Ariana Nunes',
+    area: '36 m² - 72 m²',
+    bedrooms: 'Studios, 1 quarto e coberturas lineares',
+    suites: '—',
+    garage: 'sob consulta',
+    cardVideo: 'https://www.instagram.com/p/Ddo0XGLsgaA/',
+    heroMedia: {
+      type: 'video',
+      src: 'https://youtu.be/ztxtz7Sa_3k',
+      alt: 'Vídeo ARTi Leblon',
+    },
+    images: [
+      ...Array.from({ length: 16 }, (_, index) =>
+        `${basePath}images/id10/arti-${String(index).padStart(2, '0')}.jpg`,
+      ),
+      ...Array.from({ length: 22 }, (_, index) =>
+        `${basePath}images/id10/arti-page-${String(index + 2).padStart(4, '0')}.jpg`,
+      ),
+    ],
+    image: `${basePath}images/id10/arti-00.jpg`,
+    summary: 'Na quadríssima da praia, uma nova forma de viver o Leblon.',
+    details: {
+      address: 'Rua General Artigas, 119',
+      typologies: 'Studios, 1 quarto e coberturas lineares',
+      beachDistance: '150 m da orla',
+      description:
+        'Na quadríssima da praia, a apenas 150 m da orla, o ARTi Leblon combina arquitetura contemporânea, design e uma atmosfera de hotel boutique. Uma experiência pensada para desacelerar. Cada detalhe foi concebido para proporcionar momentos de relaxamento, bem-estar e exclusividade. Onde o exclusivo não é apenas um adjetivo, é uma experiência.',
+      amenities: [
+        'Piscina',
+        'Lounge bar',
+        'Academia',
+        'Hidromassagem',
+        'Sauna seca e úmida',
+        'Sala de massagem',
+        'Lounge de relaxamento',
+        'Confort shower',
+        'Lavanderia',
+      ],
     },
   },
 ];

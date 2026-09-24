@@ -74,19 +74,39 @@ export const properties: Property[] = [
     bedrooms: 'Studios, 1 e 2 quartos',
     suites: '1-2',
     garage: 'sob consulta',
-    cardVideo: 'https://www.youtube.com/shorts/xEyIXTbYLnk',
+    cardVideo: 'https://www.instagram.com/p/Ddq4Ma2sO5B/',
     heroMedia: {
       type: 'video',
-      src: 'https://www.youtube.com/shorts/xEyIXTbYLnk',
+      src: 'https://youtu.be/Ns989Fu-1ow',
       alt: 'Vídeo Connect Square',
     },
-    image: `${basePath}images/connect-square-piscina.jpg`,
+    images: [
+      `${basePath}images/id02/connect-00.jpg`,
+      `${basePath}images/id02/connect-01.jpg`,
+      `${basePath}images/id02/connect-02.jpg`,
+      `${basePath}images/id02/connect-03.jpg`,
+      `${basePath}images/id02/connect-04.jpg`,
+      `${basePath}images/id02/connect-05.jpg`,
+      `${basePath}images/id02/connect-06.jpg`,
+      `${basePath}images/id02/connect-07.jpg`,
+      `${basePath}images/id02/connect-08.jpg`,
+      `${basePath}images/id02/connect-09.jpg`,
+      `${basePath}images/id02/connect-10.jpg`,
+    ],
+    image: `${basePath}images/id02/connect-00.jpg`,
     summary:
-      'Residencial da Patrimar no Centro, com rooftop, studios e apartamentos de 1 e 2 quartos pensado para mobilidade e conveniência urbana.',
+      'Residencial da Patrimar no coração do Centro do Rio, com rooftop, studios e apartamentos de 1 e 2 quartos. Um projeto pensado para quem valoriza mobilidade, praticidade e a conveniência de viver perto de tudo.',
     details: {
       address: 'Av. Graça Aranha, 429 / em frente ao Terminal Menezes Cortes',
       description:
-        'O Connect Square é um residencial da Patrimar que combina arquitetura contemporânea, plantas inteligentes e infraestrutura voltada para mobilidade urbana, localizado no epicentro do Centro do Rio.',
+        'O Connect Square é um residencial da Patrimar pensado para quem busca praticidade, mobilidade e uma nova experiência de morar no Centro do Rio. Localizado na Av. Graça Aranha, 429, em frente ao Terminal Menezes Cortes, o empreendimento coloca importantes conexões da cidade ao seu alcance.',
+      amenities: [
+        'Piscina com deck integrado',
+        'Academia e espaço wellness',
+        'Coworking e lounge gourmet',
+        'Segurança 24 horas',
+        'Localização premium no Centro do Rio',
+      ],
       condominiumEstimate:
         'Lobby com controle de acesso, áreas de convivência modernas, serviços compartilhados e soluções sustentáveis.',
       valuesValid:

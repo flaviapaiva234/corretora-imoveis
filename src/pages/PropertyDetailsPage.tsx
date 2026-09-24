@@ -266,7 +266,15 @@ export function PropertyDetailsPage() {
         <div className="details-card">
           <span className="details-card__eyebrow">{property.location}</span>
           <h1 className="details-card__title">{property.title}</h1>
-          <p className="details-card__description">{property.details?.description || property.summary}</p>
+          {property.id === 2 ? (
+            <div className="details-card__description">
+              <p><strong>Viver conectado ao que o Rio tem de melhor.</strong></p>
+              <p>O Connect Square é um residencial da Patrimar pensado para quem busca <strong>praticidade, mobilidade e uma nova experiência de morar no Centro do Rio</strong>.</p>
+              <p>Localizado na <strong>Av. Graça Aranha, 429</strong>, em frente ao <strong>Terminal Menezes Cortes</strong>, o empreendimento coloca importantes conexões da cidade ao seu alcance.</p>
+            </div>
+          ) : (
+            <p className="details-card__description">{property.details?.description || property.summary}</p>
+          )}
 
           <ul className="details-card__list">
             <li><strong>Endereço:</strong> {property.details?.address || 'Em breve'}</li>
@@ -333,7 +341,7 @@ export function PropertyDetailsPage() {
 
         <div className="details-section">
           <h2 className="details-section__title">
-            {property.id === 10 ? 'Bem-estar e experiências' : 'Lazer e diferenciais'}
+            {property.id === 2 ? 'Vista Privilegiada' : property.id === 10 ? 'Bem-estar e experiências' : 'Lazer e diferenciais'}
           </h2>
           <ul className="amenities-list">
             {amenities.map((item) => (

@@ -25,23 +25,23 @@
   }
 
   84% {
-    transform: scale(1.15) rotate(-8deg);
+    transform: scale(1.22) rotate(-10deg);
   }
 
   86% {
-    transform: scale(1.15) rotate(8deg);
+    transform: scale(1.22) rotate(10deg);
   }
 
   88% {
-    transform: scale(1.15) rotate(-6deg);
+    transform: scale(1.22) rotate(-8deg);
   }
 
   90% {
-    transform: scale(1.15) rotate(6deg);
+    transform: scale(1.22) rotate(8deg);
   }
 
   92% {
-    transform: scale(1.05) rotate(0deg);
+    transform: scale(1.08) rotate(0deg);
   }
 }
 

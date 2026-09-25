@@ -272,6 +272,11 @@ export function PropertyDetailsPage() {
               <p>O Connect Square é um residencial da Patrimar pensado para quem busca <strong>praticidade, mobilidade e uma nova experiência de morar no Centro do Rio</strong>.</p>
               <p>Localizado na <strong>Av. Graça Aranha, 429</strong>, em frente ao <strong>Terminal Menezes Cortes</strong>, o empreendimento coloca importantes conexões da cidade ao seu alcance.</p>
             </div>
+          ) : property.id === 3 ? (
+            <div className="details-card__description">
+              <p><strong>No Quadrilátero do Charme de Ipanema</strong></p>
+              <p>O IPA Studios Design combina localização privilegiada, arquitetura contemporânea e uma estrutura completa para uma experiência de viver 360°.</p>
+            </div>
           ) : (
             <p className="details-card__description">{property.details?.description || property.summary}</p>
           )}
@@ -279,7 +284,13 @@ export function PropertyDetailsPage() {
           <ul className="details-card__list">
             <li><strong>Endereço:</strong> {property.details?.address || 'Em breve'}</li>
             <li><strong>Área:</strong> {property.area}</li>
-            {property.details?.typologies && property.details.beachDistance ? (
+            {property.id === 3 ? (
+              <>
+                <li><strong>Tipologias:</strong> {property.details?.typologies}</li>
+                <li><strong>Suítes:</strong> {property.suites}</li>
+                <li><strong>Garagem:</strong> {property.garage}</li>
+              </>
+            ) : property.details?.typologies && property.details.beachDistance ? (
               <>
                 <li><strong>Tipologias:</strong> {property.details.typologies}</li>
                 <li><strong>Distância da praia:</strong> {property.details.beachDistance}</li>
@@ -412,6 +423,24 @@ export function PropertyDetailsPage() {
 
             <p className="details-section__text" style={{ marginTop: '1rem', fontWeight: 'bold', fontSize: '1.1em', textAlign: 'left' }}>
               🌿 Mais de 6 mil m² de verde e lazer.
+            </p>
+          </>
+        ) : property.id === 3 ? (
+          <>
+            <p className="details-section__text">
+              <strong>O IPA Studios Design une a atmosfera sofisticada de Ipanema a uma estrutura completa de lazer, conveniência e tecnologia.</strong> Localizado na Rua Prudente de Morais, no Quadrilátero do Charme, o empreendimento foi pensado para quem valoriza praticidade, conforto e uma experiência contemporânea de viver.
+            </p>
+            <p className="details-section__text">
+              🌊 <strong>Rooftop com vista panorâmica</strong> para o mar de Ipanema e a Lagoa Rodrigo de Freitas.
+            </p>
+            <p className="details-section__text">
+              ✨ <strong>Estrutura completa de lazer e conveniência</strong>, com piscina, academia panorâmica, sauna, hidromassagem, lounges e espaços de convivência.
+            </p>
+            <p className="details-section__text">
+              💼 <strong>Facilities para o dia a dia</strong>, incluindo coworking, meeting room, delivery e lavanderia.
+            </p>
+            <p className="details-section__text">
+              🔐 <strong>Tecnologia e segurança</strong>, com Smart Lock, CFTV com acesso remoto, controle de acesso 24h e aplicativo de serviços.
             </p>
           </>
         ) : (

@@ -118,18 +118,40 @@ export const properties: Property[] = [
     title: 'IPA Studios Design',
     location: 'Ipanema',
     price: 'A partir de R$ 2.890.000,00',
-    area: '81 - 110 m²',
-    bedrooms: '1-3 quartos',
-    suites: 'variável',
+    area: '39 - 111 m²',
+    bedrooms: 'Studios e Gardens',
+    suites: 'conforme unidade',
     garage: 'conforme unidade',
-    cardVideo: 'https://www.instagram.com/p/DbPG-5ktyJ_/',
-    image: `${basePath}images/ipa-studios.jpg`,
+    cardVideo: 'https://www.instagram.com/p/DdtSxUFMPK7/',
+    heroMedia: {
+      type: 'video',
+      src: 'https://youtu.be/hTsf03t1ZwM',
+      alt: 'Vídeo IPA Studios Design',
+    },
+    images: [
+      `${basePath}images/id03/ipa-studios-00.jpg`,
+      ...Array.from({ length: 14 }, (_, index) =>
+        `${basePath}images/id03/ipa-studios-${String(index + 1).padStart(2, '0')}.jpg`,
+      ),
+    ],
+    image: `${basePath}images/id03/ipa-studios-00.jpg`,
     summary:
-      'No Quadrilátero do Charme, com mais de 1.500m² de lazer, solarium com vista para lagoa e infraestrutura premium.',
+      'No Quadrilátero do Charme de Ipanema, o IPA Studios Design reúne studios e gardens, rooftop com piscina de borda infinita, lazer premium e uma estrutura completa para viver com conforto, praticidade e sofisticação.',
     details: {
-      address: 'Rua Prudente de Morais, 1.117 - Ipanema',
+      address: 'Rua Prudente de Morais, 1.117 – Ipanema',
+      typologies: 'Studios e Gardens',
       description:
-        'No Quadrilátero do Charme, condomínio com mais de 1.500m² de lazer: piscina com borda infinita, solarium, sauna, hidromassagem, academia 360º, coworking, smart food, lavanderia, lounge gourmet e recarga para veículos elétricos.',
+        'No Quadrilátero do Charme de Ipanema, o IPA Studios Design combina localização privilegiada, arquitetura contemporânea e uma estrutura completa para uma experiência de viver 360°.',
+      amenities: [
+        '🏡 Studios de 39 a 85 m²',
+        '🌿 Gardens de 49 a 111 m²',
+        '🌊 Rooftop com piscina e vista panorâmica',
+        '✨ Mais de 1.500 m² de convivência, lazer e estrutura',
+        '💼 Coworking, espaços de trabalho e áreas de convivência',
+        '🏋️ Academia panorâmica',
+        '🧖 Sauna, hidromassagem e espaços de relaxamento',
+        '🔐 Tecnologia, segurança e serviços para facilitar o dia a dia',
+      ],
       promotionalUnits: [
         { unit: '109', area: '104 m²', price: 'R$ 2.890.000' },
         { unit: '110', area: '81.49 m²', price: 'R$ 3.435.438' },
@@ -151,8 +173,6 @@ export const properties: Property[] = [
         { unit: '201', area: '85 m²', price: 'R$ 3.485.248' },
         { unit: '301', area: '85 m²', price: 'R$ 3.532.607' },
       ],
-      condominiumEstimate: 'R$ 20,00 por m² (previsão)',
-      valuesValid: 'Valores válidos para junho 2026',
     },
   },
   {

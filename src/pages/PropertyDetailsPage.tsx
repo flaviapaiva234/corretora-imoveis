@@ -60,6 +60,7 @@ export function PropertyDetailsPage() {
     ? { type: 'video' as const, src: property.cardVideo, alt: property.title }
     : { type: 'image' as const, src: property.image, alt: property.title });
   const videoEmbedUrl = heroMedia.type === 'video' ? getYoutubeEmbedUrl(heroMedia.src) : null;
+  const isPortraitVideo = heroMedia.type === 'video' && heroMedia.src.includes('/shorts/');
   const gaviGalleryImages: GalleryItem[] = Array.from({ length: 22 }, (_, index) => {
     const number = String(index + 2).padStart(2, '0');
     return {
@@ -268,7 +269,7 @@ export function PropertyDetailsPage() {
 
       <section className="details-hero">
         {videoEmbedUrl ? (
-          <div className="details-hero__video">
+          <div className={`details-hero__video ${isPortraitVideo ? 'details-hero__video--portrait' : ''}`}>
             <iframe
               className="details-hero__iframe"
               src={videoEmbedUrl}
@@ -280,8 +281,10 @@ export function PropertyDetailsPage() {
         ) : (
           <img className="details-hero__image" src={heroMedia.src} alt={heroMedia.alt || property.title} />
         )}
+      </section>
 
-        <div className="details-card">
+      <section className="details-card">
+        <div className="details-card__content">
           <span className="details-card__eyebrow">{property.location}</span>
           <h1 className="details-card__title">{property.title}</h1>
           {property.id === 4 ? (
@@ -354,32 +357,8 @@ export function PropertyDetailsPage() {
         </div>
       </section>
 
-      <section className="details-grid">
-        <div className="details-section">
-          <h2 className="details-section__title">Galeria do imóvel</h2>
-          <div className="gallery-grid">
-            {galleryItems.map((item, index) => (
-              <button
-                key={`${item.src}-${index}`}
-                className={`gallery-item ${item.type === 'pdf' ? 'gallery-item--pdf' : ''}`}
-                type="button"
-                onClick={() => openGalleryItem(index)}
-                aria-label={item.type === 'pdf' ? `Abrir PDF ${item.label}` : `Abrir imagem ${index + 1} da galeria`}
-              >
-                {item.type === 'image' ? (
-                  <img src={item.src} alt={item.alt} />
-                ) : (
-                  <div className="gallery-item__pdf">
-                    <span>PDF</span>
-                    <p>{item.label}</p>
-                  </div>
-                )}
-              </button>
-            ))}
-          </div>
-        </div>
-
-        <div className="details-section">
+      <section className="details-section details-section--amenities">
+        <div className="details-section__content">
           <h2 className="details-section__title">
             {property.id === 2 ? 'Vista Privilegiada' : property.id === 10 ? 'Bem-estar e experiências' : 'Lazer e diferenciais'}
           </h2>
@@ -388,22 +367,22 @@ export function PropertyDetailsPage() {
               <li key={item}>{property.id === 4 ? <strong>{item}</strong> : item}</li>
             ))}
           </ul>
+          {property.details?.characteristics ? (
+            <div className="details-section__characteristics">
+              <h3 className="details-section__subtitle">Características</h3>
+              <ul className="details-section__text">
+                {property.details.characteristics.map((item) => (
+                  <li key={item}>{item}</li>
+                ))}
+              </ul>
+            </div>
+          ) : null}
         </div>
       </section>
 
-      {property.details?.characteristics ? (
-        <section className="details-section" style={{ marginTop: '1.5rem' }}>
-          <h2 className="details-section__title">Características</h2>
-          <ul className="details-section__text">
-            {property.details.characteristics.map((item) => (
-              <li key={item}>{item}</li>
-            ))}
-          </ul>
-        </section>
-      ) : null}
-
-      <section className="details-section" style={{ marginTop: '1.5rem' }}>
-        <h2 className="details-section__title">Por que esse imóvel se destaca</h2>
+      <section className="details-section details-section--highlights">
+        <div className="details-section__content">
+          <h2 className="details-section__title">Por que esse imóvel se destaca</h2>
         {property.id === 4 ? (
           <>
             <p className="details-section__text">
@@ -512,6 +491,33 @@ export function PropertyDetailsPage() {
             {property.details.contactMessage}
           </p>
         ) : null}
+        </div>
+      </section>
+
+      <section className="details-section details-section--gallery">
+        <div className="details-section__content">
+          <h2 className="details-section__title">Galeria do imóvel</h2>
+          <div className="gallery-grid">
+            {galleryItems.map((item, index) => (
+              <button
+                key={`${item.src}-${index}`}
+                className={`gallery-item ${item.type === 'pdf' ? 'gallery-item--pdf' : ''}`}
+                type="button"
+                onClick={() => openGalleryItem(index)}
+                aria-label={item.type === 'pdf' ? `Abrir PDF ${item.label}` : `Abrir imagem ${index + 1} da galeria`}
+              >
+                {item.type === 'image' ? (
+                  <img src={item.src} alt={item.alt} />
+                ) : (
+                  <div className="gallery-item__pdf">
+                    <span>PDF</span>
+                    <p>{item.label}</p>
+                  </div>
+                )}
+              </button>
+            ))}
+          </div>
+        </div>
       </section>
 
       {selectedImageIndex !== null ? (

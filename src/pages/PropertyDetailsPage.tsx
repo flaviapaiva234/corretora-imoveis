@@ -75,12 +75,17 @@ export function PropertyDetailsPage() {
   if (property.images && property.images.length > 0) {
     galleryItems = property.images.map((src, i) => ({ type: 'image' as const, src, label: `${property.title} ${i + 1}`, alt: `${property.title} ${i + 1}` }));
   } else if (property.id === 4) {
-    galleryItems = [
-      { type: 'image' as const, src: `${basePath}images/iconyc-1-perfil-inteiro.jpg`, label: 'ICONYC fachada', alt: 'ICONYC fachada' },
-      { type: 'image' as const, src: `${basePath}images/iconyc-3-predios.jpg`, label: 'ICONYC prédios', alt: 'ICONYC prédios' },
-      { type: 'image' as const, src: `${basePath}images/iconyc-4-cobertura-duplex.jpg`, label: 'ICONYC coberturas duplex', alt: 'ICONYC coberturas duplex' },
-      { type: 'image' as const, src: `${basePath}images/iconyc-5-cobertura-2-quartos.jpg`, label: 'ICONYC interiores', alt: 'ICONYC interiores' },
-    ];
+    galleryItems = Array.from({ length: 72 }, (_, index) => index)
+      .filter((index) => index !== 41 && index !== 56)
+      .map((index) => {
+        const number = String(index).padStart(2, '0');
+        return {
+          type: 'image' as const,
+          src: `${basePath}images/id04/iconyc-${number}.jpg`,
+          label: `ICONYC ${number}`,
+          alt: `ICONYC ${number}`,
+        };
+      });
   } else if (property.id === 1) {
     galleryItems = [
       { type: 'image' as const, src: `${basePath}images/pool-bar-rooftop.jpg`, label: 'Symphony Flamengo piscina', alt: 'Symphony Flamengo piscina' },
@@ -240,7 +245,20 @@ export function PropertyDetailsPage() {
     'Segurança 24 horas',
     'Vista privilegiada e localização premium',
   ];
-  const amenities = property.details?.amenities || defaultAmenities;
+  const iconycAmenities = [
+    '🏊 Piscina e áreas externas de lazer',
+    '🏋️ Espaço fitness e wellness',
+    '💆 Espaços dedicados ao relaxamento e bem-estar',
+    '🍸 Lounge gourmet e ambientes de convivência',
+    '💼 Coworking e espaços de trabalho',
+    '💇 Espaço de beleza',
+    '📦 Central de encomendas',
+    '🧺 Laundry',
+    '🚗 Infraestrutura para veículos elétricos',
+    '🚲 Estrutura para bicicletas elétricas',
+    '🔐 Segurança e controle de acesso',
+  ];
+  const amenities = property.id === 4 ? iconycAmenities : property.details?.amenities || defaultAmenities;
 
   return (
     <main className="property-details-page">
@@ -266,7 +284,12 @@ export function PropertyDetailsPage() {
         <div className="details-card">
           <span className="details-card__eyebrow">{property.location}</span>
           <h1 className="details-card__title">{property.title}</h1>
-          {property.id === 2 ? (
+          {property.id === 4 ? (
+            <div className="details-card__description">
+              <p>O ICONYC By Yoo reúne arquitetura contemporânea, design e uma experiência residencial completa em um dos bairros mais desejados da Zona Sul do Rio.</p>
+              <p>Desenvolvido pela <strong>RJZ Cyrela em parceria com a YOO</strong>, o projeto combina apartamentos, gardens e coberturas a uma estrutura pensada para proporcionar conforto, lazer, conveniência e bem-estar.</p>
+            </div>
+          ) : property.id === 2 ? (
             <div className="details-card__description">
               <p><strong>Viver conectado ao que o Rio tem de melhor.</strong></p>
               <p>O Connect Square é um residencial da Patrimar pensado para quem busca <strong>praticidade, mobilidade e uma nova experiência de morar no Centro do Rio</strong>.</p>
@@ -282,9 +305,15 @@ export function PropertyDetailsPage() {
           )}
 
           <ul className="details-card__list">
-            <li><strong>Endereço:</strong> {property.details?.address || 'Em breve'}</li>
+            <li><strong>Endereço:</strong> {property.id === 4 ? 'Rua Mena Barreto, 150 – Botafogo' : property.details?.address || 'Em breve'}</li>
             <li><strong>Área:</strong> {property.area}</li>
-            {property.id === 3 ? (
+            {property.id === 4 ? (
+              <>
+                <li><strong>Tipologias:</strong> 2 quartos e coberturas duplex*</li>
+                <li><strong>Suítes:</strong> conforme unidade</li>
+                <li><strong>Garagem:</strong> conforme unidade</li>
+              </>
+            ) : property.id === 3 ? (
               <>
                 <li><strong>Tipologias:</strong> {property.details?.typologies}</li>
                 <li><strong>Suítes:</strong> {property.suites}</li>
@@ -356,7 +385,7 @@ export function PropertyDetailsPage() {
           </h2>
           <ul className="amenities-list">
             {amenities.map((item) => (
-              <li key={item}>{item}</li>
+              <li key={item}>{property.id === 4 ? <strong>{item}</strong> : item}</li>
             ))}
           </ul>
         </div>
@@ -375,7 +404,19 @@ export function PropertyDetailsPage() {
 
       <section className="details-section" style={{ marginTop: '1.5rem' }}>
         <h2 className="details-section__title">Por que esse imóvel se destaca</h2>
-        {property.id === 10 ? (
+        {property.id === 4 ? (
+          <>
+            <p className="details-section__text">
+              <strong>O ICONYC By Yoo vai além de um endereço: é um projeto que combina arquitetura contemporânea, design internacional e uma experiência residencial completa. Em Botafogo, reúne diferentes tipologias, ambientes de lazer, serviços e espaços de convivência em um projeto pensado para acompanhar diferentes estilos de vida.</strong>
+            </p>
+            <ul className="details-section__text">
+              <li>📍 <strong>Localização estratégica</strong> — Botafogo reúne gastronomia, cultura, comércio, serviços e mobilidade em uma das regiões mais completas da Zona Sul.</li>
+              <li>✨ <strong>Design internacional</strong> — o projeto conta com a participação do YOO Studio, responsável pelos projetos de decoração e paisagismo.</li>
+              <li>🏡 <strong>Diversidade de tipologias</strong> — o empreendimento possui apartamentos, gardens e coberturas, atendendo diferentes perfis de moradores.</li>
+              <li>🌿 <strong>Experiência completa</strong> — lazer, bem-estar, conveniência e espaços de convivência integrados à proposta residencial.</li>
+            </ul>
+          </>
+        ) : property.id === 10 ? (
           <p className="details-section__text">
             Mais do que um endereço, o ARTi Leblon é uma peça de design na quadríssima da praia. A apenas 150 metros da orla, reúne arquitetura contemporânea, interiores sofisticados e uma atmosfera de hotel boutique. Com studios, apartamentos de 1 quarto e coberturas lineares de 36 a 72 m², o projeto foi pensado para proporcionar uma experiência diferenciada de viver o Leblon.
           </p>
@@ -445,9 +486,7 @@ export function PropertyDetailsPage() {
           </>
         ) : (
           <p className="details-section__text">
-            {property.id === 4
-              ? 'Mais do que um endereço, o Iconyc é uma nova forma de viver. Arquitetura marcante, design exclusivo e apartamentos de 2 a 4 quartos, além de gardens e coberturas, em um dos bairros mais desejados do Rio de Janeiro. Viva cercado por cultura, gastronomia, mobilidade e uma vista privilegiada, com toda a sofisticação que você e sua família merecem.'
-              : property.id === 6
+            {property.id === 6
                   ? 'O Gaví reúne sofisticação, natureza, gastronomia, cultura e bem-estar em um dos bairros mais desejados do Rio de Janeiro. Imagine morar cercado pelo verde, a poucos passos do Baixo Gávea, da PUC, do Planetário e da futura estação de metrô. Um projeto pensado para oferecer conforto, integração e qualidade de vida, com studios, apartamentos de 1, 2 e 3 quartos, UpGardens e uma área de lazer exclusiva com bosque, rooftop, coworking, espaço de estudos, sala de podcast, minimercado e área wellness. Mais do que um empreendimento, o Gaví traduz a essência da Gávea em cada detalhe. ✨ Descubra por que a Gávea vive no Gaví.'
                   : property.id === 8
                     ? 'Kronos by Tegra redefine o significado de morar bem na Zona Oeste. Projetado com sofisticação e conforto, o empreendimento integra volumetria moderna, acabamentos de altíssimo padrão e infraestrutura sustentável. Viva a apenas minutos da Praia da Barra da Tijuca, desfrutando de ciclovias modernas, gastronomia de qualidade e um estilo de vida ativo e saudável. Segurança 24h, lazer de resort, automação residencial e controle biométrico complementam essa experiência exclusiva.'

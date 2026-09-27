@@ -16,11 +16,15 @@ export function PropertyDetailsPage() {
   const [selectedImageIndex, setSelectedImageIndex] = useState<number | null>(null);
   const [zoomLevel, setZoomLevel] = useState(1);
   const [isGalleryDragging, setIsGalleryDragging] = useState(false);
+  const [swipeOffset, setSwipeOffset] = useState(0);
+  const [isSwipeSettling, setIsSwipeSettling] = useState(false);
   const galleryFrameRef = useRef<HTMLDivElement>(null);
   const zoomAnchorRef = useRef<{ x: number; y: number; imageX: number; imageY: number } | null>(null);
   const galleryWheelHandlerRef = useRef<((event: WheelEvent) => void) | null>(null);
   const activePointersRef = useRef(new Map<number, { x: number; y: number }>());
   const pinchStartRef = useRef<{ distance: number; zoom: number } | null>(null);
+  const touchStartRef = useRef<{ pointerId: number; x: number; y: number } | null>(null);
+  const swipeAnimationRef = useRef<number | null>(null);
 
   useEffect(() => {
     window.scrollTo({ top: 0, left: 0, behavior: 'auto' });
@@ -246,11 +250,15 @@ export function PropertyDetailsPage() {
 
     setSelectedImageIndex(index);
     setZoomLevel(1);
+    setSwipeOffset(0);
+    setIsSwipeSettling(false);
   };
 
   const closeImage = () => {
     setSelectedImageIndex(null);
     setZoomLevel(1);
+    setSwipeOffset(0);
+    setIsSwipeSettling(false);
   };
 
   const goToPreviousImage = () => {
@@ -262,6 +270,7 @@ export function PropertyDetailsPage() {
           : currentIndex - 1,
     );
     setZoomLevel(1);
+    setSwipeOffset(0);
   };
 
   const goToNextImage = () => {
@@ -273,6 +282,7 @@ export function PropertyDetailsPage() {
           : currentIndex + 1,
     );
     setZoomLevel(1);
+    setSwipeOffset(0);
   };
 
   const defaultAmenities = [
@@ -345,7 +355,10 @@ export function PropertyDetailsPage() {
     event.currentTarget.setPointerCapture(event.pointerId);
     const pointers = activePointersRef.current;
     pointers.set(event.pointerId, { x: event.clientX, y: event.clientY });
-    if (pointers.size === 2) {
+    if (pointers.size === 1) {
+      touchStartRef.current = { pointerId: event.pointerId, x: event.clientX, y: event.clientY };
+    } else if (pointers.size === 2) {
+      touchStartRef.current = null;
       const [first, second] = Array.from(pointers.values());
       pinchStartRef.current = {
         distance: Math.hypot(second.x - first.x, second.y - first.y),
@@ -375,14 +388,53 @@ export function PropertyDetailsPage() {
     } else if (zoomLevel > 1) {
       event.currentTarget.scrollLeft += previous.x - event.clientX;
       event.currentTarget.scrollTop += previous.y - event.clientY;
+    } else if (event.pointerType === 'touch' && touchStartRef.current?.pointerId === event.pointerId) {
+      const deltaX = event.clientX - touchStartRef.current.x;
+      const deltaY = event.clientY - touchStartRef.current.y;
+      if (Math.abs(deltaX) > Math.abs(deltaY)) {
+        setIsSwipeSettling(false);
+        setSwipeOffset(deltaX);
+      }
     }
   };
 
   const handleGalleryPointerEnd = (event: ReactPointerEvent<HTMLDivElement>) => {
     const pointers = activePointersRef.current;
+    const touchStart = touchStartRef.current;
+    if (event.type === 'pointerup' && event.pointerType === 'touch' && pointers.size === 1 && touchStart?.pointerId === event.pointerId && !pinchStartRef.current && zoomLevel <= 1) {
+      const deltaX = event.clientX - touchStart.x;
+      const deltaY = event.clientY - touchStart.y;
+      const isHorizontalSwipe = Math.abs(deltaX) >= 48 && Math.abs(deltaX) > Math.abs(deltaY) * 1.2;
+
+      if (isHorizontalSwipe) {
+        const frameWidth = event.currentTarget.clientWidth;
+        setIsSwipeSettling(true);
+        setSwipeOffset(deltaX > 0 ? frameWidth : -frameWidth);
+        swipeAnimationRef.current = window.setTimeout(() => {
+          if (deltaX > 0) {
+            goToPreviousImage();
+          } else {
+            goToNextImage();
+          }
+          setSwipeOffset(0);
+          setIsSwipeSettling(false);
+          swipeAnimationRef.current = null;
+        }, 220);
+      } else {
+        setIsSwipeSettling(true);
+        setSwipeOffset(0);
+        window.setTimeout(() => setIsSwipeSettling(false), 180);
+      }
+    } else if (event.pointerType === 'touch' && !pinchStartRef.current) {
+      setIsSwipeSettling(true);
+      setSwipeOffset(0);
+      window.setTimeout(() => setIsSwipeSettling(false), 180);
+    }
+
     pointers.delete(event.pointerId);
     if (event.pointerType === 'mouse') setIsGalleryDragging(false);
     if (pointers.size < 2) pinchStartRef.current = null;
+    if (touchStart?.pointerId === event.pointerId) touchStartRef.current = null;
   };
 
   const resetGalleryZoom = () => {
@@ -390,6 +442,17 @@ export function PropertyDetailsPage() {
     setZoomLevel(1);
     galleryFrameRef.current?.scrollTo({ left: 0, top: 0 });
   };
+
+  const currentGalleryItem = selectedImageIndex === null ? null : galleryItems[selectedImageIndex];
+  const getAdjacentImage = (offset: number) => {
+    if (selectedImageIndex === null || galleryItems.length === 0) return currentGalleryItem;
+
+    const index = (selectedImageIndex + offset + galleryItems.length) % galleryItems.length;
+    const item = galleryItems[index];
+    return item.type === 'image' ? item : currentGalleryItem;
+  };
+  const previousGalleryItem = getAdjacentImage(-1);
+  const nextGalleryItem = getAdjacentImage(1);
 
   return (
     <main className="property-details-page">
@@ -740,12 +803,29 @@ export function PropertyDetailsPage() {
                 onPointerCancel={handleGalleryPointerEnd}
               >
                 <div className="gallery-modal__stage" style={{ width: `${zoomLevel * 100}%`, height: `${zoomLevel * 100}%` }}>
-                  <img
-                    className="gallery-modal__image"
-                    src={galleryItems[selectedImageIndex].src}
-                    alt={galleryItems[selectedImageIndex].alt}
-                    draggable={false}
-                  />
+                  {zoomLevel > 1 ? (
+                    <img
+                      className="gallery-modal__image"
+                      src={galleryItems[selectedImageIndex].src}
+                      alt={galleryItems[selectedImageIndex].alt}
+                      draggable={false}
+                    />
+                  ) : (
+                    <div
+                      className={`gallery-modal__swipe-track ${isSwipeSettling ? 'is-settling' : ''}`}
+                      style={{ transform: `translateX(calc(-33.333333% + ${swipeOffset}px))` }}
+                    >
+                      {[previousGalleryItem, currentGalleryItem, nextGalleryItem].map((item, index) => (
+                        <img
+                          key={`${item?.src ?? 'gallery-item'}-${index}`}
+                          className="gallery-modal__image"
+                          src={item?.src}
+                          alt={item?.alt || ''}
+                          draggable={false}
+                        />
+                      ))}
+                    </div>
+                  )}
                 </div>
               </div>
 

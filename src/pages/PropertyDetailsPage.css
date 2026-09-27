@@ -401,6 +401,21 @@
   user-select: none;
 }
 
+.gallery-modal__swipe-track {
+  display: flex;
+  width: 300%;
+  height: 100%;
+  transform: translateX(-33.333333%);
+}
+
+.gallery-modal__swipe-track.is-settling {
+  transition: transform 220ms ease-out;
+}
+
+.gallery-modal__swipe-track .gallery-modal__image {
+  flex: 0 0 33.333333%;
+}
+
 .gallery-modal__controls {
   position: absolute;
   z-index: 3;

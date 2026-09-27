@@ -433,6 +433,16 @@ export function PropertyDetailsPage() {
               <p><strong>No Quadrilátero do Charme de Ipanema</strong></p>
               <p>O IPA Studios Design combina localização privilegiada, arquitetura contemporânea e uma estrutura completa para uma experiência de viver 360°.</p>
             </div>
+          ) : property.id === 11 ? (
+            <div className="details-card__description">
+              <p><strong>Entre Ipanema e Leblon, o Parque Studios combina localização privilegiada, arquitetura contemporânea e praticidade em um dos endereços mais desejados do Rio.</strong></p>
+              <p>Um projeto pensado para quem valoriza mobilidade, lazer e a experiência de viver perto do mar, da Lagoa e do Jardim de Alah.</p>
+              <p>📍 <strong>Endereço:</strong> Rua Visconde de Pirajá, 640 – Ipanema</p>
+              <p>📐 <strong>Área:</strong> 35–66 m²</p>
+              <p>🏡 <strong>Tipologias:</strong> Studios, Lofts, Double Studios e Coberturas</p>
+              <p>✨ <strong>Lazer:</strong> Completo</p>
+              <p>🕐 <strong>Conveniência:</strong> 24 horas</p>
+            </div>
           ) : (
             <p className="details-card__description">{property.details?.description || property.summary}</p>
           )}
@@ -446,7 +456,7 @@ export function PropertyDetailsPage() {
                 <li><strong>Suítes:</strong> conforme unidade</li>
                 <li><strong>Garagem:</strong> conforme unidade</li>
               </>
-            ) : property.id === 3 ? (
+            ) : property.id === 3 || property.id === 11 ? (
               <>
                 <li><strong>Tipologias:</strong> {property.details?.typologies}</li>
                 <li><strong>Suítes:</strong> {property.suites}</li>
@@ -512,8 +522,18 @@ export function PropertyDetailsPage() {
 
       <section className="details-section details-section--highlights">
         <div className="details-section__content">
-          <h2 className="details-section__title">Por que esse imóvel se destaca</h2>
-        {property.id === 4 ? (
+          <h2 className="details-section__title">Por que {property.id === 11 ? 'este' : 'esse'} imóvel se destaca?</h2>
+        {property.id === 11 ? (
+          <>
+            <p className="details-section__text"><strong>O Parque Studios se destaca pela combinação de localização, praticidade e uma proposta contemporânea de viver Ipanema. Entre Ipanema e Leblon, o empreendimento coloca o morador próximo ao mar, à Lagoa, ao Jardim de Alah, à gastronomia, à cultura e à mobilidade da Zona Sul.</strong></p>
+            <p className="details-section__text"><strong>Com studios, lofts, double studios e coberturas, o projeto oferece diferentes possibilidades de moradia em uma estrutura que valoriza conforto, tecnologia e conveniência. O rooftop com vista para a Lagoa e o Cristo Redentor, aliado aos espaços de lazer e às soluções para o dia a dia, completa a experiência.</strong></p>
+            <ul className="details-section__text">
+              <li>📍 <strong>Localização privilegiada</strong> — entre Ipanema e Leblon, na Rua Visconde de Pirajá, próximo ao mar, à Lagoa e ao Jardim de Alah.</li>
+              <li>🌇 <strong>Rooftop com vista</strong> — um dos diferenciais do projeto é o rooftop com vista para a Lagoa e o Cristo Redentor.</li>
+              <li>🏡 <strong>Diferentes possibilidades</strong> — studios, lofts, double studios e coberturas, com metragens de 35 a 66 m².</li>
+            </ul>
+          </>
+        ) : property.id === 4 ? (
           <>
             <p className="details-section__text">
               <strong>O ICONYC By Yoo vai além de um endereço: é um projeto que combina arquitetura contemporânea, design internacional e uma experiência residencial completa. Em Botafogo, reúne diferentes tipologias, ambientes de lazer, serviços e espaços de convivência em um projeto pensado para acompanhar diferentes estilos de vida.</strong>

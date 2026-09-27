@@ -447,4 +447,49 @@ export const properties: Property[] = [
       ],
     },
   },
+  {
+    id: 11,
+    title: 'Parque Studios | Balassiano',
+    location: 'Ipanema',
+    price: 'Entre em contato com Ariana Nunes',
+    area: '35–66 m²',
+    bedrooms: 'Studios, Lofts, Double Studios e Coberturas',
+    suites: 'Conforme unidade',
+    garage: 'Conforme unidade',
+    cardVideo: 'https://www.instagram.com/p/DdxbYSxMq1N/',
+    heroMedia: {
+      type: 'video',
+      src: 'https://youtu.be/YmSxOxpnflQ',
+      alt: 'Vídeo Parque Studios | Balassiano',
+    },
+    images: Array.from({ length: 30 }, (_, index) => index)
+      .filter((index) => index !== 2 && index !== 12)
+      .map((index) => `${basePath}images/id11/balassiano-${String(index).padStart(2, '0')}.jpg`),
+    image: `${basePath}images/id11/balassiano-00.jpg`,
+    summary:
+      'Entre Ipanema e Leblon, o Parque Studios traduz o estilo de vida carioca em um projeto contemporâneo, com lazer completo, conveniência 24 horas e uma localização privilegiada junto ao Jardim de Alah, ao mar e à Lagoa.',
+    details: {
+      address: 'Rua Visconde de Pirajá, 640 – Ipanema',
+      typologies: 'Studios, Lofts, Double Studios e Coberturas',
+      description:
+        'Entre Ipanema e Leblon, o Parque Studios combina localização privilegiada, arquitetura contemporânea e praticidade em um dos endereços mais desejados do Rio. Um projeto pensado para quem valoriza mobilidade, lazer e a experiência de viver perto do mar, da Lagoa e do Jardim de Alah.',
+      amenities: [
+        '🏊 Rooftop com vista para a Lagoa e o Cristo Redentor',
+        '🏋️ Academia',
+        '🛋️ Lobby',
+        '🚲 Bicicletário com compressor e tomada para bicicleta elétrica',
+        '🧺 Lavanderia',
+        '🎯 Espaço multiuso',
+        '🌿 Terraço multiuso',
+        '📦 Estrutura para recebimento de encomendas e food delivery',
+        '🔐 Controle de acesso digital e circulações monitoradas',
+        '❄️ Áreas comuns climatizadas e decoradas',
+        '♿ Acessibilidade',
+        '🔑 Fechadura eletrônica nas unidades',
+        '🍳 Bancada para cooktop elétrico de 2 bocas',
+        '❄️ Infraestrutura para ar-condicionado split',
+        '🍖 Kit gourmet, churrasqueira e piscina nas coberturas',
+      ],
+    },
+  },
 ];

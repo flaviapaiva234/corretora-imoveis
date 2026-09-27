@@ -19,6 +19,7 @@ export function PropertyDetailsPage() {
   const [swipeOffset, setSwipeOffset] = useState(0);
   const [isSwipeSettling, setIsSwipeSettling] = useState(false);
   const galleryFrameRef = useRef<HTMLDivElement>(null);
+  const galleryThumbnailsRef = useRef<HTMLDivElement>(null);
   const zoomAnchorRef = useRef<{ x: number; y: number; imageX: number; imageY: number } | null>(null);
   const galleryWheelHandlerRef = useRef<((event: WheelEvent) => void) | null>(null);
   const activePointersRef = useRef(new Map<number, { x: number; y: number }>());
@@ -48,6 +49,11 @@ export function PropertyDetailsPage() {
   useEffect(() => {
     if (selectedImageIndex !== null) {
       galleryFrameRef.current?.scrollTo({ left: 0, top: 0 });
+      galleryThumbnailsRef.current?.querySelector<HTMLElement>('.gallery-modal__thumbnail.is-active')?.scrollIntoView({
+        behavior: 'smooth',
+        block: 'nearest',
+        inline: 'center',
+      });
     }
   }, [selectedImageIndex]);
 
@@ -813,12 +819,12 @@ export function PropertyDetailsPage() {
                   ) : (
                     <div
                       className={`gallery-modal__swipe-track ${isSwipeSettling ? 'is-settling' : ''}`}
-                      style={{ transform: `translateX(calc(-33.333333% + ${swipeOffset}px))` }}
+                      style={{ transform: `translateX(${swipeOffset}px)` }}
                     >
                       {[previousGalleryItem, currentGalleryItem, nextGalleryItem].map((item, index) => (
                         <img
                           key={`${item?.src ?? 'gallery-item'}-${index}`}
-                          className="gallery-modal__image"
+                          className={`gallery-modal__image ${index === 0 ? 'is-previous' : index === 2 ? 'is-next' : 'is-current'}`}
                           src={item?.src}
                           alt={item?.alt || ''}
                           draggable={false}
@@ -846,7 +852,7 @@ export function PropertyDetailsPage() {
               </button>
             </div>
 
-            <div className="gallery-modal__thumbnails">
+            <div className="gallery-modal__thumbnails" ref={galleryThumbnailsRef}>
               {galleryItems.map((item, index) =>
                 item.type === 'image' ? (
                   <button
@@ -856,6 +862,8 @@ export function PropertyDetailsPage() {
                     onClick={() => {
                       setSelectedImageIndex(index);
                       setZoomLevel(1);
+                      setSwipeOffset(0);
+                      setIsSwipeSettling(false);
                     }}
                     aria-label={`Ir para a imagem ${index + 1}`}
                   >

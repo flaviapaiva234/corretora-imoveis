@@ -37,6 +37,10 @@
   font-size: 0.78rem;
 }
 
+.property-location-line {
+  display: block !important;
+}
+
 .property-content h3 {
   margin: 0;
   font-family: 'Playfair Display', serif;

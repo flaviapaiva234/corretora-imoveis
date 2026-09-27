@@ -416,6 +416,7 @@ export function PropertyDetailsPage() {
       <section className="details-card">
         <div className="details-card__content">
           <span className="details-card__eyebrow">{property.location}</span>
+          {property.subtitle ? <span className="details-card__eyebrow details-card__eyebrow--subline">{property.subtitle}</span> : null}
           <h1 className="details-card__title">{property.title}</h1>
           {property.id === 4 ? (
             <div className="details-card__description">
@@ -442,6 +443,16 @@ export function PropertyDetailsPage() {
               <p>🚗 <strong>Vagas:</strong> 2–4 vagas</p>
               <p>🌊 <strong>Localização:</strong> Quadra da praia</p>
               <p>✨ <strong>Residências:</strong> 47 unidades</p>
+            </div>
+          ) : property.id === 13 ? (
+            <div className="details-card__description">
+              <p><strong>O KAUAI Pontal Oceânico foi concebido para quem busca uma vida mais próxima da natureza, sem abrir mão de praticidade e infraestrutura. Localizado em um bairro planejado e cercado por montanhas, praias e áreas verdes, o empreendimento oferece diferentes opções de apartamentos e coberturas, além de uma ampla estrutura de lazer para toda a família.</strong></p>
+              <p>📍 <strong>Localização:</strong> Pontal Oceânico – Recreio dos Bandeirantes</p>
+              <p>📐 <strong>Área:</strong> 58–155 m²</p>
+              <p>🏡 <strong>Tipologias:</strong> 2, 3 e 4 quartos</p>
+              <p>✨ <strong>Coberturas:</strong> Duplex</p>
+              <p>🌿 <strong>Lazer:</strong> Mais de 20 itens</p>
+              <p>🏢 <strong>Unidades:</strong> 204 unidades, sendo 200 residenciais e 4 comerciais</p>
             </div>
           ) : property.id === 11 ? (
             <div className="details-card__description">
@@ -471,6 +482,12 @@ export function PropertyDetailsPage() {
                 <li><strong>Tipologias:</strong> {property.details?.typologies}</li>
                 <li><strong>Suítes:</strong> {property.suites}</li>
                 <li><strong>Garagem:</strong> {property.garage}</li>
+              </>
+            ) : property.id === 13 ? (
+              <>
+                <li><strong>Tipologias:</strong> {property.details?.typologies}</li>
+                <li><strong>Coberturas:</strong> {property.suites}</li>
+                <li><strong>Lazer:</strong> {property.garage}</li>
               </>
             ) : property.details?.typologies && property.details.beachDistance ? (
               <>
@@ -542,6 +559,16 @@ export function PropertyDetailsPage() {
               <li>🌊 <strong>Na quadra da praia</strong> — localizado no Posto 6 da Barra da Tijuca, próximo ao mar e em frente ao Canal de Marapendi.</li>
               <li>✨ <strong>Design Breton</strong> — curadoria e mobiliário Breton nas áreas comuns, no hall e nos espaços de convivência.</li>
               <li>🏡 <strong>Exclusividade</strong> — apenas 47 residências, com três apartamentos por pavimento e duas coberturas lineares exclusivas.</li>
+            </ul>
+          </>
+        ) : property.id === 13 ? (
+          <>
+            <p className="details-section__text"><strong>O KAUAI Pontal Oceânico se destaca por unir a tranquilidade de viver cercado pela natureza à praticidade de estar em um bairro planejado, com praias, comércio, serviços e opções de lazer ao redor. O projeto foi pensado para valorizar a convivência, a qualidade de vida e o contato com a paisagem, criando uma experiência residencial completa para diferentes momentos da vida.</strong></p>
+            <p className="details-section__text"><strong>Entre montanhas, praias e áreas verdes, o KAUAI convida você a desacelerar, aproveitar mais o tempo com quem ama e viver seu lado oceânico todos os dias.</strong></p>
+            <ul className="details-section__text">
+              <li>🌊 <strong>Vida perto do mar</strong> — o Pontal Oceânico está próximo às praias do Recreio, Pontal, Prainha e Grumari.</li>
+              <li>🌿 <strong>Bairro planejado</strong> — um ambiente com áreas verdes, ciclovia, praças e infraestrutura de comércio e serviços.</li>
+              <li>🏡 <strong>Uma verdadeira ilha de lazer</strong> — mais de 20 espaços para esporte, bem-estar, convivência e diversão para toda a família.</li>
             </ul>
           </>
         ) : property.id === 11 ? (

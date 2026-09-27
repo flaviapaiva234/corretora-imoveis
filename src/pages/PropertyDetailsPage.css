@@ -67,13 +67,17 @@
 }
 
 .details-card__eyebrow {
-  display: inline-block;
+  display: block;
   color: #d4af37;
   text-transform: uppercase;
   letter-spacing: 0.18em;
   font-weight: 700;
   font-size: 0.8rem;
   margin-bottom: 0.6rem;
+}
+
+.details-card__eyebrow--subline {
+  margin-top: -0.6rem;
 }
 
 .details-card__title {

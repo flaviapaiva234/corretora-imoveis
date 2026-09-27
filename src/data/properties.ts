@@ -2,6 +2,7 @@ export type Property = {
   id: number;
   title: string;
   location: string;
+  subtitle?: string;
   price: string;
   area: string;
   bedrooms: string;
@@ -536,6 +537,67 @@ export const properties: Property[] = [
         '❄️ Gelo Health',
         '🌿 Áreas de convivência',
         '🏖️ Beach Point na praia',
+      ],
+    },
+  },
+  {
+    id: 13,
+    location: 'PONTAL OCEÂNICO',
+    subtitle: 'RECREIO DOS BANDEIRANTES',
+    title: 'KAUAI',
+    price: 'Entre em contato com Ariana Nunes',
+    area: '58–155 m²',
+    bedrooms: '2, 3 e 4 quartos',
+    suites: 'Coberturas duplex',
+    garage: 'Mais de 20 itens de lazer',
+    cardVideo: 'https://www.instagram.com/p/DdzFIi3MHgW/',
+    heroMedia: {
+      type: 'video',
+      src: 'https://youtu.be/vhK3k9a-mec',
+      alt: 'Vídeo KAUAI Pontal Oceânico',
+    },
+    images: Array.from({ length: 39 }, (_, index) => {
+      const filename = index === 26
+        ? 'kauai26.jpg'
+        : `kauai-${String(index).padStart(2, '0')}.jpg`;
+      return `${basePath}images/id13/${filename}`;
+    }),
+    image: `${basePath}images/id13/kauai-00.jpg`,
+    summary:
+      'No Pontal Oceânico, o KAUAI combina natureza, tranquilidade e uma estrutura completa de lazer para você viver seu lado oceânico. Um projeto cercado por montanhas, praias e tudo o que você precisa para aproveitar o melhor do Recreio.',
+    details: {
+      address: 'Pontal Oceânico – Recreio dos Bandeirantes',
+      typologies: '2, 3 e 4 quartos',
+      description:
+        'O KAUAI Pontal Oceânico foi concebido para quem busca uma vida mais próxima da natureza, sem abrir mão de praticidade e infraestrutura. Localizado em um bairro planejado e cercado por montanhas, praias e áreas verdes, o empreendimento oferece diferentes opções de apartamentos e coberturas, além de uma ampla estrutura de lazer para toda a família.',
+      amenities: [
+        '🌴 Boulevard de lazer',
+        '🌊 Piscina com raia',
+        '💦 Deck molhado',
+        '☀️ Solarium',
+        '🧖 Sauna e espaço de repouso',
+        '🏋️ Academia',
+        '🎾 Quadra de Beach Tennis / Futvôlei',
+        '⚽ Campo infantil gramado',
+        '🍖 Churrasqueiras',
+        '🍸 Espaço Gourmet',
+        '🎉 Salão de festas adulto e infantil',
+        '👶 Praça dos bebês',
+        '🎠 Playground',
+        '🧸 Brinquedoteca',
+        '🎮 Espaço Teen',
+        '💼 Coworking',
+        '🤝 Sala de reunião',
+        '🎙️ Espaço Podcast',
+        '🐾 Pet Place',
+        '📦 Espaço Delivery',
+        '🛒 Minimarket',
+        '🚲 Bicicletário',
+        '🛠️ Sala de ferramentas',
+        '🏢 Espaço Multiuso',
+        '🔐 Segurança: controle de acessos, segurança perimetral, CFTV e monitoramento 24 horas.',
+        '🌱 Sustentabilidade: iluminação LED com sensores, coleta seletiva e reutilização de águas pluviais.',
+        '🏡 Conforto: porcelanato e preparação para ar-condicionado Multi Bi Split.',
       ],
     },
   },

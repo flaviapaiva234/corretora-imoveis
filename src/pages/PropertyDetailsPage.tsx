@@ -1,4 +1,4 @@
-import { useEffect, useState } from 'react';
+import { useEffect, useRef, useState, type PointerEvent as ReactPointerEvent } from 'react';
 import { useParams, Link } from 'react-router-dom';
 import { properties } from '../data/properties';
 import './PropertyDetailsPage.css';
@@ -15,10 +15,46 @@ export function PropertyDetailsPage() {
   const property = properties.find((item) => item.id === Number(id));
   const [selectedImageIndex, setSelectedImageIndex] = useState<number | null>(null);
   const [zoomLevel, setZoomLevel] = useState(1);
+  const [isGalleryDragging, setIsGalleryDragging] = useState(false);
+  const galleryFrameRef = useRef<HTMLDivElement>(null);
+  const zoomAnchorRef = useRef<{ x: number; y: number; imageX: number; imageY: number } | null>(null);
+  const galleryWheelHandlerRef = useRef<((event: WheelEvent) => void) | null>(null);
+  const activePointersRef = useRef(new Map<number, { x: number; y: number }>());
+  const pinchStartRef = useRef<{ distance: number; zoom: number } | null>(null);
 
   useEffect(() => {
     window.scrollTo({ top: 0, left: 0, behavior: 'auto' });
   }, [id]);
+
+  useEffect(() => {
+    const frame = galleryFrameRef.current;
+    if (!frame) return;
+
+    const anchor = zoomAnchorRef.current;
+    if (!anchor) {
+      if (zoomLevel === 1) frame.scrollTo({ left: 0, top: 0 });
+      return;
+    }
+
+    frame.scrollLeft = anchor.imageX * frame.clientWidth * zoomLevel - anchor.x;
+    frame.scrollTop = anchor.imageY * frame.clientHeight * zoomLevel - anchor.y;
+    zoomAnchorRef.current = null;
+  }, [zoomLevel]);
+
+  useEffect(() => {
+    if (selectedImageIndex !== null) {
+      galleryFrameRef.current?.scrollTo({ left: 0, top: 0 });
+    }
+  }, [selectedImageIndex]);
+
+  useEffect(() => {
+    const frame = galleryFrameRef.current;
+    if (!frame || selectedImageIndex === null) return;
+
+    const handleWheel = (event: WheelEvent) => galleryWheelHandlerRef.current?.(event);
+    frame.addEventListener('wheel', handleWheel, { passive: false });
+    return () => frame.removeEventListener('wheel', handleWheel);
+  }, [selectedImageIndex]);
 
   if (!property) {
     return (
@@ -260,6 +296,100 @@ export function PropertyDetailsPage() {
     '🔐 Segurança e controle de acesso',
   ];
   const amenities = property.id === 4 ? iconycAmenities : property.details?.amenities || defaultAmenities;
+
+  const zoomGalleryAtPoint = (
+    requestedZoom: number,
+    frame: HTMLDivElement,
+    x = frame.clientWidth / 2,
+    y = frame.clientHeight / 2,
+  ) => {
+    if (frame.clientWidth === 0 || frame.clientHeight === 0) return;
+
+    const nextZoom = Math.max(1, Math.min(6, Number(requestedZoom.toFixed(2))));
+    if (nextZoom === zoomLevel) return;
+
+    const localX = Math.max(0, Math.min(frame.clientWidth, x));
+    const localY = Math.max(0, Math.min(frame.clientHeight, y));
+    zoomAnchorRef.current = {
+      x: localX,
+      y: localY,
+      imageX: (frame.scrollLeft + localX) / (frame.clientWidth * zoomLevel),
+      imageY: (frame.scrollTop + localY) / (frame.clientHeight * zoomLevel),
+    };
+    setZoomLevel(nextZoom);
+  };
+
+  galleryWheelHandlerRef.current = (event: WheelEvent) => {
+    event.preventDefault();
+    const frame = galleryFrameRef.current;
+    if (!frame) return;
+
+    const bounds = frame.getBoundingClientRect();
+    const nextZoom = zoomLevel * Math.exp(-event.deltaY * 0.0012);
+    zoomGalleryAtPoint(nextZoom, frame, event.clientX - bounds.left, event.clientY - bounds.top);
+  };
+
+  const handleGalleryPointerDown = (event: ReactPointerEvent<HTMLDivElement>) => {
+    if (event.pointerType === 'mouse') {
+      if (zoomLevel <= 1) return;
+
+      event.preventDefault();
+      event.currentTarget.setPointerCapture(event.pointerId);
+      activePointersRef.current.set(event.pointerId, { x: event.clientX, y: event.clientY });
+      setIsGalleryDragging(true);
+      return;
+    }
+
+    if (event.pointerType !== 'touch') return;
+
+    event.currentTarget.setPointerCapture(event.pointerId);
+    const pointers = activePointersRef.current;
+    pointers.set(event.pointerId, { x: event.clientX, y: event.clientY });
+    if (pointers.size === 2) {
+      const [first, second] = Array.from(pointers.values());
+      pinchStartRef.current = {
+        distance: Math.hypot(second.x - first.x, second.y - first.y),
+        zoom: zoomLevel,
+      };
+    }
+  };
+
+  const handleGalleryPointerMove = (event: ReactPointerEvent<HTMLDivElement>) => {
+    const pointers = activePointersRef.current;
+    const previous = pointers.get(event.pointerId);
+    if (!previous) return;
+
+    pointers.set(event.pointerId, { x: event.clientX, y: event.clientY });
+    if (pointers.size >= 2 && pinchStartRef.current) {
+      const [first, second] = Array.from(pointers.values());
+      const bounds = event.currentTarget.getBoundingClientRect();
+      const centerX = (first.x + second.x) / 2 - bounds.left;
+      const centerY = (first.y + second.y) / 2 - bounds.top;
+      const distance = Math.hypot(second.x - first.x, second.y - first.y);
+      zoomGalleryAtPoint(
+        pinchStartRef.current.zoom * distance / pinchStartRef.current.distance,
+        event.currentTarget,
+        centerX,
+        centerY,
+      );
+    } else if (zoomLevel > 1) {
+      event.currentTarget.scrollLeft += previous.x - event.clientX;
+      event.currentTarget.scrollTop += previous.y - event.clientY;
+    }
+  };
+
+  const handleGalleryPointerEnd = (event: ReactPointerEvent<HTMLDivElement>) => {
+    const pointers = activePointersRef.current;
+    pointers.delete(event.pointerId);
+    if (event.pointerType === 'mouse') setIsGalleryDragging(false);
+    if (pointers.size < 2) pinchStartRef.current = null;
+  };
+
+  const resetGalleryZoom = () => {
+    zoomAnchorRef.current = null;
+    setZoomLevel(1);
+    galleryFrameRef.current?.scrollTo({ left: 0, top: 0 });
+  };
 
   return (
     <main className="property-details-page">
@@ -533,13 +663,22 @@ export function PropertyDetailsPage() {
                 ←
               </button>
 
-              <div className="gallery-modal__frame">
-                <img
-                  className="gallery-modal__image"
-                  src={galleryItems[selectedImageIndex].src}
-                  alt={galleryItems[selectedImageIndex].alt}
-                  style={{ transform: `scale(${zoomLevel})` }}
-                />
+              <div
+                className={`gallery-modal__frame ${zoomLevel > 1 ? 'is-zoomed' : ''} ${isGalleryDragging ? 'is-dragging' : ''}`}
+                ref={galleryFrameRef}
+                onPointerDown={handleGalleryPointerDown}
+                onPointerMove={handleGalleryPointerMove}
+                onPointerUp={handleGalleryPointerEnd}
+                onPointerCancel={handleGalleryPointerEnd}
+              >
+                <div className="gallery-modal__stage" style={{ width: `${zoomLevel * 100}%`, height: `${zoomLevel * 100}%` }}>
+                  <img
+                    className="gallery-modal__image"
+                    src={galleryItems[selectedImageIndex].src}
+                    alt={galleryItems[selectedImageIndex].alt}
+                    draggable={false}
+                  />
+                </div>
               </div>
 
               <button className="gallery-modal__nav" type="button" onClick={goToNextImage} aria-label="Próxima imagem">
@@ -548,13 +687,13 @@ export function PropertyDetailsPage() {
             </div>
 
             <div className="gallery-modal__controls">
-              <button type="button" onClick={() => setZoomLevel((current) => Math.max(1, Number((current - 0.25).toFixed(2))))}>
+              <button type="button" onClick={() => galleryFrameRef.current && zoomGalleryAtPoint(zoomLevel - 0.25, galleryFrameRef.current)}>
                 − Zoom
               </button>
-              <button type="button" onClick={() => setZoomLevel(1)}>
+              <button type="button" onClick={resetGalleryZoom}>
                 Resetar
               </button>
-              <button type="button" onClick={() => setZoomLevel((current) => Math.min(3, Number((current + 0.25).toFixed(2))))}>
+              <button type="button" onClick={() => galleryFrameRef.current && zoomGalleryAtPoint(zoomLevel + 0.25, galleryFrameRef.current)}>
                 + Zoom
               </button>
             </div>

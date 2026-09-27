@@ -433,6 +433,16 @@ export function PropertyDetailsPage() {
               <p><strong>No Quadrilátero do Charme de Ipanema</strong></p>
               <p>O IPA Studios Design combina localização privilegiada, arquitetura contemporânea e uma estrutura completa para uma experiência de viver 360°.</p>
             </div>
+          ) : property.id === 12 ? (
+            <div className="details-card__description">
+              <p><strong>O Mariano by Breton está localizado na Avenida Sobral Pinto, 4225, no Posto 6 da Barra da Tijuca, na quadra da praia e em frente ao Canal de Marapendi. O projeto reúne 47 residências em uma torre única, com apenas três apartamentos por pavimento, proporcionando uma proposta residencial marcada por privacidade, design e exclusividade.</strong></p>
+              <p>📍 <strong>Endereço:</strong> Avenida Sobral Pinto, 4225 – Posto 6, Barra da Tijuca</p>
+              <p>📐 <strong>Área:</strong> 135,76–289,26 m²</p>
+              <p>🏡 <strong>Tipologias:</strong> 3 suítes, 4 suítes e coberturas lineares</p>
+              <p>🚗 <strong>Vagas:</strong> 2–4 vagas</p>
+              <p>🌊 <strong>Localização:</strong> Quadra da praia</p>
+              <p>✨ <strong>Residências:</strong> 47 unidades</p>
+            </div>
           ) : property.id === 11 ? (
             <div className="details-card__description">
               <p><strong>Entre Ipanema e Leblon, o Parque Studios combina localização privilegiada, arquitetura contemporânea e praticidade em um dos endereços mais desejados do Rio.</strong></p>
@@ -456,7 +466,7 @@ export function PropertyDetailsPage() {
                 <li><strong>Suítes:</strong> conforme unidade</li>
                 <li><strong>Garagem:</strong> conforme unidade</li>
               </>
-            ) : property.id === 3 || property.id === 11 ? (
+            ) : property.id === 3 || property.id === 11 || property.id === 12 ? (
               <>
                 <li><strong>Tipologias:</strong> {property.details?.typologies}</li>
                 <li><strong>Suítes:</strong> {property.suites}</li>
@@ -522,8 +532,19 @@ export function PropertyDetailsPage() {
 
       <section className="details-section details-section--highlights">
         <div className="details-section__content">
-          <h2 className="details-section__title">Por que {property.id === 11 ? 'este' : 'esse'} imóvel se destaca?</h2>
-        {property.id === 11 ? (
+          <h2 className="details-section__title">Por que {property.id === 11 || property.id === 12 ? 'este' : 'esse'} imóvel se destaca?</h2>
+        {property.id === 12 ? (
+          <>
+            <p className="details-section__text">
+              O Mariano by Breton se destaca pela combinação entre localização, exclusividade e design. Na quadra da praia do Posto 6, o empreendimento reúne apenas 47 residências em uma torre com três unidades por pavimento, criando uma experiência mais reservada de morar na Barra da Tijuca. A arquitetura autoral da FEU e a curadoria de design da Breton elevam a proposta do projeto, enquanto as diferentes tipologias e a estrutura completa de lazer tornam o Mariano uma experiência residencial pensada para viver com conforto, privacidade e proximidade com o mar.
+            </p>
+            <ul className="details-section__text">
+              <li>🌊 <strong>Na quadra da praia</strong> — localizado no Posto 6 da Barra da Tijuca, próximo ao mar e em frente ao Canal de Marapendi.</li>
+              <li>✨ <strong>Design Breton</strong> — curadoria e mobiliário Breton nas áreas comuns, no hall e nos espaços de convivência.</li>
+              <li>🏡 <strong>Exclusividade</strong> — apenas 47 residências, com três apartamentos por pavimento e duas coberturas lineares exclusivas.</li>
+            </ul>
+          </>
+        ) : property.id === 11 ? (
           <>
             <p className="details-section__text"><strong>O Parque Studios se destaca pela combinação de localização, praticidade e uma proposta contemporânea de viver Ipanema. Entre Ipanema e Leblon, o empreendimento coloca o morador próximo ao mar, à Lagoa, ao Jardim de Alah, à gastronomia, à cultura e à mobilidade da Zona Sul.</strong></p>
             <p className="details-section__text"><strong>Com studios, lofts, double studios e coberturas, o projeto oferece diferentes possibilidades de moradia em uma estrutura que valoriza conforto, tecnologia e conveniência. O rooftop com vista para a Lagoa e o Cristo Redentor, aliado aos espaços de lazer e às soluções para o dia a dia, completa a experiência.</strong></p>

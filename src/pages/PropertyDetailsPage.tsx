@@ -347,12 +347,14 @@ export function PropertyDetailsPage() {
 
   const handleGalleryPointerDown = (event: ReactPointerEvent<HTMLDivElement>) => {
     if (event.pointerType === 'mouse') {
-      if (zoomLevel <= 1) return;
-
       event.preventDefault();
       event.currentTarget.setPointerCapture(event.pointerId);
       activePointersRef.current.set(event.pointerId, { x: event.clientX, y: event.clientY });
-      setIsGalleryDragging(true);
+      if (zoomLevel > 1) {
+        setIsGalleryDragging(true);
+      } else {
+        touchStartRef.current = { pointerId: event.pointerId, x: event.clientX, y: event.clientY };
+      }
       return;
     }
 
@@ -394,7 +396,7 @@ export function PropertyDetailsPage() {
     } else if (zoomLevel > 1) {
       event.currentTarget.scrollLeft += previous.x - event.clientX;
       event.currentTarget.scrollTop += previous.y - event.clientY;
-    } else if (event.pointerType === 'touch' && touchStartRef.current?.pointerId === event.pointerId) {
+    } else if ((event.pointerType === 'touch' || event.pointerType === 'mouse') && touchStartRef.current?.pointerId === event.pointerId) {
       const deltaX = event.clientX - touchStartRef.current.x;
       const deltaY = event.clientY - touchStartRef.current.y;
       if (Math.abs(deltaX) > Math.abs(deltaY)) {
@@ -407,7 +409,7 @@ export function PropertyDetailsPage() {
   const handleGalleryPointerEnd = (event: ReactPointerEvent<HTMLDivElement>) => {
     const pointers = activePointersRef.current;
     const touchStart = touchStartRef.current;
-    if (event.type === 'pointerup' && event.pointerType === 'touch' && pointers.size === 1 && touchStart?.pointerId === event.pointerId && !pinchStartRef.current && zoomLevel <= 1) {
+    if (event.type === 'pointerup' && (event.pointerType === 'touch' || event.pointerType === 'mouse') && pointers.size === 1 && touchStart?.pointerId === event.pointerId && !pinchStartRef.current && zoomLevel <= 1) {
       const deltaX = event.clientX - touchStart.x;
       const deltaY = event.clientY - touchStart.y;
       const isHorizontalSwipe = Math.abs(deltaX) >= 48 && Math.abs(deltaX) > Math.abs(deltaY) * 1.2;
@@ -431,7 +433,7 @@ export function PropertyDetailsPage() {
         setSwipeOffset(0);
         window.setTimeout(() => setIsSwipeSettling(false), 180);
       }
-    } else if (event.pointerType === 'touch' && !pinchStartRef.current) {
+    } else if ((event.pointerType === 'touch' || event.pointerType === 'mouse') && !pinchStartRef.current && zoomLevel <= 1) {
       setIsSwipeSettling(true);
       setSwipeOffset(0);
       window.setTimeout(() => setIsSwipeSettling(false), 180);

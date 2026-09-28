@@ -16,7 +16,8 @@
 .contact-inner span {
   display: inline-block;
   margin-bottom: 1rem;
-  color: #d4af37;
+  color: var(--accent-text-color);
+  text-shadow: var(--accent-text-shadow);
   text-transform: uppercase;
   letter-spacing: 0.24em;
   font-size: 0.85rem;
@@ -65,7 +66,8 @@
   justify-content: center;
   gap: 0.65rem;
   font-size: 1.05rem;
-  color: #d4af37;
+  color: var(--accent-text-color);
+  text-shadow: var(--accent-text-shadow);
 }
 
 .social-icon {

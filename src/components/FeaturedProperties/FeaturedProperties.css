@@ -15,7 +15,8 @@
   margin-bottom: 1rem;
   text-transform: uppercase;
   letter-spacing: 0.25em;
-  color: var(--accent);
+  color: var(--accent-text-color);
+  text-shadow: var(--accent-text-shadow);
   font-size: 0.85rem;
 }
 

@@ -88,7 +88,8 @@
 
 .property-content span {
   display: inline-block;
-  color: #d4af37;
+  color: var(--accent-text-color);
+  text-shadow: var(--accent-text-shadow);
   text-transform: uppercase;
   letter-spacing: 0.16em;
   font-weight: 700;
@@ -107,7 +108,8 @@
 }
 
 .property-price {
-  color: #d4af37;
+  color: var(--accent-text-color);
+  text-shadow: var(--accent-text-shadow);
   font-weight: 700;
   font-size: 1.2rem;
 }
@@ -161,7 +163,8 @@
 
 .button.outline {
   border: 1px solid var(--accent);
-  color: var(--accent);
+  color: var(--accent-text-color);
+  text-shadow: var(--accent-text-shadow);
   background: transparent;
 }
 

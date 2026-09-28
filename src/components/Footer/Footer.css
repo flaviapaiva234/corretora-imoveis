@@ -1,8 +1,8 @@
 .site-footer {
   padding: 3rem 2rem;
-  background: #0a0a0a;
-  color: #e8e5d9;
-  border-top: 1px solid #d4af37;
+  background: var(--section-bg-alt);
+  color: var(--section-text);
+  border-top: 1px solid var(--accent);
 }
 
 .footer-content {
@@ -18,12 +18,13 @@
   font-family: 'Playfair Display', serif;
   font-size: 1.6rem;
   margin-bottom: 0.5rem;
-  color: #d4af37;
+  color: var(--accent-text-color);
+  text-shadow: var(--accent-text-shadow);
 }
 
 .footer-content p {
   margin: 0;
-  color: #c4c1b3;
+  color: var(--section-text-muted);
 }
 
 .footer-content .footer-contact {
@@ -36,16 +37,32 @@
 .footer-contact .social-icon {
   width: 1rem;
   height: 1rem;
-  color: #d4af37;
+  color: var(--accent);
+  text-shadow: var(--accent-text-shadow);
 }
 
 .footer-contact a {
   color: #d8d7d3;
   text-decoration: none;
+  transition: color 0.2s ease, text-shadow 0.2s ease, filter 0.2s ease;
 }
 
 .footer-contact a:hover {
-  color: #d4af37;
+  color: var(--accent-text-color);
+  text-shadow: var(--accent-text-shadow);
+}
+
+.app-theme-light .footer-contact a {
+  color: var(--accent-text-color);
+  font-family: 'Arial Black', Arial, sans-serif;
+  text-shadow: var(--accent-text-shadow);
+}
+
+.app-theme-light .footer-contact a:hover,
+.app-theme-light .footer-contact a:focus-visible,
+.app-theme-light .footer-contact a:active {
+  filter: drop-shadow(0 0 5px rgba(178, 138, 25, 0.8));
+  text-shadow: var(--accent-text-shadow), 0 0 9px rgba(178, 138, 25, 0.75);
 }
 
 .footer-links {
@@ -55,13 +72,14 @@
 }
 
 .footer-links a {
-  color: #c4c1b3;
+  color: var(--section-text-muted);
   text-decoration: none;
   transition: color 0.2s ease;
 }
 
 .footer-links a:hover {
-  color: #d4af37;
+  color: var(--accent-text-color);
+  text-shadow: var(--accent-text-shadow);
 }
 
 .footer-copy {
@@ -69,7 +87,7 @@
   max-width: 1180px;
   margin: 0 auto;
   text-align: center;
-  color: #7a7770;
+  color: var(--section-text-muted);
   font-size: 0.95rem;
 }
 

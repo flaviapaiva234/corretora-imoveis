@@ -16,7 +16,8 @@
 .about-text span {
   display: inline-block;
   margin-bottom: 1rem;
-  color: var(--accent);
+  color: var(--accent-text-color);
+  text-shadow: var(--accent-text-shadow);
   letter-spacing: 0.2em;
   text-transform: uppercase;
   font-size: 1.5rem;

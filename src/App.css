@@ -37,6 +37,9 @@
   --section-heading: #fdf8f3;
   --accent: #d4af37;
   --accent-hover: #e8c547;
+  --accent-text-color: #d4af37;
+  --accent-text-shadow: none;
+  --gold-button-text-shadow: none;
   --card-bg: #1a1a1a;
   --card-border: #2a2820;
   --card-shadow: rgba(0, 0, 0, 0.4);
@@ -60,6 +63,9 @@
   --section-heading: #000000;
   --accent: #b28a19;
   --accent-hover: #9a7315;
+  --accent-text-color: #17130a;
+  --accent-text-shadow: none;
+  --gold-button-text-shadow: -1px -1px 0 #332806, 1px -1px 0 #332806, -1px 1px 0 #332806, 1px 1px 0 #332806;
   --card-bg: #ffffff;
   --card-border: #e8dcc8;
   --card-shadow: rgba(168, 132, 62, 0.16);
@@ -69,6 +75,14 @@ body {
   min-height: 100vh;
   background: var(--app-bg);
   color: var(--app-text);
+}
+
+.app-theme-light :is(
+  .about-text .button,
+  .property-tour-controls .button.property-details-button,
+  .property-actions > a.button:not(.outline)
+) {
+  text-shadow: var(--gold-button-text-shadow);
 }
 
 button,

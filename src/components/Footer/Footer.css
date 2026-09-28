@@ -26,6 +26,28 @@
   color: #c4c1b3;
 }
 
+.footer-content .footer-contact {
+  display: flex;
+  align-items: center;
+  gap: 0.45rem;
+  margin-top: 0.5rem;
+}
+
+.footer-contact .social-icon {
+  width: 1rem;
+  height: 1rem;
+  color: #d4af37;
+}
+
+.footer-contact a {
+  color: #d8d7d3;
+  text-decoration: none;
+}
+
+.footer-contact a:hover {
+  color: #d4af37;
+}
+
 .footer-links {
   display: flex;
   gap: 1.25rem;

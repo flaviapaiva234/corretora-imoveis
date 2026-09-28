@@ -75,7 +75,7 @@ export const properties: Property[] = [
     bedrooms: 'Studios, 1 e 2 quartos',
     suites: '1-2',
     garage: 'sob consulta',
-    cardVideo: 'https://www.instagram.com/p/Ddq4Ma2sO5B/',
+    cardVideo: 'https://youtu.be/Ns989Fu-1ow',
     heroMedia: {
       type: 'video',
       src: 'https://youtu.be/Ns989Fu-1ow',
@@ -123,7 +123,7 @@ export const properties: Property[] = [
     bedrooms: 'Studios e Gardens',
     suites: 'conforme unidade',
     garage: 'conforme unidade',
-    cardVideo: 'https://www.instagram.com/p/DdtSxUFMPK7/',
+    cardVideo: 'https://youtube.com/shorts/P-WRqFbzqvU?feature=share',
     heroMedia: {
       type: 'video',
       src: 'https://youtu.be/hTsf03t1ZwM',
@@ -360,7 +360,7 @@ export const properties: Property[] = [
     bedrooms: '5 suítes',
     suites: '5',
     garage: 'a partir de 2 vagas',
-    cardVideo: 'https://youtu.be/ntlDVaEMZDY',
+    cardVideo: 'https://www.youtube.com/shorts/ntlDVaEMZDY',
     heroMedia: {
       type: 'video',
       src: 'https://www.youtube.com/watch?v=5ygPLTUuAF4',
@@ -413,7 +413,7 @@ export const properties: Property[] = [
     bedrooms: 'Studios, 1 quarto e coberturas lineares',
     suites: '—',
     garage: 'sob consulta',
-    cardVideo: 'https://www.instagram.com/p/Ddo0XGLsgaA/',
+    cardVideo: 'https://www.youtube.com/shorts/jYqnzL0YLkg',
     heroMedia: {
       type: 'video',
       src: 'https://youtu.be/ztxtz7Sa_3k',
@@ -457,7 +457,7 @@ export const properties: Property[] = [
     bedrooms: 'Studios, Lofts, Double Studios e Coberturas',
     suites: 'Conforme unidade',
     garage: 'Conforme unidade',
-    cardVideo: 'https://www.instagram.com/p/DdxbYSxMq1N/',
+    cardVideo: 'https://youtu.be/1ACgFuoj1Y4',
     heroMedia: {
       type: 'video',
       src: 'https://youtu.be/YmSxOxpnflQ',
@@ -502,7 +502,7 @@ export const properties: Property[] = [
     bedrooms: 'Apartamentos e coberturas | 3 e 4 suítes',
     suites: '3 e 4 suítes',
     garage: '2–4 vagas',
-    cardVideo: 'https://www.instagram.com/p/Ddxe7qXNJc3/',
+    cardVideo: 'https://www.youtube.com/shorts/5ZiTvZnyG2M',
     heroMedia: {
       type: 'video',
       src: 'https://www.youtube.com/watch?v=z-W0OHRPf2U',
@@ -550,7 +550,7 @@ export const properties: Property[] = [
     bedrooms: '2, 3 e 4 quartos',
     suites: 'Coberturas duplex',
     garage: 'Mais de 20 itens de lazer',
-    cardVideo: 'https://www.instagram.com/p/DdzFIi3MHgW/',
+    cardVideo: 'https://youtu.be/vhK3k9a-mec',
     heroMedia: {
       type: 'video',
       src: 'https://youtu.be/vhK3k9a-mec',

@@ -489,7 +489,14 @@ export function PropertyDetailsPage() {
           <span className="details-card__eyebrow">{property.location}</span>
           {property.subtitle ? <span className="details-card__eyebrow details-card__eyebrow--subline">{property.subtitle}</span> : null}
           <h1 className="details-card__title">{property.title}</h1>
-          {property.id === 4 ? (
+          {property.id === 14 ? (
+            <div className="details-card__description">
+              <p><strong>Viva o novo Recreio.</strong></p>
+              <p>O Lanai Pontal Oceânico foi pensado para quem busca uma experiência de moradia que combine conforto, praticidade e contato com a natureza. Localizado no Pontal Oceânico, no Recreio dos Bandeirantes, o projeto reúne apartamentos de 2 e 3 quartos e gardens, com ambientes integrados e varandas com cortina de vidro.</p>
+              <p>Com 272 unidades distribuídas em três blocos, o empreendimento oferece uma estrutura completa de lazer e convivência, além de recursos de segurança e soluções sustentáveis.</p>
+              <p><strong>Um projeto para quem quer viver o Recreio com mais conforto, natureza e qualidade de vida.</strong></p>
+            </div>
+          ) : property.id === 4 ? (
             <div className="details-card__description">
               <p>O ICONYC By Yoo reúne arquitetura contemporânea, design e uma experiência residencial completa em um dos bairros mais desejados da Zona Sul do Rio.</p>
               <p>Desenvolvido pela <strong>RJZ Cyrela em parceria com a YOO</strong>, o projeto combina apartamentos, gardens e coberturas a uma estrutura pensada para proporcionar conforto, lazer, conveniência e bem-estar.</p>
@@ -553,6 +560,13 @@ export function PropertyDetailsPage() {
                 <li><strong>Tipologias:</strong> {property.details?.typologies}</li>
                 <li><strong>Suítes:</strong> {property.suites}</li>
                 <li><strong>Garagem:</strong> {property.garage}</li>
+              </>
+            ) : property.id === 14 ? (
+              <>
+                <li><strong>Tipologias:</strong> {property.details?.typologies}</li>
+                <li><strong>Suítes:</strong> {property.suites}</li>
+                <li><strong>Vagas:</strong> {property.garage}</li>
+                <li><strong>Unidades:</strong> 272</li>
               </>
             ) : property.id === 13 ? (
               <>
@@ -620,7 +634,7 @@ export function PropertyDetailsPage() {
 
       <section className="details-section details-section--highlights">
         <div className="details-section__content">
-          <h2 className="details-section__title">Por que {property.id === 11 || property.id === 12 ? 'este' : 'esse'} imóvel se destaca?</h2>
+          <h2 className="details-section__title">Por que {property.id === 11 || property.id === 12 || property.id === 14 ? 'este' : 'esse'} imóvel se destaca?</h2>
         {property.id === 12 ? (
           <>
             <p className="details-section__text">
@@ -630,6 +644,17 @@ export function PropertyDetailsPage() {
               <li>🌊 <strong>Na quadra da praia</strong> — localizado no Posto 6 da Barra da Tijuca, próximo ao mar e em frente ao Canal de Marapendi.</li>
               <li>✨ <strong>Design Breton</strong> — curadoria e mobiliário Breton nas áreas comuns, no hall e nos espaços de convivência.</li>
               <li>🏡 <strong>Exclusividade</strong> — apenas 47 residências, com três apartamentos por pavimento e duas coberturas lineares exclusivas.</li>
+            </ul>
+          </>
+        ) : property.id === 14 ? (
+          <>
+            <p className="details-section__text"><strong>O Lanai Pontal Oceânico se destaca por unir a tranquilidade de um bairro planejado à praticidade de estar no Recreio dos Bandeirantes.</strong></p>
+            <p className="details-section__text">O projeto combina arquitetura contemporânea, ambientes pensados para o dia a dia e uma ampla estrutura de lazer, criando uma experiência residencial completa para diferentes momentos da vida.</p>
+            <p className="details-section__text">A localização no Pontal Oceânico aproxima os moradores das praias do Pontal e da Macumba, além de oferecer acesso à Avenida das Américas e à Transoeste. A região também conta com comércio, supermercados, colégios e o Recreio Shopping, trazendo praticidade para a rotina.</p>
+            <ul className="details-section__text">
+              <li><strong>🌿 Pontal Oceânico</strong> — bairro planejado, cercado por áreas verdes e próximo às praias.</li>
+              <li><strong>🏡 Estrutura completa</strong> — mais de 30 opções de lazer distribuídas em 3.500 m².</li>
+              <li><strong>📍 Localização estratégica</strong> — próximo às praias, Avenida das Américas, Transoeste, comércio e serviços.</li>
             </ul>
           </>
         ) : property.id === 13 ? (

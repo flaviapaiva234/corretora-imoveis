@@ -601,4 +601,47 @@ export const properties: Property[] = [
       ],
     },
   },
+  {
+    id: 14,
+    location: 'PONTAL OCEÂNICO',
+    subtitle: 'RECREIO DOS BANDEIRANTES',
+    title: 'LANAI',
+    price: 'Entre em contato com Ariana Nunes',
+    area: '52–87 m²',
+    bedrooms: '2 e 3 quartos + Gardens',
+    suites: '1',
+    garage: '1 vaga por unidade',
+    cardVideo: 'https://youtube.com/shorts/SJk4eiLK49s?feature=share',
+    heroMedia: {
+      type: 'video',
+      src: 'https://youtu.be/aaiwVxVClnU',
+      alt: 'Vídeo Lanai Pontal Oceânico',
+    },
+    images: Array.from({ length: 18 }, (_, index) =>
+      `${basePath}images/id14/lanai-${String(index).padStart(2, '0')}.jpg`,
+    ),
+    image: `${basePath}images/id14/lanai-00.jpg`,
+    summary:
+      'No Pontal Oceânico, o Lanai combina conforto, lazer e qualidade de vida em um projeto contemporâneo pensado para viver o melhor do novo Recreio. Apartamentos de 2 e 3 quartos e gardens, cercados por natureza e uma estrutura completa para toda a família.',
+    details: {
+      address: 'Rua Luiz Carlos Sarolli, 1355 – Recreio dos Bandeirantes',
+      typologies: '2 e 3 quartos + Gardens',
+      description:
+        'O Lanai Pontal Oceânico foi pensado para quem busca uma experiência de moradia que combine conforto, praticidade e contato com a natureza. Localizado no Pontal Oceânico, no Recreio dos Bandeirantes, o projeto reúne apartamentos de 2 e 3 quartos e gardens, com ambientes integrados e varandas com cortina de vidro. Com 272 unidades distribuídas em três blocos, o empreendimento oferece uma estrutura completa de lazer e convivência, além de recursos de segurança e soluções sustentáveis.',
+      amenities: [
+        '🏊 Piscina e Pool House',
+        '⚽ Campo de futebol',
+        '🏋️ Centro de recuperação',
+        '🍽️ Espaço gourmet',
+        '🎉 Salão de festas',
+        '🎠 Parque infantil',
+        '🌿 Áreas de convivência e lazer',
+        '🔐 Controle de acesso com biometria facial',
+        '📹 Câmeras de monitoramento',
+        '🛡️ Portaria 24 horas',
+        '💧 Sistema de reaproveitamento de água',
+        '💡 Iluminação LED nas áreas comuns',
+      ],
+    },
+  },
 ];

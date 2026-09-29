@@ -496,6 +496,19 @@ export function PropertyDetailsPage() {
               <p>Com 272 unidades distribuídas em três blocos, o empreendimento oferece uma estrutura completa de lazer e convivência, além de recursos de segurança e soluções sustentáveis.</p>
               <p><strong>Um projeto para quem quer viver o Recreio com mais conforto, natureza e qualidade de vida.</strong></p>
             </div>
+          ) : property.id === 15 ? (
+            <div className="details-card__description">
+              <p><strong>Um espaço para sentir.</strong></p>
+              <p><strong>O FEEL Pontal Oceânico foi pensado para quem deseja viver com mais leveza, conexão com a natureza e praticidade no dia a dia.</strong></p>
+              <p>Localizado no Pontal Oceânico, o projeto combina a tranquilidade de um bairro planejado com a proximidade da natureza e a infraestrutura da Avenida das Américas.</p>
+              <p>O empreendimento reúne <strong>Studios Design de 30 a 36 m², Garden Studios de 39 a 83 m² e Studios Dúplex de 55 a 70 m²</strong>, criando diferentes possibilidades para morar, descansar ou investir.</p>
+              <p>Com arquitetura contemporânea, lazer completo, espaços compartilhados e soluções de tecnologia, o FEEL foi concebido para acompanhar uma nova maneira de viver o Rio.</p>
+              <p><strong>Endereço:</strong> Luiz Carlos Sarolli, 1600 – Pontal Oceânico</p>
+              <p><strong>Tipologias:</strong> Studios Design, Garden Studios e Studios Dúplex</p>
+              <p><strong>Área:</strong> 30–83 m²</p>
+              <p><strong>Lazer:</strong> Completo</p>
+              <p><strong>Localização:</strong> Pontal Oceânico – Recreio dos Bandeirantes</p>
+            </div>
           ) : property.id === 4 ? (
             <div className="details-card__description">
               <p>O ICONYC By Yoo reúne arquitetura contemporânea, design e uma experiência residencial completa em um dos bairros mais desejados da Zona Sul do Rio.</p>
@@ -568,6 +581,12 @@ export function PropertyDetailsPage() {
                 <li><strong>Vagas:</strong> {property.garage}</li>
                 <li><strong>Unidades:</strong> 272</li>
               </>
+            ) : property.id === 15 ? (
+              <>
+                <li><strong>Tipologias:</strong> {property.details?.typologies}</li>
+                <li><strong>Lazer:</strong> Completo</li>
+                <li><strong>Localização:</strong> Pontal Oceânico – Recreio dos Bandeirantes</li>
+              </>
             ) : property.id === 13 ? (
               <>
                 <li><strong>Tipologias:</strong> {property.details?.typologies}</li>
@@ -634,8 +653,21 @@ export function PropertyDetailsPage() {
 
       <section className="details-section details-section--highlights">
         <div className="details-section__content">
-          <h2 className="details-section__title">Por que {property.id === 11 || property.id === 12 || property.id === 14 ? 'este' : 'esse'} imóvel se destaca?</h2>
-        {property.id === 12 ? (
+          <h2 className="details-section__title">Por que {property.id === 11 || property.id === 12 || property.id === 14 || property.id === 15 ? 'este' : 'esse'} imóvel se destaca?</h2>
+        {property.id === 15 ? (
+          <>
+            <p className="details-section__text"><strong>O FEEL Pontal Oceânico se destaca por unir natureza, praticidade e uma proposta contemporânea de viver.</strong></p>
+            <p className="details-section__text">Localizado em um bairro planejado do Recreio dos Bandeirantes, o empreendimento está próximo de áreas naturais e das praias da região, enquanto mantém fácil conexão com a Avenida das Américas e toda a infraestrutura necessária para o dia a dia.</p>
+            <p className="details-section__text">A variedade de tipologias — <strong>Studios Design, Garden Studios e Studios Dúplex</strong> — permite diferentes formas de aproveitar o imóvel, seja para morar, ter um refúgio próximo à natureza ou buscar uma alternativa de investimento.</p>
+            <p className="details-section__text">O projeto também combina <strong>lazer completo, espaços compartilhados, tecnologia, segurança e soluções voltadas à praticidade</strong>, criando uma experiência residencial conectada às novas formas de viver.</p>
+            <p className="details-section__text"><strong>Um lugar para sentir, desacelerar e aproveitar o melhor do Pontal Oceânico.</strong></p>
+            <ul className="details-section__text">
+              <li>🌿 <strong>Natureza e cidade em equilíbrio</strong> — localização no Pontal Oceânico, próxima à natureza e conectada à Avenida das Américas.</li>
+              <li>🏡 <strong>Diferentes possibilidades de viver</strong> — Studios Design, Garden Studios e Studios Dúplex, com diferentes metragens e configurações.</li>
+              <li>✨ <strong>Tecnologia e praticidade</strong> — App FEEL, fechadura Smart, reconhecimento facial, monitoramento e facilidades para o dia a dia.</li>
+            </ul>
+          </>
+        ) : property.id === 12 ? (
           <>
             <p className="details-section__text">
               O Mariano by Breton se destaca pela combinação entre localização, exclusividade e design. Na quadra da praia do Posto 6, o empreendimento reúne apenas 47 residências em uma torre com três unidades por pavimento, criando uma experiência mais reservada de morar na Barra da Tijuca. A arquitetura autoral da FEU e a curadoria de design da Breton elevam a proposta do projeto, enquanto as diferentes tipologias e a estrutura completa de lazer tornam o Mariano uma experiência residencial pensada para viver com conforto, privacidade e proximidade com o mar.

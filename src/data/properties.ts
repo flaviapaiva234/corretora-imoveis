@@ -774,4 +774,48 @@ export const properties: Property[] = [
       ],
     },
   },
+  {
+    id: 17,
+    location: 'Barra da Tijuca',
+    title: 'Green Park Barra',
+    price: 'Entre em contato com Ariana Nunes',
+    area: '2, 3 e 4 quartos',
+    bedrooms: '2, 3 e 4 quartos',
+    suites: 'Conforme unidade',
+    garage: 'Condomínio-clube com lazer completo',
+    cardVideo: 'https://youtube.com/shorts/PrHHIqrheMg?feature=share',
+    heroMedia: {
+      type: 'video',
+      src: 'https://youtu.be/C1p7mlngE4I',
+      alt: 'Vídeo Green Park Barra',
+    },
+    images: Array.from({ length: 91 }, (_, index) => {
+      const number = index + 1;
+      return `${basePath}images/id17/green-p-${String(number).padStart(2, '0')}.jpg`;
+    }),
+    image: `${basePath}images/id17/green-p-01.png`,
+    summary:
+      'No início da Barra da Tijuca, o Green Park Barra combina natureza, mobilidade, conveniência e uma estrutura completa de lazer. Um condomínio-clube pensado para equilibrar a praticidade da vida urbana com o bem-estar de viver cercado pelo verde, com opções de plantas de 2, 3 e 4 quartos.',
+    details: {
+      address: 'Avenida das Américas, 1300 – Barra da Tijuca',
+      typologies: '2, 3 e 4 quartos',
+      description:
+        'Viva a Barra com mais espaço, natureza e qualidade de vida. O Green Park Barra está localizado na Avenida das Américas, 1300, no início da Barra da Tijuca, em uma região que combina mobilidade, conveniência e proximidade com a natureza. O projeto foi concebido para integrar arquitetura, paisagismo e áreas de convivência, criando um verdadeiro parque verde dentro do empreendimento. A implantação valoriza as áreas abertas, os jardins e as vistas para a paisagem da Barra, incluindo a Pedra da Gávea e as montanhas da região. Com apartamentos de 2, 3 e 4 quartos, além de gardens e coberturas em diferentes blocos, o Green Park Barra oferece múltiplas possibilidades de plantas para diferentes estilos de vida. O projeto também conta com um rooftop de uso comum, áreas de lazer completas, espaços de bem-estar, ambientes para convivência e estruturas pensadas para facilitar o dia a dia.',
+      amenities: [
+        '🏊 Piscinas: adulto, infantil, com raia de 25 m, deck molhado e Splash Pad',
+        '🏖️ Pool Party House com área para eventos e espaço gourmet',
+        '🏋️ Academia e Fitness Externo',
+        '🧘 Pilates, Yoga e Wellness com spa, sauna seca e sala de massagem',
+        '🎾 Quadra poliesportiva, quadra de pickleball e áreas esportivas externas',
+        '🍷 Wine Lounge, espaços gourmet, churrasqueira com forno de pizza e bar da piscina',
+        '🎬 Cinema, salas de jogos adulto e jovem e espaços de convivência',
+        '🎉 Salão de festas adulto, infantil e espaços gourmet',
+        '🧸 Brinquedoteca, playground, Espaço Kids e piscina infantil com parque aquático',
+        '🌳 Jardim central, Web Garden, pomar com área de piquenique, praças e áreas externas de estar',
+        '🐾 Espaço Pet',
+        '💼 Coworking com sala de reunião e Wi-Fi',
+        '📦 Espaço Delivery, minimercado, bicicletário e posto de coleta de lavanderia',
+      ],
+    },
+  },
 ];

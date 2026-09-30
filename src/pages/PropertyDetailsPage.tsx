@@ -496,14 +496,14 @@ export function PropertyDetailsPage() {
               <p>Com 272 unidades distribuídas em três blocos, o empreendimento oferece uma estrutura completa de lazer e convivência, além de recursos de segurança e soluções sustentáveis.</p>
               <p><strong>Um projeto para quem quer viver o Recreio com mais conforto, natureza e qualidade de vida.</strong></p>
             </div>
-          ) : property.id === 15 ? (
+          ) : property.id === 15 || property.id === 16 ? (
             <div className="details-card__description">
-              <p><strong>Um espaço para sentir.</strong></p>
-              <p><strong>O FEEL Pontal Oceânico foi pensado para quem deseja viver com mais leveza, conexão com a natureza e praticidade no dia a dia.</strong></p>
-              <p>Localizado no Pontal Oceânico, o projeto combina a tranquilidade de um bairro planejado com a proximidade da natureza e a infraestrutura da Avenida das Américas.</p>
-              <p>O empreendimento reúne <strong>Studios Design de 30 a 36 m², Garden Studios de 39 a 83 m² e Studios Dúplex de 55 a 70 m²</strong>, criando diferentes possibilidades para morar, descansar ou investir.</p>
-              <p>Com arquitetura contemporânea, lazer completo, espaços compartilhados e soluções de tecnologia, o FEEL foi concebido para acompanhar uma nova maneira de viver o Rio.</p>
-              <p><strong>Endereço:</strong> Luiz Carlos Sarolli, 1600 – Pontal Oceânico</p>
+              <p><strong>{property.id === 16 ? 'Uma vida mais leve e conectada à natureza.' : 'Um espaço para sentir.'}</strong></p>
+              <p><strong>{property.id === 16 ? 'O FEEL NATURE Pontal Oceânico foi pensado para quem busca uma vida mais leve, conectada à natureza e com praticidade no dia a dia.' : 'O FEEL SUN Pontal Oceânico foi pensado para quem deseja viver com mais leveza, conexão com a natureza e praticidade no dia a dia.'}</strong></p>
+              <p>Localizado no Pontal Oceânico, {property.id === 16 ? 'um bairro planejado do Recreio dos Bandeirantes, o empreendimento combina a proximidade com praias, áreas naturais e a infraestrutura da Avenida das Américas.' : 'o projeto combina a tranquilidade de um bairro planejado com a proximidade da natureza e a infraestrutura da Avenida das Américas.'}</p>
+              <p>O empreendimento reúne <strong>Studios Design de 30 a 36 m², Garden Studios de 39 a 83 m² e Studios Dúplex de 55 a 70 m²</strong>, criando diferentes possibilidades para morar, descansar ou aproveitar o imóvel.</p>
+              <p>{property.id === 16 ? 'Com arquitetura contemporânea, lazer completo, espaços compartilhados e soluções pensadas para facilitar a rotina, o FEEL NATURE traduz uma proposta de viver com menos excessos e mais conexão.' : 'Com arquitetura contemporânea, lazer completo, espaços compartilhados e soluções de tecnologia, o FEEL foi concebido para acompanhar uma nova maneira de viver o Rio.'}</p>
+              <p><strong>Endereço:</strong> {property.id === 16 ? 'Rua Teixeira Heizer, 1.700 – Pontal Oceânico' : 'Luiz Carlos Sarolli, 1600 – Pontal Oceânico'}</p>
               <p><strong>Tipologias:</strong> Studios Design, Garden Studios e Studios Dúplex</p>
               <p><strong>Área:</strong> 30–83 m²</p>
               <p><strong>Lazer:</strong> Completo</p>
@@ -581,7 +581,7 @@ export function PropertyDetailsPage() {
                 <li><strong>Vagas:</strong> {property.garage}</li>
                 <li><strong>Unidades:</strong> 272</li>
               </>
-            ) : property.id === 15 ? (
+            ) : property.id === 15 || property.id === 16 ? (
               <>
                 <li><strong>Tipologias:</strong> {property.details?.typologies}</li>
                 <li><strong>Lazer:</strong> Completo</li>
@@ -653,10 +653,23 @@ export function PropertyDetailsPage() {
 
       <section className="details-section details-section--highlights">
         <div className="details-section__content">
-          <h2 className="details-section__title">Por que {property.id === 11 || property.id === 12 || property.id === 14 || property.id === 15 ? 'este' : 'esse'} imóvel se destaca?</h2>
-        {property.id === 15 ? (
+          <h2 className="details-section__title">Por que {property.id === 11 || property.id === 12 || property.id === 14 || property.id === 15 || property.id === 16 ? 'este' : 'esse'} imóvel se destaca?</h2>
+        {property.id === 16 ? (
           <>
-            <p className="details-section__text"><strong>O FEEL Pontal Oceânico se destaca por unir natureza, praticidade e uma proposta contemporânea de viver.</strong></p>
+            <p className="details-section__text"><strong>O FEEL NATURE se destaca por transformar a proximidade com a natureza em parte da experiência de viver.</strong></p>
+            <p className="details-section__text">No Pontal Oceânico, o projeto combina a tranquilidade de um bairro planejado com a proximidade das praias, áreas naturais, comércio, serviços e da Avenida das Américas.</p>
+            <p className="details-section__text">Mais do que oferecer diferentes tipologias, o empreendimento propõe uma forma de viver mais leve, com ambientes compartilhados, lazer completo e soluções que facilitam a rotina.</p>
+            <p className="details-section__text">A localização também coloca algumas das praias e paisagens mais marcantes da região ao alcance do dia a dia: Praia do Pontal, Praia do Secreto, Praia da Macumba, Prainha e Grumari.</p>
+            <p className="details-section__text"><strong>Um projeto para quem valoriza natureza, praticidade e a liberdade de viver o Rio de uma maneira diferente.</strong></p>
+            <ul className="details-section__text">
+              <li>🌿 <strong>Natureza como parte da rotina</strong> — Pontal Oceânico, áreas verdes e proximidade das praias.</li>
+              <li>🏡 <strong>Diferentes formas de viver</strong> — Studios Design, Garden Studios e Studios Dúplex.</li>
+              <li>✨ <strong>Uma experiência completa</strong> — lazer, espaços compartilhados, tecnologia e facilidades para o dia a dia.</li>
+            </ul>
+          </>
+        ) : property.id === 15 ? (
+          <>
+            <p className="details-section__text"><strong>O FEEL SUN Pontal Oceânico se destaca por unir natureza, praticidade e uma proposta contemporânea de viver.</strong></p>
             <p className="details-section__text">Localizado em um bairro planejado do Recreio dos Bandeirantes, o empreendimento está próximo de áreas naturais e das praias da região, enquanto mantém fácil conexão com a Avenida das Américas e toda a infraestrutura necessária para o dia a dia.</p>
             <p className="details-section__text">A variedade de tipologias — <strong>Studios Design, Garden Studios e Studios Dúplex</strong> — permite diferentes formas de aproveitar o imóvel, seja para morar, ter um refúgio próximo à natureza ou buscar uma alternativa de investimento.</p>
             <p className="details-section__text">O projeto também combina <strong>lazer completo, espaços compartilhados, tecnologia, segurança e soluções voltadas à praticidade</strong>, criando uma experiência residencial conectada às novas formas de viver.</p>

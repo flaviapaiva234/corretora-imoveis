@@ -648,7 +648,7 @@ export const properties: Property[] = [
     id: 15,
     location: 'PONTAL OCEÂNICO',
     subtitle: 'RECREIO DOS BANDEIRANTES',
-    title: 'FEEL',
+    title: 'FEEL SUN',
     price: 'Entre em contato com Ariana Nunes',
     area: '30–83 m²',
     bedrooms: 'Studios Design, Garden Studios e Studios Dúplex',
@@ -689,12 +689,12 @@ export const properties: Property[] = [
     ],
     image: `${basePath}images/id15/feel-00-portico-diurno.jpg`,
     summary:
-      'No Pontal Oceânico, o FEEL combina design, natureza e praticidade em um projeto pensado para quem busca uma nova forma de viver. Studios, Garden Studios e Studios Dúplex em um bairro planejado, cercado por natureza e próximo às praias do Recreio.',
+      'No Pontal Oceânico, o FEEL SUN combina design, natureza e praticidade em um projeto pensado para quem busca uma nova forma de viver. Studios, Garden Studios e Studios Dúplex em um bairro planejado, cercado por natureza e próximo às praias do Recreio.',
     details: {
       address: 'Luiz Carlos Sarolli, 1600 – Pontal Oceânico',
       typologies: 'Studios Design, Garden Studios e Studios Dúplex',
       description:
-        'O FEEL Pontal Oceânico foi pensado para quem deseja viver com mais leveza, conexão com a natureza e praticidade no dia a dia. Localizado no Pontal Oceânico, o projeto combina a tranquilidade de um bairro planejado com a proximidade da natureza e a infraestrutura da Avenida das Américas. O empreendimento reúne Studios Design de 30 a 36 m², Garden Studios de 39 a 83 m² e Studios Dúplex de 55 a 70 m², criando diferentes possibilidades para morar, descansar ou investir. Com arquitetura contemporânea, lazer completo, espaços compartilhados e soluções de tecnologia, o FEEL foi concebido para acompanhar uma nova maneira de viver o Rio.',
+        'O FEEL SUN Pontal Oceânico foi pensado para quem deseja viver com mais leveza, conexão com a natureza e praticidade no dia a dia. Localizado no Pontal Oceânico, o projeto combina a tranquilidade de um bairro planejado com a proximidade da natureza e a infraestrutura da Avenida das Américas. O empreendimento reúne Studios Design de 30 a 36 m², Garden Studios de 39 a 83 m² e Studios Dúplex de 55 a 70 m², criando diferentes possibilidades para morar, descansar ou investir. Com arquitetura contemporânea, lazer completo, espaços compartilhados e soluções de tecnologia, o FEEL SUN foi concebido para acompanhar uma nova maneira de viver o Rio.',
       amenities: [
         '🏊 Piscina',
         '🌊 Deck molhado e solarium',
@@ -716,6 +716,61 @@ export const properties: Property[] = [
         '👤 Reconhecimento facial no acesso de pedestres',
         '🚗 Controle de acesso de veículos',
         '📶 Wi-Fi nas áreas comuns',
+      ],
+    },
+  },
+  {
+    id: 16,
+    location: 'PONTAL OCEÂNICO',
+    subtitle: 'RECREIO DOS BANDEIRANTES',
+    title: 'FEEL NATURE',
+    price: 'Entre em contato com Ariana Nunes',
+    area: '30–83 m²',
+    bedrooms: 'Studios Design, Garden Studios e Studios Dúplex',
+    suites: 'Conforme unidade',
+    garage: 'Lazer completo',
+    cardVideo: 'https://youtu.be/9jx1zVU26sk',
+    heroMedia: {
+      type: 'video',
+      src: 'https://youtu.be/9jx1zVU26sk',
+      alt: 'Vídeo FEEL NATURE Pontal Oceânico',
+    },
+    images: Array.from({ length: 69 }, (_, index) => {
+      const number = index + 1;
+      if ([11, 24, 44].includes(number)) return null;
+      const fileName = number === 2 ? 'feel-n-02.png' : `feel-n-${String(number).padStart(2, '0')}.jpg`;
+      return `${basePath}images/id16/${fileName}`;
+    }).filter((src): src is string => src !== null),
+    image: `${basePath}images/id16/feel-n-01.jpg`,
+    summary:
+      'No Pontal Oceânico, o FEEL NATURE combina natureza, leveza e praticidade em uma nova forma de viver. Studios Design, Garden Studios e Studios Dúplex em um bairro planejado, próximo às praias e cercado pela natureza do Recreio.',
+    details: {
+      address: 'Rua Teixeira Heizer, 1.700 – Pontal Oceânico',
+      typologies: 'Studios Design, Garden Studios e Studios Dúplex',
+      description:
+        'O FEEL NATURE Pontal Oceânico foi pensado para quem busca uma vida mais leve, conectada à natureza e com praticidade no dia a dia. Localizado no Pontal Oceânico, um bairro planejado do Recreio dos Bandeirantes, o empreendimento combina a proximidade com praias, áreas naturais e a infraestrutura da Avenida das Américas. O projeto reúne Studios Design de 30 a 36 m², Garden Studios de 39 a 83 m² e Studios Dúplex de 55 a 70 m², criando diferentes possibilidades para morar, descansar ou aproveitar o imóvel. Com arquitetura contemporânea, lazer completo, espaços compartilhados e soluções pensadas para facilitar a rotina, o FEEL NATURE traduz uma proposta de viver com menos excessos e mais conexão.',
+      amenities: [
+        '🏊 Piscina',
+        '🍹 Pool House',
+        '🎉 Salão de festas gourmet e coworking',
+        '🏋️ Academia',
+        '🧖 Sauna com repouso',
+        '🎠 Play Kids e redário',
+        '🐾 Pet Place e Pet Care',
+        '🔥 Churrasqueira',
+        '📦 Guarda-entregas e Smart Locker',
+        '🧺 Lavanderia compartilhada',
+        '🏄 Pranchário',
+        '🚲 Bicicletário',
+        '🛒 Take It',
+        '📱 App FEEL',
+        '🔐 Fechadura Smart',
+        '🤖 Infraestrutura para robô entregador',
+        '📹 Monitoramento por câmeras',
+        '👤 Reconhecimento facial',
+        '🚗 Controle de acesso de veículos',
+        '📶 Wi-Fi nas áreas comuns',
+        '🏖️ Beach Point na Praia do Recreio',
       ],
     },
   },

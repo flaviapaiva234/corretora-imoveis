@@ -818,4 +818,47 @@ export const properties: Property[] = [
       ],
     },
   },
+  {
+    id: 18,
+    location: 'Barra da Tijuca',
+    title: 'ALL Jardim Oceânico',
+    price: 'Entre em contato com Ariana Nunes',
+    area: '78–172 m²',
+    bedrooms: '2 e 3 quartos + coberturas duplex',
+    suites: '1 suíte nos apartamentos apresentados',
+    garage: 'Lazer completo',
+    cardVideo: 'https://youtube.com/shorts/ob010zrRyo8',
+    heroMedia: {
+      type: 'video',
+      src: 'https://youtu.be/DJZ8M7VapTU',
+      alt: 'Vídeo ALL Jardim Oceânico',
+    },
+    images: Array.from({ length: 71 }, (_, index) => index + 1)
+      .filter((number) => number !== 6)
+      .map((number) => `${basePath}images/id18/all-j-${String(number).padStart(2, '0')}.jpg`),
+    image: `${basePath}images/id18/all-j-01.jpg`,
+    summary:
+      'No Jardim Oceânico, o ALL combina natureza, comodidade e lazer completo em um novo endereço na Barra da Tijuca. Um projeto pensado para quem valoriza qualidade de vida, mobilidade e diferentes experiências para viver e aproveitar cada momento.',
+    details: {
+      address: 'Jardim Oceânico – Barra da Tijuca',
+      typologies: '2 e 3 quartos + coberturas duplex',
+      description:
+        'O ALL Jardim Oceânico foi pensado para quem busca uma experiência residencial que combine conforto, natureza, lazer e praticidade em um dos endereços mais desejados da Barra da Tijuca. Localizado no Jardim Oceânico, o empreendimento está a aproximadamente 5 minutos da estação Jardim Oceânico do metrô e a cerca de 15 minutos da praia, conectando mobilidade e qualidade de vida. O projeto reúne apartamentos de 2 e 3 quartos e coberturas duplex, além de um masterplan de lazer de aproximadamente 3.500 m², com espaços pensados para diferentes momentos do dia e para toda a família.',
+      amenities: [
+        '🏊 Complexo aquático — piscina adulto com raia, piscina infantil, solarium, deck molhado, bangalôs, Espaço Praia e bar da piscina',
+        '🏋️ Fitness e bem-estar — espaço fitness, área para ergometria e ambientes preparados para atividades com personal ou vídeos',
+        '🧖 Spa e relaxamento — espaços dedicados ao bem-estar e momentos de descanso',
+        '🍽️ Espaços gourmet e convivência — ambientes planejados para receber, celebrar e aproveitar bons momentos',
+        '🎉 Salão de festas — estrutura para confraternizações e celebrações',
+        '🎮 Espaços de entretenimento — salão de jogos e brinquedoteca',
+        '💼 Coworking — espaço pensado para trabalhar sem sair de casa',
+        '🐾 Pet Place — área para os pets brincarem e receberem cuidados, inclusive cães de grande porte',
+        '🚲 Bicicletário completo — compressor, tomadas para recarga, lockers e área para manutenção e limpeza das bicicletas',
+        '🛠️ Oficina compartilhada — equipamentos básicos para pequenos reparos',
+        '📦 Espaço Delivery — área destinada ao armazenamento de entregas, inclusive refrigeradas',
+        '⚡ Recarga elétrica — uma vaga de garagem com recarga elétrica, conforme material do empreendimento',
+        '🌐 Tecnologia e conectividade — infraestrutura para internet wireless nas áreas comuns',
+      ],
+    },
+  },
 ];

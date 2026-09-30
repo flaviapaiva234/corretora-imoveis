@@ -489,7 +489,13 @@ export function PropertyDetailsPage() {
           <span className="details-card__eyebrow">{property.location}</span>
           {property.subtitle ? <span className="details-card__eyebrow details-card__eyebrow--subline">{property.subtitle}</span> : null}
           <h1 className="details-card__title">{property.title}</h1>
-          {property.id === 14 ? (
+          {property.id === 18 ? (
+            <div className="details-card__description">
+              <p>O ALL Jardim Oceânico foi pensado para quem busca uma experiência residencial que combine conforto, natureza, lazer e praticidade em um dos endereços mais desejados da Barra da Tijuca.</p>
+              <p>Localizado no Jardim Oceânico, o empreendimento está a aproximadamente <strong>5 minutos da estação Jardim Oceânico do metrô</strong> e a cerca de <strong>15 minutos da praia</strong>, conectando mobilidade e qualidade de vida.</p>
+              <p>O projeto reúne apartamentos de <strong>2 e 3 quartos e coberturas duplex</strong>, além de um masterplan de lazer de aproximadamente <strong>3.500 m²</strong>, com espaços pensados para diferentes momentos do dia e para toda a família.</p>
+            </div>
+          ) : property.id === 14 ? (
             <div className="details-card__description">
               <p><strong>Viva o novo Recreio.</strong></p>
               <p>O Lanai Pontal Oceânico foi pensado para quem busca uma experiência de moradia que combine conforto, praticidade e contato com a natureza. Localizado no Pontal Oceânico, no Recreio dos Bandeirantes, o projeto reúne apartamentos de 2 e 3 quartos e gardens, com ambientes integrados e varandas com cortina de vidro.</p>
@@ -568,11 +574,16 @@ export function PropertyDetailsPage() {
                 <li><strong>Suítes:</strong> conforme unidade</li>
                 <li><strong>Garagem:</strong> conforme unidade</li>
               </>
-            ) : property.id === 3 || property.id === 11 || property.id === 12 ? (
+            ) : property.id === 3 || property.id === 11 || property.id === 12 || property.id === 18 ? (
               <>
                 <li><strong>Tipologias:</strong> {property.details?.typologies}</li>
                 <li><strong>Suítes:</strong> {property.suites}</li>
-                <li><strong>Garagem:</strong> {property.garage}</li>
+                {property.id === 18 ? (
+                  <>
+                    <li><strong>Vagas:</strong> 2 vagas nas coberturas duplex</li>
+                    <li><strong>Lazer:</strong> Masterplan de aproximadamente 3.500 m²</li>
+                  </>
+                ) : <li><strong>Garagem:</strong> {property.garage}</li>}
               </>
             ) : property.id === 14 ? (
               <>
@@ -653,8 +664,33 @@ export function PropertyDetailsPage() {
 
       <section className="details-section details-section--highlights">
         <div className="details-section__content">
-          <h2 className="details-section__title">Por que {property.id === 11 || property.id === 12 || property.id === 14 || property.id === 15 || property.id === 16 ? 'este' : 'esse'} imóvel se destaca?</h2>
-        {property.id === 16 ? (
+          <h2 className="details-section__title">Por que {property.id === 11 || property.id === 12 || property.id === 14 || property.id === 15 || property.id === 16 || property.id === 17 || property.id === 18 ? 'este' : 'esse'} imóvel se destaca?</h2>
+        {property.id === 18 ? (
+          <>
+            <p className="details-section__text"><strong>O ALL Jardim Oceânico se destaca por reunir localização, mobilidade, lazer e qualidade de vida em um projeto pensado para acompanhar diferentes estilos de vida.</strong></p>
+            <p className="details-section__text">Estar no Jardim Oceânico significa ter uma rotina conectada ao melhor da Barra, com acesso ao metrô, à praia, ao comércio e aos serviços da região. O empreendimento ainda conta com um masterplan de lazer de aproximadamente <strong>3.500 m²</strong>, criando diferentes possibilidades de convivência, bem-estar e entretenimento.</p>
+            <p className="details-section__text">O projeto também valoriza a praticidade no dia a dia, com soluções como bicicletário equipado, Espaço Delivery, Pet Place, oficina compartilhada, coworking e infraestrutura para conectividade nas áreas comuns.</p>
+            <p className="details-section__text"><strong>Um novo endereço para viver o Jardim Oceânico com mais conforto, praticidade e experiências para aproveitar todos os dias.</strong></p>
+            <ul className="details-section__text">
+              <li>📍 <strong>Localização privilegiada</strong> — a aproximadamente 5 minutos do metrô Jardim Oceânico e 15 minutos da praia.</li>
+              <li>🌿 <strong>Lazer completo</strong> — masterplan de aproximadamente 3.500 m² com espaços para esporte, bem-estar, convivência e entretenimento.</li>
+              <li>🏡 <strong>Diferentes possibilidades de morar</strong> — apartamentos de 2 e 3 quartos e coberturas duplex de 129 a 172 m².</li>
+            </ul>
+          </>
+        ) : property.id === 17 ? (
+          <>
+            <p className="details-section__text"><strong>O Green Park Barra se destaca por transformar a relação entre cidade e natureza em uma experiência de morar.</strong></p>
+            <p className="details-section__text">Localizado no início da Barra da Tijuca, o empreendimento reúne mobilidade, conveniência e uma ampla estrutura de lazer em um projeto pensado para proporcionar mais qualidade de vida.</p>
+            <p className="details-section__text">Seu paisagismo valoriza a vegetação tropical e cria caminhos, jardins e espaços de convivência que aproximam os moradores da natureza. Ao mesmo tempo, a localização oferece acesso ao metrô, aos principais shoppings, hipermercados e centros empresariais da região, além da proximidade com o mar.</p>
+            <p className="details-section__text">A arquitetura também valoriza as paisagens da Barra, com vistas para a Pedra da Gávea e as montanhas da região. O rooftop de uso comum completa a proposta com uma perspectiva privilegiada da Barra da Tijuca.</p>
+            <p className="details-section__text"><strong>Um projeto que reúne espaço, natureza, lazer e praticidade para viver a Barra de uma forma diferente.</strong></p>
+            <ul className="details-section__text">
+              <li>🌳 <strong>Natureza integrada</strong> — paisagismo inspirado na Mata Atlântica, jardins e áreas de convivência.</li>
+              <li>📍 <strong>Localização estratégica</strong> — no início da Barra, com acesso ao metrô, shoppings, serviços e proximidade do mar.</li>
+              <li>🏡 <strong>Experiência de condomínio-clube</strong> — ampla estrutura de lazer, bem-estar, esportes, gastronomia e convivência.</li>
+            </ul>
+          </>
+        ) : property.id === 16 ? (
           <>
             <p className="details-section__text"><strong>O FEEL NATURE se destaca por transformar a proximidade com a natureza em parte da experiência de viver.</strong></p>
             <p className="details-section__text">No Pontal Oceânico, o projeto combina a tranquilidade de um bairro planejado com a proximidade das praias, áreas naturais, comércio, serviços e da Avenida das Américas.</p>

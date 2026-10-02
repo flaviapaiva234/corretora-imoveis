@@ -511,7 +511,7 @@ export function PropertyDetailsPage() {
               <p><strong>Um novo jeito de viver o Flamengo</strong></p>
               <p>O Symphony Residences foi concebido para integrar arquitetura contemporânea, história e bem-estar em um dos endereços mais tradicionais da Zona Sul do Rio.</p>
               <p>Localizado na <strong>Rua Marquês de Abrantes, 55</strong>, o empreendimento reúne duas torres residenciais e o histórico <strong>Casarão São Clemente</strong>, preservado e integrado ao projeto.</p>
-              <p>São apartamentos de <strong>1, 2 e 3 quartos</strong>, além de coberturas duplex, com plantas pensadas para diferentes estilos de vida. As áreas comuns combinam lazer, esporte, relaxamento e convivência, incluindo piscina com raia, spa, academia, sauna, coworking e espaços de convivência. <a href="https://symphonyresidences.com.br/?utm_source=chatgpt.com" target="_blank" rel="noreferrer">Symphony Flamengo</a></p>
+              <p>São apartamentos de <strong>1, 2 e 3 quartos</strong>, além de coberturas duplex, com plantas pensadas para diferentes estilos de vida. As áreas comuns combinam lazer, esporte, relaxamento e convivência, incluindo piscina com raia, spa, academia, sauna, coworking e espaços de convivência.</p>
               <p>A localização também é um dos grandes atributos do projeto: o Symphony está próximo à Praia do Flamengo, ao Aterro do Flamengo e às estações de metrô Flamengo e Largo do Machado, conectando o morador ao comércio, serviços, gastronomia e cultura da região.</p>
               <p><strong>Ficha técnica</strong></p>
             </div>

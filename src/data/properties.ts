@@ -44,26 +44,34 @@ export const properties: Property[] = [
     id: 1,
     title: 'Symphony Flamengo',
     location: 'Flamengo',
-    price: 'A partir de R$ 890.000,00',
-    area: '40 - 190 m²',
-    bedrooms: '1-3 quartos',
+    price: 'Sob Consulta',
+    area: '41 – 194 m²',
+    bedrooms: '1–3 quartos + coberturas duplex',
     suites: '1-3',
-    garage: 'conforme unidade',
-    cardVideo: 'https://youtube.com/shorts/MqjWjUuK5cw',
+    garage: 'Sob Consulta',
+    cardVideo: 'https://www.youtube.com/shorts/MqjWjUuK5cw',
     heroMedia: {
       type: 'video',
-      src: 'https://www.youtube.com/watch?v=Qj24v8MEFXc&t=281s',
-      alt: 'Vídeo Symphony Flamengo',
+      src: 'https://youtu.be/bHlJ1i7BMtE',
+      alt: 'Vídeo Symphony Residences',
     },
-    image: `${basePath}images/symphony-flamengo.jpg`,
+    images: [
+      ...Array.from({ length: 11 }, (_, index) => index + 1),
+      ...Array.from({ length: 86 }, (_, index) => index + 14),
+      101,
+      102,
+      103,
+    ].map((number) => {
+      const fileNumber = String(number).padStart(3, '0');
+      const extension = number >= 2 && number <= 29 ? 'JPG' : 'jpg';
+      return `${basePath}images/id01/symphony-${fileNumber}.${extension}`;
+    }),
+    image: `${basePath}images/id01/symphony-001.jpg`,
     summary:
-      'Lançamento no antigo Colégio Bennett com localização histórica no Flamengo, alto padrão e forte potencial de valorização.',
+      'Um novo endereço no Flamengo que une arquitetura contemporânea, história e bem-estar. O Symphony Residences reúne apartamentos de 1, 2 e 3 quartos e coberturas duplex, com lazer completo e uma localização privilegiada na Rua Marquês de Abrantes.',
     details: {
       address: 'Rua Marquês de Abrantes, 55 – Flamengo',
-      description:
-        'O Symphony Flamengo ocupa um dos últimos grandes terrenos do bairro, unindo sofisticação, história e potencial de valorização imobiliária em um produto raro na Zona Sul.',
-      condominiumEstimate: 'Lazer completo, spa, coworking, academia, piscina de 25m, playground e infraestrutura de alto padrão.',
-      valuesValid: 'Esta é uma oferta de alto padrão com informações de projeto e valorização.',
+      typologies: '1, 2 e 3 quartos + coberturas duplex',
     },
   },
   {

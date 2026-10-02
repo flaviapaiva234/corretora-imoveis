@@ -133,15 +133,6 @@ export function PropertyDetailsPage() {
           alt: `ICONYC ${number}`,
         };
       });
-  } else if (property.id === 1) {
-    galleryItems = [
-      { type: 'image' as const, src: `${basePath}images/pool-bar-rooftop.jpg`, label: 'Symphony Flamengo piscina', alt: 'Symphony Flamengo piscina' },
-      { type: 'image' as const, src: `${basePath}images/QUARTO-CASAL-APTO-2Q-F24-scaled.jpg`, label: 'Symphony Flamengo quarto casal', alt: 'Symphony Flamengo quarto casal' },
-      { type: 'image' as const, src: `${basePath}images/SALA-APTO-1Q-F28-scaled.jpg`, label: 'Symphony Flamengo sala', alt: 'Symphony Flamengo sala' },
-      { type: 'image' as const, src: `${basePath}images/symphony-3-quartos.jpg`, label: 'Symphony Flamengo 3 quartos', alt: 'Symphony Flamengo 3 quartos' },
-      { type: 'image' as const, src: `${basePath}images/symphony-2-quartos.jpg`, label: 'Symphony Flamengo 2 quartos', alt: 'Symphony Flamengo 2 quartos' },
-      { type: 'image' as const, src: `${basePath}images/symphony-1-quarto.jpg`, label: 'Symphony Flamengo 1 quarto', alt: 'Symphony Flamengo 1 quarto' },
-    ];
   } else if (property.id === 5) {
     galleryItems = [
       { type: 'image' as const, src: `${basePath}images/id05/arte-wood-00.jpg`, label: 'Arte Wood 01', alt: 'Arte Wood 01' },
@@ -515,6 +506,15 @@ export function PropertyDetailsPage() {
               <p><strong>Lazer:</strong> Completo</p>
               <p><strong>Localização:</strong> Pontal Oceânico – Recreio dos Bandeirantes</p>
             </div>
+          ) : property.id === 1 ? (
+            <div className="details-card__description">
+              <p><strong>Um novo jeito de viver o Flamengo</strong></p>
+              <p>O Symphony Residences foi concebido para integrar arquitetura contemporânea, história e bem-estar em um dos endereços mais tradicionais da Zona Sul do Rio.</p>
+              <p>Localizado na <strong>Rua Marquês de Abrantes, 55</strong>, o empreendimento reúne duas torres residenciais e o histórico <strong>Casarão São Clemente</strong>, preservado e integrado ao projeto.</p>
+              <p>São apartamentos de <strong>1, 2 e 3 quartos</strong>, além de coberturas duplex, com plantas pensadas para diferentes estilos de vida. As áreas comuns combinam lazer, esporte, relaxamento e convivência, incluindo piscina com raia, spa, academia, sauna, coworking e espaços de convivência. <a href="https://symphonyresidences.com.br/?utm_source=chatgpt.com" target="_blank" rel="noreferrer">Symphony Flamengo</a></p>
+              <p>A localização também é um dos grandes atributos do projeto: o Symphony está próximo à Praia do Flamengo, ao Aterro do Flamengo e às estações de metrô Flamengo e Largo do Machado, conectando o morador ao comércio, serviços, gastronomia e cultura da região.</p>
+              <p><strong>Ficha técnica</strong></p>
+            </div>
           ) : property.id === 4 ? (
             <div className="details-card__description">
               <p>O ICONYC By Yoo reúne arquitetura contemporânea, design e uma experiência residencial completa em um dos bairros mais desejados da Zona Sul do Rio.</p>
@@ -568,7 +568,14 @@ export function PropertyDetailsPage() {
           <ul className="details-card__list">
             <li><strong>Endereço:</strong> {property.id === 4 ? 'Rua Mena Barreto, 150 – Botafogo' : property.details?.address || 'Em breve'}</li>
             <li><strong>Área:</strong> {property.area}</li>
-            {property.id === 4 ? (
+            {property.id === 1 ? (
+              <>
+                <li><strong>Tipologias:</strong> {property.details?.typologies}</li>
+                <li><strong>Suítes:</strong> conforme unidade</li>
+                <li><strong>Vagas:</strong> conforme unidade</li>
+                <li><strong>Unidades:</strong> sob consulta</li>
+              </>
+            ) : property.id === 4 ? (
               <>
                 <li><strong>Tipologias:</strong> 2 quartos e coberturas duplex*</li>
                 <li><strong>Suítes:</strong> conforme unidade</li>
@@ -642,13 +649,40 @@ export function PropertyDetailsPage() {
       <section className="details-section details-section--amenities">
         <div className="details-section__content">
           <h2 className="details-section__title">
-            {property.id === 2 ? 'Vista Privilegiada' : property.id === 10 ? 'Bem-estar e experiências' : 'Lazer e diferenciais'}
+            {property.id === 1 ? 'Lazer e bem-estar' : property.id === 2 ? 'Vista Privilegiada' : property.id === 10 ? 'Bem-estar e experiências' : 'Lazer e diferenciais'}
           </h2>
-          <ul className="amenities-list">
-            {amenities.map((item) => (
-              <li key={item}>{property.id === 4 ? <strong>{item}</strong> : item}</li>
-            ))}
-          </ul>
+          {property.id === 1 ? (
+            <>
+              <ul className="amenities-list amenities-list--icon-led">
+                <li>🏊 <strong>Piscina com raia de 25 m:</strong> Piscina adulto, piscina infantil e estrutura para momentos de lazer.</li>
+                <li>🧖 <strong>Spa e wellness:</strong> Spa, sauna e área de repouso.</li>
+                <li>🏋️ <strong>Academia Bodytech:</strong> Espaço fitness com consultoria especializada.</li>
+                <li>🍽️ <strong>Espaço Gourmet:</strong> Ambiente pensado para receber e aproveitar bons momentos.</li>
+                <li>🎉 <strong>Salão de festas:</strong> Espaço para celebrações e encontros.</li>
+                <li>💼 <strong>Coworking:</strong> Ambiente dedicado à rotina profissional.</li>
+                <li>🎮 <strong>Sala Gamer:</strong> Espaço de entretenimento.</li>
+                <li>🧸 <strong>Brinquedoteca e Playground:</strong> Ambientes destinados às crianças.</li>
+                <li>🐾 <strong>Pet Care:</strong> Espaço pensado para os cuidados com os pets.</li>
+                <li>🍹 <strong>Bar da piscina:</strong> Mais comodidade para aproveitar a área externa.</li>
+              </ul>
+              <h3 className="details-section__subtitle">Tecnologia e comodidade</h3>
+              <ul className="amenities-list amenities-list--icon-led">
+                <li>🚗 <strong>Carregador para carro elétrico</strong></li>
+                <li>🚲 <strong>Carregador para bike elétrica</strong></li>
+                <li>🛒 <strong>Fast Market</strong></li>
+                <li>📦 <strong>Espaço Delivery</strong></li>
+                <li>📶 <strong>Wi-Fi nas áreas comuns</strong></li>
+                <li>📱 <strong>Aplicativo do condomínio</strong></li>
+                <li>⚡ <strong>Gerador de energia</strong></li>
+              </ul>
+            </>
+          ) : (
+            <ul className="amenities-list">
+              {amenities.map((item) => (
+                <li key={item}>{property.id === 4 ? <strong>{item}</strong> : item}</li>
+              ))}
+            </ul>
+          )}
           {property.details?.characteristics ? (
             <div className="details-section__characteristics">
               <h3 className="details-section__subtitle">Características</h3>
@@ -665,7 +699,25 @@ export function PropertyDetailsPage() {
       <section className="details-section details-section--highlights">
         <div className="details-section__content">
           <h2 className="details-section__title">Por que {property.id === 11 || property.id === 12 || property.id === 14 || property.id === 15 || property.id === 16 || property.id === 17 || property.id === 18 ? 'este' : 'esse'} imóvel se destaca?</h2>
-        {property.id === 18 ? (
+        {property.id === 1 ? (
+          <>
+            <p className="details-section__text">O Symphony Residences se destaca por unir <strong>história, arquitetura contemporânea e bem-estar</strong> em um dos endereços mais tradicionais do Flamengo. O projeto integra duas torres residenciais ao histórico Casarão São Clemente, preservando sua identidade e incorporando-o à experiência de lazer e convivência. Com diferentes opções de apartamentos e coberturas duplex, lazer completo e uma localização próxima ao metrô, à Praia do Flamengo e ao Aterro, o Symphony foi pensado para oferecer uma experiência residencial contemporânea sem abrir mão da história e da atmosfera do bairro.</p>
+            <p className="details-section__text details-section__text--location-heading"><strong>📍 Localização e conveniência</strong></p>
+            <p className="details-section__text">Entre os principais pontos próximos ao Symphony Residences Flamengo estão:</p>
+            <ul className="details-section__text details-section__text--plain-list">
+              <li>✓ Praia do Flamengo</li>
+              <li>✓ Aterro do Flamengo</li>
+              <li>✓ Metrô do Flamengo</li>
+              <li>✓ Largo do Machado</li>
+              <li>✓ Supermercado Zona Sul</li>
+              <li>✓ Hortifruti</li>
+              <li>✓ Smart Fit</li>
+              <li>✓ Museu da República</li>
+              <li>✓ Parque Guinle</li>
+              <li>✓ Praia de Botafogo</li>
+            </ul>
+          </>
+        ) : property.id === 18 ? (
           <>
             <p className="details-section__text"><strong>O ALL Jardim Oceânico se destaca por reunir localização, mobilidade, lazer e qualidade de vida em um projeto pensado para acompanhar diferentes estilos de vida.</strong></p>
             <p className="details-section__text">Estar no Jardim Oceânico significa ter uma rotina conectada ao melhor da Barra, com acesso ao metrô, à praia, ao comércio e aos serviços da região. O empreendimento ainda conta com um masterplan de lazer de aproximadamente <strong>3.500 m²</strong>, criando diferentes possibilidades de convivência, bem-estar e entretenimento.</p>

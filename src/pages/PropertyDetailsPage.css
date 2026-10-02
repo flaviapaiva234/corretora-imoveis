@@ -213,6 +213,15 @@
   line-height: 1.8;
 }
 
+.details-section__text--location-heading {
+  margin-top: 1rem;
+}
+
+.details-section__text--plain-list {
+  list-style: none;
+  padding-left: 0;
+}
+
 .gallery-grid {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
@@ -517,6 +526,14 @@
   color: var(--accent);
   text-shadow: var(--accent-text-shadow);
   font-size: 1.15rem;
+}
+
+.amenities-list--icon-led li {
+  display: block;
+}
+
+.amenities-list--icon-led li::before {
+  content: none;
 }
 
 @media (max-width: 900px) {

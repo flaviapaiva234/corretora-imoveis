@@ -480,7 +480,13 @@ export function PropertyDetailsPage() {
           <span className="details-card__eyebrow">{property.location}</span>
           {property.subtitle ? <span className="details-card__eyebrow details-card__eyebrow--subline">{property.subtitle}</span> : null}
           <h1 className="details-card__title">{property.title}</h1>
-          {property.id === 18 ? (
+          {property.id === 19 ? (
+            <div className="details-card__description">
+              <p><strong>Um novo jeito de viver o Centro do Rio</strong></p>
+              <p>Localizado na Rua da Quitanda, 23, esquina com a Rua 7 de Setembro, o Q Studios foi pensado para quem valoriza mobilidade, praticidade e uma experiência contemporânea de morar.</p>
+              <p>O projeto combina arquitetura contemporânea e interiores inspirados na personalidade urbana do Centro, criando ambientes funcionais e acolhedores. As unidades contam com varanda e o empreendimento oferece uma estrutura completa de lazer, bem-estar, trabalho e serviços.</p>
+            </div>
+          ) : property.id === 18 ? (
             <div className="details-card__description">
               <p>O ALL Jardim Oceânico foi pensado para quem busca uma experiência residencial que combine conforto, natureza, lazer e praticidade em um dos endereços mais desejados da Barra da Tijuca.</p>
               <p>Localizado no Jardim Oceânico, o empreendimento está a aproximadamente <strong>5 minutos da estação Jardim Oceânico do metrô</strong> e a cerca de <strong>15 minutos da praia</strong>, conectando mobilidade e qualidade de vida.</p>
@@ -568,7 +574,15 @@ export function PropertyDetailsPage() {
           <ul className="details-card__list">
             <li><strong>Endereço:</strong> {property.id === 4 ? 'Rua Mena Barreto, 150 – Botafogo' : property.details?.address || 'Em breve'}</li>
             <li><strong>Área:</strong> {property.area}</li>
-            {property.id === 1 ? (
+            {property.id === 19 ? (
+              <>
+                <li><strong>Tipologia:</strong> Studios</li>
+                <li><strong>Unidades:</strong> 344 residenciais + 2 lojas</li>
+                <li><strong>Pavimentos:</strong> 24</li>
+                <li><strong>Elevadores:</strong> 4</li>
+                <li><strong>Vagas para bicicletas:</strong> 344</li>
+              </>
+            ) : property.id === 1 ? (
               <>
                 <li><strong>Tipologias:</strong> {property.details?.typologies}</li>
                 <li><strong>Suítes:</strong> conforme unidade</li>
@@ -698,8 +712,19 @@ export function PropertyDetailsPage() {
 
       <section className="details-section details-section--highlights">
         <div className="details-section__content">
-          <h2 className="details-section__title">Por que {property.id === 11 || property.id === 12 || property.id === 14 || property.id === 15 || property.id === 16 || property.id === 17 || property.id === 18 ? 'este' : 'esse'} imóvel se destaca?</h2>
-        {property.id === 1 ? (
+          <h2 className="details-section__title">Por que {property.id === 11 || property.id === 12 || property.id === 14 || property.id === 15 || property.id === 16 || property.id === 17 || property.id === 18 || property.id === 19 ? 'este' : 'esse'} imóvel se destaca?</h2>
+          {property.id === 19 ? (
+            <>
+              <p className="details-section__text">O Q Studios se destaca pela combinação entre <strong>localização, mobilidade, arquitetura contemporânea e uma estrutura completa para o dia a dia</strong>. Na Rua da Quitanda, o projeto coloca o morador próximo a metrô, VLT, Praça XV, Barcas, comércio, restaurantes, cultura e serviços, permitindo aproveitar muito do Centro a pé ou de bicicleta.</p>
+              <p className="details-section__text">O empreendimento também traz uma proposta contemporânea de viver o Centro, com ambientes de convivência, espaços de trabalho, lazer no rooftop e uma arquitetura que dialoga com a história e a identidade da região.</p>
+              <ul className="details-section__text">
+                <li>📍 <strong>Localização estratégica</strong> — próximo ao metrô, VLT, Praça XV, Barcas, Santos Dumont, comércio, restaurantes, museus e importantes pontos culturais do Centro.</li>
+                <li>🏙️ <strong>Um novo jeito de viver o Centro</strong> — studios com varanda e uma estrutura pensada para integrar moradia, trabalho, lazer e praticidade.</li>
+                <li>🌊 <strong>Rooftop com vista</strong> — piscina, solário e ambientes de convivência com a Baía de Guanabara como horizonte.</li>
+                <li>🚲 <strong>Mobilidade e praticidade</strong> — bicicletário, Bike Wash e uma localização que facilita deslocamentos pelo Centro do Rio.</li>
+              </ul>
+            </>
+          ) : property.id === 1 ? (
           <>
             <p className="details-section__text">O Symphony Residences se destaca por unir <strong>história, arquitetura contemporânea e bem-estar</strong> em um dos endereços mais tradicionais do Flamengo. O projeto integra duas torres residenciais ao histórico Casarão São Clemente, preservando sua identidade e incorporando-o à experiência de lazer e convivência. Com diferentes opções de apartamentos e coberturas duplex, lazer completo e uma localização próxima ao metrô, à Praia do Flamengo e ao Aterro, o Symphony foi pensado para oferecer uma experiência residencial contemporânea sem abrir mão da história e da atmosfera do bairro.</p>
             <p className="details-section__text details-section__text--location-heading"><strong>📍 Localização e conveniência</strong></p>

@@ -869,4 +869,55 @@ export const properties: Property[] = [
       ],
     },
   },
+  {
+    id: 19,
+    location: 'Centro do Rio',
+    title: 'Q Studios',
+    price: 'Sob consulta',
+    area: '30 m²+',
+    bedrooms: 'Studios',
+    suites: 'Não se aplica',
+    garage: '344 vagas para bicicletas',
+    cardVideo: 'https://youtu.be/0l4uY-aRfQo',
+    heroMedia: {
+      type: 'video',
+      src: 'https://youtu.be/0l4uY-aRfQo',
+      alt: 'Tour do Q Studios',
+    },
+    images: Array.from({ length: 85 }, (_, index) => {
+      const number = String(index).padStart(index < 10 ? 3 : 4, '0');
+      const extension = index === 0 ? 'png' : 'jpg';
+      return `${basePath}images/id19/Q-${number}.${extension}`;
+    }),
+    image: `${basePath}images/id19/Q-000.png`,
+    summary:
+      'No coração do Centro do Rio, o Q Studios combina arquitetura contemporânea, praticidade e uma nova forma de viver a cidade. Studios a partir de 30 m², varanda em todas as unidades e lazer no rooftop.',
+    details: {
+      address: 'Rua da Quitanda, 23 – Centro, Rio de Janeiro',
+      typologies: 'Studios',
+      description:
+        'Localizado na Rua da Quitanda, 23, esquina com a Rua 7 de Setembro, o Q Studios foi pensado para quem valoriza mobilidade, praticidade e uma experiência contemporânea de morar. O projeto combina arquitetura contemporânea e interiores inspirados na personalidade urbana do Centro, com varanda em todas as unidades e estrutura completa de lazer, bem-estar, trabalho e serviços.',
+      amenities: [
+        '🏊 Rooftop com piscina',
+        '🌊 Vista para a Baía de Guanabara',
+        '☀️ Solário',
+        '🍸 Bar e espaço gourmet',
+        '🧖 Sauna úmida',
+        '🏋️ Fitness e fitness externo',
+        '💼 Coworking',
+        '🗣️ Sala de reunião e Podcast Room',
+        '💆 Sala de massagem',
+        '💇 Espaço Beauty / Barber Shop',
+        '🛍️ Mini Market',
+        '🧺 Lavanderia',
+        '🐾 Pet Wash',
+        '📦 Delivery e lockers',
+        '🚲 Bicicletário e Bike Wash',
+        '🔐 Controle de acesso e segurança',
+        '🌿 Varanda em todas as unidades',
+        '❄️ Infraestrutura para ar-condicionado split',
+        '🚲 Estrutura para mobilidade por bicicleta',
+      ],
+    },
+  },
 ];
